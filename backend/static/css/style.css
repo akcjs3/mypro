@@ -1,0 +1,1386 @@
+/* 리셋 & 기본 세팅 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans KR", sans-serif;
+  background: radial-gradient(circle at top, #191933, #050510);
+  color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 상단 헤더 - 밝은 배너 */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(
+    to bottom,
+    #f7f7ff,
+    #ececff
+  );
+  border-bottom: 1px solid rgba(120, 120, 180, 0.15);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* 왼쪽 브랜드 영역 */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.brand-logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(140, 140, 200, 0.4);
+}
+
+.brand-logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #272744;
+}
+
+/* 가운데 네비게이션 */
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: #111111;
+  text-decoration: none;
+  padding: 0.2rem 0;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.25rem;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7c4dff, #ff6b6b);
+  transform: translateX(-50%);
+  transition: width 0.18s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #000000;
+}
+
+.nav-link:hover::after {
+  width: 70%;
+}
+
+
+.nav-link.is-active {
+  color: #000000;
+}
+
+/* 오른쪽 액션 버튼들 */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.header-btn {
+  border-radius: 999px;
+  padding: 0.32rem 0.9rem;
+  font-size: 0.86rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  color: #222222;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.nickname-label {
+  font-size: 0.9rem;
+  color: #333333;
+  margin-right: 0.4rem; /* 마이페이지 버튼과 간격 */
+}
+
+.nickname-label.hidden {
+  display: none;
+}
+
+
+/* 로그인 버튼 - 누런 배경 + 검은 글씨 */
+.primary-btn {
+  background: #f5e6b0;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #111111;
+  box-shadow: 0 4px 10px rgba(150, 130, 60, 0.35);
+}
+
+.primary-btn:hover {
+  background: #f1dd90;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(150, 130, 60, 0.45);
+}
+
+/* 마이페이지 텍스트 버튼 */
+.text-btn {
+  color: #4a4a7a;
+}
+
+.text-btn:hover {
+  color: #232344;
+}
+
+/* 로그아웃 아웃라인 버튼 */
+.outline-btn {
+  border-color: rgba(120, 120, 190, 0.5);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.outline-btn:hover {
+  background: rgba(245, 245, 255, 1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* 메인 히어로 영역 */
+.hero {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem 2rem;
+}
+
+/* 기본 카드 상태 */
+.hero-card {
+  position: relative;          /* ✅ 패널을 카드 안에 겹치게 놓기 위한 기준 */
+  min-height: 260px; 
+  position: relative;
+  max-width: 720px;
+  width: 100%;
+  padding: 2rem 2.5rem;
+  border-radius: 24px;
+  background: radial-gradient(circle at top left, #262650, #090919);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+  overflow: visible;
+  cursor: default;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease, background 0.25s ease;
+}
+
+/* 카드 뒤에서 은은하게 빛나는 효과 */
+.hero-glow {
+  position: absolute;
+  inset: -60%;
+  background: radial-gradient(circle at top, rgba(124, 77, 255, 0.22), transparent 60%),
+              radial-gradient(circle at bottom, rgba(255, 107, 107, 0.16), transparent 65%);
+  opacity: 0.9;
+  pointer-events: none;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+
+/* 카드 안 실제 내용 */
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+/* 가운데 로고 */
+.hero-logo {
+  display: block;
+  width: 90px;
+  max-width: 30vw;
+  height: auto;
+  margin: 0 auto 1.2rem;
+  border-radius: 24px;
+}
+
+.hero-title {
+  font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem; /* 버튼이 바로 아래 오니 너무 크지 않게 */
+}
+
+.hero-subtitle {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(235, 235, 255, 0.8);
+  margin-top: 1.4rem;      /* 버튼 아래쪽으로 여유 */
+}
+
+/* 중앙 카드 안 버튼 줄 */
+.hero-actions {
+  margin-top: 0.4rem;                 /* 로고+타이틀 근처에 붙게 */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;                           /* 버튼 간 간격 조금 넓게 */
+}
+
+/* 버튼: 기존보다 약 1.8배 크게 */
+.hero-btn {
+  padding: 0.9rem 2.0rem;              /* ⬅ 높이/가로 둘 다 크게 */
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(10, 10, 30, 0.95);
+  color: #f5f5ff;
+  font-size: 1.05rem;                  /* ⬅ 글자 크기 증가 */
+  font-weight: 600;                    /* ⬅ 글씨 두껍게 */
+  cursor: pointer;
+  outline: none;
+  white-space: nowrap;
+
+  opacity: 0;
+  transform: translateX(-18px);
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease-out,
+    transform 0.25s ease-out,
+    background 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+/* 활성화 시 나타나는 건 그대로 유지 */
+.hero-card.is-active .hero-btn {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* hover 효과는 그대로 / 약간 더 강조해도 됨 */
+.hero-btn:hover {
+  background: rgba(40, 40, 90, 0.98);
+  border-color: rgba(124, 77, 255, 0.95);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+  transform: translateX(0) translateY(-1px);
+}
+
+/* 왼쪽 버튼부터 순차적으로 등장 */
+.hero-btn:nth-child(1) {
+  transition-delay: 0.02s;
+}
+
+.hero-btn:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+.hero-btn:nth-child(3) {
+  transition-delay: 0.14s;
+}
+
+.hero-btn:nth-child(4) {
+  transition-delay: 0.20s;
+}
+
+/* 활성화(마우스 올라갔을 때) 상태 - 더 강하게 어둡게 */
+.hero-card.is-active {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 50px 110px rgba(0, 0, 0, 0.95);
+  background: radial-gradient(circle at top left, #050509, #010103);
+}
+
+/* glow도 같이 거의 꺼지다시피 어둡게 */
+.hero-card.is-active .hero-glow {
+  opacity: 0.18;
+  filter: brightness(0.25);
+}
+
+/* 글자는 겨우 보일 정도로만 */
+.hero-card.is-active .hero-title,
+.hero-card.is-active .hero-subtitle {
+  opacity: 0.2;
+}
+
+/* =====================
+   소개 모드(about-mode)
+   ===================== */
+
+/* 소개 모드일 때 hero 카드 확장 */
+.hero-card.about-expanded {
+  transform: scale(1.25);                    /* 2배는 너무 커서 살짝만 키워도 느낌 충분 */
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 60px 130px rgba(0, 0, 0, 0.95);
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease,
+    background 0.45s ease;
+}
+
+/* 글, 로고, 버튼은 서서히 사라짐 */
+.hero-card.about-expanded .hero-content {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+
+/* 기본적으로 소개 섹션은 숨김 */
+.about-sections {
+  display: none;
+  padding: 4rem 1.5rem 3rem;
+}
+
+/* 소개 모드일 때만 등장 */
+body.about-mode .about-sections {
+  display: block;
+}
+
+/* 소개 섹션 안의 큰 박스들 (hero와 비슷한 느낌) */
+.about-card {
+  max-width: 960px;
+  margin: 0 auto 2.5rem;
+  border-radius: 24px;
+  background: radial-gradient(circle at top left, #262650, #090919);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+  padding: 2.5rem 2.2rem;
+}
+
+/* 안쪽 레이아웃: 왼쪽/오른쪽 이미지 배치용 (2열) */
+.about-card-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* 이미지 영역 */
+.about-card-image {
+  display: flex;
+  justify-content: center;
+}
+
+/* 실제 이미지 들어갈 자리를 임시로 박스로 표현 */
+.about-image-placeholder {
+  width: 260px;
+  max-width: 100%;
+  height: 180px;
+  border-radius: 16px;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: rgba(235, 235, 255, 0.7);
+  background: rgba(10, 10, 30, 0.6);
+}
+
+/* 텍스트 영역 */
+.about-card-text h2 {
+  font-size: 1.5rem;                 /* 조금 크게 */
+  font-weight: 800;                  /* 많이 진하게 */
+  color: #ffffff;                    /* 완전 흰색 */
+  margin-bottom: 0.8rem;
+}
+
+/* 본문: 흰색에 가까운 밝은 색 + 살짝 크게 */
+.about-card-text p {
+  font-size: 1.1rem;                   /* 기존보다 살짝 키움 */
+  line-height: 1.9;                  /* 줄간격 넉넉하게 */
+  color: #f8f8ff;                    /* 아주 밝은 흰색 계열 */
+}
+
+/* 왼쪽 카드: 이미지가 왼쪽(카드의 1/3지점 근처 느낌) */
+.about-card-left .about-card-inner {
+  grid-template-columns: 1.0fr 1.4fr;
+}
+
+/* 오른쪽 카드: 이미지가 오른쪽(카드의 2/3지점 근처 느낌) */
+.about-card-right .about-card-inner {
+  grid-template-columns: 1.4fr 1.0fr;
+}
+
+/* 반응형 (모바일에서는 세로로 쌓기) */
+@media (max-width: 768px) {
+  .about-card-inner {
+    grid-template-columns: 1fr;
+  }
+  .about-card-text h2 {
+    font-size: 1.25rem;
+}
+}
+/* 소개 모드일 때 hero 영역 위 여백을 더 줘서 헤더랑 안 붙게 */
+body.about-mode .hero {
+  padding-top: 5rem; /* 기본보다 조금 더 크게 (원하면 5~6rem 사이로 조절) */
+}
+
+
+/* 푸터 */
+.footer {
+  padding: 0.9rem 1.5rem 1.4rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgba(220, 220, 255, 0.7);
+}
+
+/* 푸터 */
+.footer {
+  padding: 0.9rem 1.5rem 1.4rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgba(220, 220, 255, 0.7);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .header-inner {
+    padding-inline: 1rem;
+    gap: 0.75rem;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .hero-card {
+    padding: 2.4rem 1.8rem;
+  }
+}
+
+/* ===== 로그인 필요 모달 ===== */
+
+/* 기본적으로 display: none; 용 */
+.hidden {
+  display: none !important;
+}
+
+/* 화면 전체를 덮는 어두운 배경 */
+.login-modal-backdrop {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; 와 같음 */
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* 맨 위로 */
+}
+
+/* 모달 박스 자체 */
+.login-modal {
+  width: 100%;
+  max-width: 340px;
+  padding: 1.8rem 2rem;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  color: #111111;
+}
+
+.login-modal-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.login-modal-message {
+  font-size: 0.9rem;
+  color: #555555;
+  margin-bottom: 1.4rem;
+}
+
+.login-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.login-modal-btn {
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+/* 취소 버튼 */
+.login-modal-btn-secondary {
+  background: #f2f2f7;
+  border-color: #e0e0ea;
+  color: #333333;
+}
+
+.login-modal-btn-secondary:hover {
+  background: #e7e7f0;
+}
+
+/* 로그인 하러 가기 버튼 */
+.login-modal-btn-primary {
+  background: #111111;
+  color: #ffffff;
+}
+
+.login-modal-btn-primary:hover {
+  background: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.45);
+}
+
+/* 모달 열렸을 때 스크롤 방지 (선택) */
+body.modal-open {
+  overflow: hidden;
+}
+
+
+
+/* ===== 로그인 페이지 전용 ===== */
+
+.login-card {
+  max-width: 420px;
+    min-height: 520px; /* ✅ 버튼 잘림 방지 */
+}
+/* 화면 높이가 낮을 때는 hero를 위로 붙여서 스크롤 자연스럽게 */
+@media (max-height: 700px) {
+  .hero {
+    align-items: flex-start;
+    padding-top: 1.5rem;
+  }
+  .hero-card {
+    margin-top: 1rem;
+  }
+}
+
+/* 로그인 폼 전체 레이아웃 */
+.login-form {
+  margin-top: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: left;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  color: rgba(235, 235, 255, 0.9);
+}
+
+.form-field input {
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(230, 230, 250, 0.6);
+  background: rgba(8, 8, 24, 0.9);
+  color: #f5f5ff;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.form-field input:focus {
+  border-color: #7c4dff;
+  box-shadow: 0 0 0 1px rgba(124, 77, 255, 0.6);
+}
+
+/* 로그인 / 회원가입 나란히 배치 */
+.login-actions {
+  margin-top: 0.4rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* 로그인 버튼 */
+.login-submit-btn {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #9985d0, #ff6b6b);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.85);
+}
+
+/* 회원가입 버튼 */
+.login-signup-btn {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  color: #f5f5ff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-signup-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* 메인으로 돌아가기 버튼 */
+.login-back-btn {
+  margin-top: 1.0rem;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #f5f5ff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.login-back-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+/* 이메일 / 인증번호 같은 줄 배치용 */
+.inline-field-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* 인증번호 입력 필드가 너무 길지 않게 */
+.inline-field-row input {
+  flex: 1;
+}
+
+/* 인증번호 전송/확인 버튼 (조금 작은 스타일) */
+.inline-btn {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: #f5e6b0;
+  color: #111111;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(150, 130, 60, 0.35);
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.inline-btn:hover {
+  background: #f1dd90;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(150, 130, 60, 0.45);
+}
+
+/* 테두리만 있는 버전 (확인 버튼) */
+.inline-btn.outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #f5f5ff;
+  box-shadow: none;
+}
+
+.inline-btn.outline:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* 인증 상태 메시지 */
+.field-help {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: rgba(235, 235, 255, 0.7);
+}
+
+/* =====================
+   소개 모드 floating 구
+   ===================== */
+
+.about-orb {
+  position: fixed;
+  right: 6.5rem;
+  top: 50%;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  /* hero 카드와 비슷한 느낌의 배경 */
+  background: radial-gradient(circle at top left, #262650, #090919);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.9rem;
+  font-weight: 700; 
+  color: rgba(235, 235, 255, 0.9);
+  letter-spacing: 0.05em;  
+  cursor: pointer;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) translateY(20px) scale(0.9);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+/* 숨김용 공통 클래스 */
+.about-orb.hidden {
+  display: none;
+}
+/* 소개 모드일 때 기존 로고/텍스트는 숨기기 */
+.hero-card.about-expanded .hero-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 소개 모드에서만 활성화 */
+body.about-mode .about-orb {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) scale(1);
+}
+
+/* hover 시 살짝 강조 */
+.about-orb:hover {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+  background: radial-gradient(circle at top left, #303068, #0c0c22);
+}
+
+
+/* 소개 모드용 패널: 기본은 숨김 */
+.hero-about-panel {
+  display: none;
+  position: absolute;          /* ✅ hero-card 안에서 겹치게 */
+  inset: 0;                    /* top:0; right:0; bottom:0; left:0 와 같음 */
+  padding: 3rem 2.5rem;        /* hero-card padding과 맞추기 */
+  box-sizing: border-box;
+  color: #f5f5ff;
+}
+
+/* hero-card가 소개 모드로 확장되었을 때만 표시 */
+.hero-card.about-expanded .hero-about-panel {
+  display: grid;
+  grid-template-columns: 1.2fr 1.3fr;  /* 왼쪽 텍스트, 오른쪽 그래프 */
+  gap: 2.2rem;
+  align-items: center;
+}
+
+/* 텍스트 영역 */
+.hero-about-text {
+  text-align: left;
+}
+
+.hero-about-tag {
+  display: inline-block;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(124, 77, 255, 0.22);
+  color: rgba(230, 225, 255, 0.9);
+  margin-bottom: 0.6rem;
+}
+
+.hero-about-title {
+  font-size: 1.35rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.hero-about-title strong {
+  font-weight: 800;
+}
+
+.hero-about-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(220, 220, 255, 0.9);
+}
+/* 그래프 컨테이너 */
+.hero-about-chart {
+  position: relative;
+}
+
+.focus-chart {
+  width: 100%;
+  height: 160px;
+}
+
+/* 축/그리드 스타일 */
+.chart-axis {
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 1.2;
+}
+
+.chart-grid {
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 1;
+}
+
+/* 꺾은선 기본 스타일 + 애니메이션 준비 */
+.chart-line {
+  fill: none;
+  stroke: #ffb347;  /* 주황 계열 */
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+}
+
+/* 소개 모드에서 선이 그려지는 애니메이션 */
+.hero-card.about-expanded .chart-line {
+  animation: chart-line-draw 1.8s ease-out forwards;
+}
+
+/* 점 마커 */
+.chart-point {
+  fill: #ffcf6b;
+  opacity: 0;
+}
+
+/* 소개 모드에서 점도 순차적으로 등장 */
+.hero-card.about-expanded .chart-point {
+  animation: chart-point-pop 0.4s ease-out forwards;
+}
+
+.chart-point:nth-of-type(1) { animation-delay: 0.3s; }
+.chart-point:nth-of-type(2) { animation-delay: 0.45s; }
+.chart-point:nth-of-type(3) { animation-delay: 0.6s; }
+.chart-point:nth-of-type(4) { animation-delay: 0.75s; }
+.chart-point:nth-of-type(5) { animation-delay: 0.9s; }
+.chart-point:nth-of-type(6) { animation-delay: 1.05s; }
+.chart-point:nth-of-type(7) { animation-delay: 1.2s; }
+
+.chart-caption {
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: rgba(220, 220, 255, 0.8);
+}
+
+/* 선 그리기 애니메이션 */
+@keyframes chart-line-draw {
+  from {
+    stroke-dashoffset: 400;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* 점 튀어나오는 애니메이션 */
+@keyframes chart-point-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 반응형: 소개 패널이 세로로 쌓이도록 */
+@media (max-width: 768px) {
+  .hero-card.about-expanded .hero-about-panel {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .focus-chart {
+    height: 140px;
+  }
+}
+
+.hero-about-brand {
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;     /* HERO 타이틀처럼 간격 줌 */
+  text-transform: uppercase;
+  color: rgba(246, 246, 246, 0.9);
+  margin-bottom: 0.45rem;
+  opacity: 0.9;
+}
+
+/* 테스트 페이지 */ 
+
+/* 검사 페이지 메인 버튼 */
+.test-main-actions {
+  margin-top: 1.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.test-main-btn {
+  min-width: 200px;
+  padding: 0.9rem 2.4rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  font-size: 1.05rem;      /* 히어로 버튼과 비슷한 존재감 */
+  font-weight: 700;
+
+  background: linear-gradient(135deg, #8b62dd, #e1c0c0);
+  color: #ffffff;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.65);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+.test-main-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.8);
+  filter: brightness(1.05);
+}
+
+/* ===== 검사 페이지 전용 스타일 ===== */
+
+/* 검사 모드일 때 hero 박스 키우기 */
+.hero-card.test-mode {
+  min-height: 360px;          /* 기본보다 위아래 2배 느낌 */
+  padding: 3rem 2.8rem;
+}
+
+/* 검사 메인 버튼 (처음 화면) */
+.test-main-actions {
+  margin-top: 1.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.test-main-btn {
+  min-width: 240px;
+  padding: 0.9rem 2.4rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  font-size: 1.05rem;
+  font-weight: 700;
+
+  background: linear-gradient(135deg, #7c4dff, #ff6b6b);
+  color: #ffffff;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.65);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+.test-main-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.8);
+  filter: brightness(1.05);
+}
+
+/* 검사 설정 레이아웃 */
+.test-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1.1fr; /* 왼쪽 작업 선택, 오른쪽 타이머/버튼 */
+  gap: 2.2rem;
+  align-items: flex-start;
+  margin-top: 0.4rem;
+}
+
+.test-left { text-align: left; }
+.test-right { text-align: left; }
+
+/* 환영 문구 */
+.test-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.test-subtitle {
+  font-size: 0.95rem;
+  color: rgba(220, 220, 255, 0.85);
+  margin-bottom: 1.2rem;
+}
+
+/* 체크박스 리스트 */
+.test-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem 1.4rem;
+  margin-top: 2.8rem; 
+}
+
+.test-check-item {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  gap: 0.1rem;
+  font-size: 0.9rem;
+  color: #f5f5ff;
+}
+.test-check-item input[type="radio"] {
+  margin-top: 2px;   /* 필요하면 0~2px 사이로 조절 */
+}
+
+.test-check-item input[type="checkbox"] {
+  margin-right: 0.45rem;
+  transform: scale(1.05);
+}
+
+.check-label-main {
+  font-weight: 700;
+}
+
+.check-label-sub {
+  font-size: 0.8rem;
+  color: rgba(210, 210, 250, 0.8);
+}
+
+/* 오른쪽: 타이머 + 버튼 */
+.test-timer-label {
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+  color: rgba(235, 235, 255, 0.9);
+}
+
+#test-countdown {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.test-controls {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  justify-content: center;
+}
+
+.test-ctrl-btn {
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.test-ctrl-btn.primary {
+  background: #f5e6b0;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #111111;
+  box-shadow: 0 4px 10px rgba(150, 130, 60, 0.35);
+}
+
+.test-ctrl-btn.primary:hover:enabled {
+  background: #f1dd90;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(150, 130, 60, 0.45);
+}
+
+.test-ctrl-btn.secondary {
+  background: rgba(15, 15, 35, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #f5f5ff;
+}
+
+.test-ctrl-btn.secondary:hover:enabled {
+  background: rgba(40, 40, 80, 0.95);
+}
+
+.test-ctrl-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+}
+
+.test-note {
+  font-size: 0.8rem;
+  color: rgba(210, 210, 245, 0.8);
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+  .hero-card.test-mode {
+    padding: 2.4rem 1.8rem;
+  }
+
+  .test-layout {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+}
+
+.task-confirm-btn {
+
+   margin: 2.3rem 0 0 4.9rem; 
+  padding: 0.6rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(15, 15, 35, 0.9);
+  color: #f5f5ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.task-confirm-btn:hover {
+  background: rgba(40, 40, 80, 0.95);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+.test-timer-display {
+  font-size: 4.4rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.9rem;
+}
+/* ===== 검사 페이지 전용 orb ===== */
+.test-orb {
+  display: flex !important;      /* 항상 보이게 */
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* 검사 중 표시 (빨간 점 + 검사중) */
+.test-running {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 4.0rem;    /* ✅ 10:00와 비슷한 크기 */
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.9rem;
+}
+
+.test-running-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff4d4d;
+  box-shadow: 0 0 8px rgba(255, 77, 77, 0.9);
+  animation: ms-blink 1s infinite;
+}
+
+.test-running-text {
+  color: #ffdddd;
+}
+
+/* 깜빡이는 애니메이션 */
+@keyframes ms-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.01%, 100% {
+    opacity: 0.2;
+  }
+}
+
+/* ============================= */
+/* 검사 결과 화면 레이아웃       */
+/* ============================= */
+
+.test-result {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 1;
+}
+
+.test-result-header {
+  margin-bottom: 1.5rem;
+}
+
+.test-result-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.test-result-summary {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.test-result-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.test-result-left,
+.test-result-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;   /* 오른쪽으로 */
+  align-items: flex-end; 
+}
+.test-result-right canvas {
+  width: 100% !important;
+  height: 220px !important;  /* 파이/라인 둘 다 같은 높이로 */
+  display: block;
+}
+
+
+.test-result-subtitle {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 차트 캔버스 크기 */
+#activity-pie,
+#activity-timeline {
+  width: 100%;
+  max-width: 360px;
+  height: 260px;
+}
+
+/* ============================= */
+/* hero 카드 확장 + 페이드 애니메이션 */
+/* ============================= */
+
+.hero-card {
+  transition:
+    max-height 0.45s ease,
+    padding 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+/* 결과 모드일 때 카드가 2배쯤 커지도록 */
+.hero-card.result-mode {
+  max-height: 1200px;
+  
+}
+
+/* 스르륵 사라지는 / 나타나는 애니메이션 */
+.fade-out-up {
+  animation: fadeOutUp 0.35s forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.45s forwards;
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.test-running-text {
+  font-size: 0.85rem;   /* 글자 조금 작게 */
+  white-space: nowrap;  /* 줄바꿈 금지 */
+}
+.hero-card.login-card {
+  max-height: none;   /* 420px 상한 없애기 */
+}
+
+/* 회원가입/로그인 페이지에서 hero 배경이 카드 아래까지 이어지도록 */
+.auth-hero {
+  min-height: auto !important;       /* 기존 100vh 강제 제거 */
+  padding-bottom: 6rem !important;   /* 페이드되는 아래 배경 확보 */
+  background: radial-gradient(circle at 50% 20%,
+              rgba(124, 77, 255, 0.22),
+              rgba(60, 45, 95, 0.35) 40%,
+              #0a0a17 85%) !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+

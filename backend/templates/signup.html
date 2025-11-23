@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monitor Sketcher · 회원가입</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- 상단 헤더 -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand brand-link">
+          <div class="brand-logo-mark">
+            <img src="./src/logo.png" alt="Monitor Sketcher 로고" />
+          </div>
+          <span class="brand-text">Monitor Sketcher</span>
+        </a>
+
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link" data-page="test">검사</a>
+          <a href="index.html" class="nav-link" data-page="ranking">랭킹</a>
+          <a href="index.html" class="nav-link" data-page="about">소개</a>
+          <a href="index.html" class="nav-link" data-page="contact">문의</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="header-btn text-btn hidden">마이페이지</button>
+          <button class="header-btn outline-btn hidden">로그아웃</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 메인 회원가입 카드 -->
+    <main class="hero">
+      <section class="hero-card login-card">
+        <div class="hero-glow"></div>
+
+        <div class="hero-content">
+          <img src="./src/logo.png" alt="Monitor Sketcher 로고" class="hero-logo" />
+          <h1 class="hero-title">회원가입</h1>
+
+          <form id="signup-form" class="login-form">
+            <!-- 이메일 + 인증번호 전송 -->
+            <div class="form-field">
+              <label for="signup-email">이메일</label>
+              <div class="inline-field-row">
+                <input
+                  type="email"
+                  id="signup-email"
+                  name="email"
+                  placeholder="example@naver.com"
+                  required
+                />
+                <button type="button" id="send-code-btn" class="inline-btn">
+                  인증번호 전송
+                </button>
+              </div>
+            </div>
+
+            <!-- 인증번호 입력 + 확인 -->
+            <div class="form-field">
+              <label for="signup-code">인증번호</label>
+              <div class="inline-field-row">
+                <input
+                  type="text"
+                  id="signup-code"
+                  name="code"
+                  placeholder="메일로 받은 6자리 코드"
+                  maxlength="6"
+                />
+                <button type="button" id="verify-code-btn" class="inline-btn outline">
+                  확인
+                </button>
+              </div>
+              <p class="field-help" id="code-status-msg">
+                이메일을 입력하고 인증번호 전송 버튼을 눌러주세요.
+              </p>
+            </div>
+
+            <div class="form-field">
+              <label for="signup-nickname">닉네임</label>
+              <input
+                type="text"
+                id="signup-nickname"
+                name="nickname"
+                placeholder="랭킹/마이페이지에 표시될 이름"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="signup-student-id">학번 (선택)</label>
+              <input
+                type="text"
+                id="signup-student-id"
+                name="student_id"
+                placeholder="예: 20231234"
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="signup-password">비밀번호</label>
+              <input
+                type="password"
+                id="signup-password"
+                name="password"
+                placeholder="비밀번호"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="signup-password-confirm">비밀번호 확인</label>
+              <input
+                type="password"
+                id="signup-password-confirm"
+                name="password_confirm"
+                placeholder="비밀번호를 한 번 더 입력"
+                required
+              />
+            </div>
+
+            <div class="login-actions">
+              <button type="submit" class="login-submit-btn">회원가입</button>
+              <button
+                type="button"
+                class="login-signup-btn"
+                onclick="window.location.href='login.html'"
+              >
+                로그인 하러가기
+              </button>
+            </div>
+          </form>
+
+          <button
+            type="button"
+            class="login-back-btn"
+            onclick="window.location.href='index.html'"
+          >
+            메인으로 돌아가기
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const signupForm = document.getElementById("signup-form");
+    const sendCodeBtn = document.getElementById("send-code-btn");
+    const verifyCodeBtn = document.getElementById("verify-code-btn");
+    const emailInput = document.getElementById("signup-email");
+    const codeInput = document.getElementById("signup-code");
+    const codeStatusMsg = document.getElementById("code-status-msg");
+
+    let isEmailVerified = false;
+    let lastSentEmail = "";
+
+    // 인증번호 전송
+    sendCodeBtn?.addEventListener("click", async () => {
+      const email = emailInput.value.trim();
+      if (!email) {
+        alert("이메일을 먼저 입력해주세요.");
+        emailInput.focus();
+        return;
+      }
+
+      try {
+        sendCodeBtn.disabled = true;
+
+        const res = await fetch("/api/send-code", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+        const data = await res.json();
+
+        if (!res.ok || !data.ok) {
+          alert(data.message || "인증번호 전송에 실패했습니다.");
+          sendCodeBtn.disabled = false;
+          return;
+        }
+
+        lastSentEmail = email;
+        isEmailVerified = false;
+
+        codeStatusMsg.textContent = "인증번호를 이메일로 전송했습니다.";
+        codeStatusMsg.style.color = "#ffd27f";
+
+        // 5초 후 버튼 다시 활성화(너무 잦은 요청 방지)
+        setTimeout(() => (sendCodeBtn.disabled = false), 5000);
+      } catch (err) {
+        console.error(err);
+        alert("서버와 통신 중 오류가 발생했습니다.");
+        sendCodeBtn.disabled = false;
+      }
+    });
+
+    // 인증번호 확인
+    verifyCodeBtn?.addEventListener("click", async () => {
+      const email = emailInput.value.trim();
+      const code = codeInput.value.trim();
+
+      if (!email || !code) {
+        alert("이메일과 인증번호를 입력해주세요.");
+        return;
+      }
+
+      if (email !== lastSentEmail) {
+        alert("인증번호를 받은 이메일과 현재 이메일이 달라요. 다시 전송해주세요.");
+        return;
+      }
+
+      try {
+        verifyCodeBtn.disabled = true;
+
+        const res = await fetch("/api/verify-code", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, code }),
+        });
+        const data = await res.json();
+
+        if (!res.ok || !data.ok) {
+          isEmailVerified = false;
+          codeStatusMsg.textContent = data.message || "인증 실패";
+          codeStatusMsg.style.color = "#ff8080";
+          alert(data.message || "인증번호 확인에 실패했습니다.");
+          verifyCodeBtn.disabled = false;
+          return;
+        }
+
+        isEmailVerified = true;
+        codeStatusMsg.textContent = "이메일 인증이 완료되었습니다.";
+        codeStatusMsg.style.color = "#7cfba4";
+        alert("이메일 인증 완료!");
+        verifyCodeBtn.disabled = false;
+      } catch (err) {
+        console.error(err);
+        alert("서버와 통신 중 오류가 발생했습니다.");
+        verifyCodeBtn.disabled = false;
+      }
+    });
+
+    // 회원가입 제출
+    signupForm?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = emailInput.value.trim();
+      const nickname = document.getElementById("signup-nickname").value.trim();
+      const studentId = document.getElementById("signup-student-id").value.trim();
+      const pw = document.getElementById("signup-password").value;
+      const pw2 = document.getElementById("signup-password-confirm").value;
+
+      if (!isEmailVerified) {
+        alert("이메일 인증을 먼저 완료해주세요.");
+        return;
+      }
+
+      if (pw !== pw2) {
+        alert("비밀번호가 서로 다릅니다. 다시 확인해 주세요.");
+        return;
+      }
+
+      try {
+        const res = await fetch("/api/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            password: pw,
+            nickname,
+            student_id: studentId || null,
+          }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok || !data.ok) {
+          alert(data.message || "회원가입에 실패했습니다.");
+          return;
+        }
+
+        // ✅ 서버가 주는 값 우선 사용 (없으면 폼값 fallback)
+        const userId = data.userId || data.user_id || data.id;
+        const nickFromServer = data.nickname || nickname;
+        const token = data.token || data.access_token || data.jwt || null;
+
+        // ✅ mypage.js 호환 키(user_id / userId) 둘 다 저장
+        const msUser = {
+          user_id: userId,
+          userId: userId,
+          id: userId,               // 혹시 다른 페이지에서 id만 보는 경우 대비
+          email,
+          nickname: nickFromServer,
+          emailVerified: true,
+        };
+        if (token) msUser.token = token;
+
+        localStorage.setItem("ms_user", JSON.stringify(msUser));
+        if (token) localStorage.setItem("ms_token", token);
+
+        alert(`${nickFromServer}님, 회원가입이 완료되었습니다!`);
+        window.location.href = "index.html";
+      } catch (err) {
+        console.error(err);
+        alert("서버와 통신 중 오류가 발생했습니다.");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -9,8 +9,7 @@ from email.message import EmailMessage
 from datetime import datetime, timedelta
 from pathlib import Path
 from auth import create_token
-
-from flask import Flask, jsonify, send_from_directory, request
+from flask import Flask, render_template, jsonify, send_from_directory, request
 from werkzeug.security import generate_password_hash, check_password_hash
 import mysql.connector
 from mysql.connector import pooling

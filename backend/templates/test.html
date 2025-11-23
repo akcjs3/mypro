@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monitor Sketcher · 검사</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <!-- Chart.js (원그래프 + 시간별 차트용) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+
+  <!-- 결과 뷰 전용 간단 스타일 (원하면 style.css로 옮겨도 됨) -->
+  <style>
+/* ==============================
+   ✅ 검사 결과 뷰 최종 스타일 (중복/충돌 제거판)
+   ============================== */
+
+/* 결과 모드 hero-card: 화면 중앙 + 적당히 작은 폭 */
+.hero-card.result-mode {
+  min-height: auto;
+  max-width: 760px;
+  width: 70%;
+  margin: 0 auto;              /* ✅ hero 자체 중앙 */
+  padding: 2.2rem 2rem;
+  position: relative;          /* ✅ left/transform 금지 */
+  left: auto;
+  transform: none;
+}
+
+/* 결과 영역 전체 */
+.test-result {
+  margin-top: 1.6rem;
+  animation: ms-result-fade-in 0.35s ease-out;
+}
+
+/* A/B 절반 그리드 + 각 칸 기준 중앙정렬 */
+.test-result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* ✅ 정확히 반반 */
+  gap: 1.6rem;
+  align-items: start;
+  justify-items: center;          /* ✅ 칸 안에서 중앙 */
+}
+
+/* ---------- 왼쪽(A) ---------- */
+.test-result-left {
+  width: 100%;
+  max-width: 340px;               /* ✅ 왼쪽 칸 기준 너비 제한 */
+  text-align: center;
+  justify-self: center;
+}
+
+/* 상단 제목/요약: 왼쪽 칸 기준 정중앙 */
+.test-result-title,
+.test-result-summary {
+  text-align: center;
+}
+
+.test-result-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.test-result-summary {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(230, 230, 255, 0.94);
+}
+
+/* 통계 4개 + 마이페이지 세로 스택 (모두 같은 크기) */
+.test-result-focus {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: center;
+  width: 100%;
+}
+
+.test-result-stat {
+  width: 100%;
+  max-width: 300px;          /* ✅ 전부 동일 폭 */
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;      /* ✅ 크기 약간 축소 */
+  border-radius: 18px;
+  background: rgba(10, 10, 35, 0.9);
+  border: 1px solid rgba(130, 130, 210, 0.5);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.test-result-stat .label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(185, 185, 235, 0.95);
+}
+
+.test-result-stat .value {
+  display: block;
+  margin-top: 0.12rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* 마이페이지 버튼: 통계와 동일 크기 + 색만 다르게 */
+.test-result-actions {
+  margin-top: 0.2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.test-result-orb {
+  width: 100%;
+  max-width: 300px;      /* ✅ 통계 박스와 동일 */
+  height: auto;
+  padding: 0.6rem 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: radial-gradient(circle at top left, #262650, #090919);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(235, 235, 255, 0.9);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  position: static;
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+/* ✅ 마이페이지 버튼 색만 강조 */
+#goMyPageBtn.test-result-orb {
+  background: linear-gradient(135deg, #3b3593, #47288c);
+  border: 1px solid rgba(190, 170, 255, 0.9);
+  box-shadow: 0 10px 26px rgba(90, 70, 255, 0.55);
+  color: #fff;
+}
+
+.test-result-orb:hover {
+  background: radial-gradient(circle at top left, #303060, #0b0b1f);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.9);
+}
+
+#goMyPageBtn.test-result-orb:hover {
+  filter: brightness(1.08);
+}
+
+/* ---------- 오른쪽(B) ---------- */
+.test-result-right {
+  width: 100%;
+  max-width: 360px;               /* ✅ 오른쪽 칸 기준 너비 제한 */
+  justify-self: center;
+}
+
+.test-chart-wrapper {
+  width: 100%;
+  display: grid;
+  gap: 1.2rem;
+  justify-items: center;          /* ✅ 차트 블록도 칸 중앙 */
+}
+
+.chart-block {
+  width: 100%;
+  max-width: 360px;
+  min-width: 0;
+  background: rgba(8, 10, 25, 0.95);
+  border: 1px solid rgba(120, 120, 200, 0.5);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+}
+
+.chart-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  text-align: center;             /* ✅ 오른쪽 칸 기준 중앙 */
+  color: rgba(235, 235, 255, 0.96);
+}
+
+/* 차트 크기: hero를 꽉 채우지 않게 */
+.test-chart-wrapper canvas {
+  width: 100% !important;
+  height: 210px !important;
+}
+
+/* 모바일 */
+@media (max-width: 960px) {
+  .hero-card.result-mode {
+    max-width: 720px;
+    width: 95%;
+  }
+  .test-result-grid {
+    grid-template-columns: 1fr;
+  }
+  .test-result-left,
+  .test-result-right {
+    max-width: 100%;
+  }
+  .test-chart-wrapper canvas {
+    height: 200px !important;
+  }
+}
+
+/* animation */
+@keyframes ms-result-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* A 영역 상단 제목/요약만 확실히 가운데로 */
+.test-result-left .test-result-title,
+.test-result-left .test-result-summary {
+  width: 100%;
+  text-align: center !important;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- 상단 헤더 (index와 동일 구조) -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- 왼쪽 로고 + 텍스트 -->
+        <a href="/index.html" class="brand">
+    <div class="brand-logo-mark">
+        <img src="./src/logo.png" />
+    </div>
+    <span class="brand-text">Monitor Sketcher</span>
+</a>
+
+        <!-- 가운데 네비게이션 -->
+        <nav class="main-nav">
+          <a href="test.html" class="nav-link" data-page="test">검사</a>
+          <a href="ranking.html" class="nav-link" data-page="ranking">랭킹</a>
+          <a href="about.html" class="nav-link" data-page="about">소개</a>
+          <a href="contact.html" class="nav-link" data-page="contact">문의</a>
+        </nav>
+
+        <!-- 오른쪽 로그인 / 마이페이지 / 로그아웃 -->
+        <div class="header-actions">
+          <span id="user-nickname-label" class="nickname-label hidden"></span>
+
+          <button id="mypage-btn" class="header-btn outline-btn hidden">
+            마이페이지
+          </button>
+
+          <button id="login-btn" class="header-btn primary-btn">
+            로그인
+          </button>
+          <button id="logout-btn" class="header-btn outline-btn hidden">
+            로그아웃
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 메인 히어로 영역 (검사 페이지용) -->
+    <main class="hero">
+      <section class="hero-card">
+        <div class="hero-glow"></div>
+
+        <!-- ✅ 처음 보이는 화면 -->
+        <div class="hero-content hero-content-initial">
+          <h1 class="hero-title">Monitor Sketcher</h1>
+          <p class="hero-subtitle">
+            지금 PC 사용 기록을 짧게 측정해서,<br />
+            내가 정말로 어디에 시간을 쓰고 있는지 확인해보세요.
+          </p>
+
+          <div class="test-main-actions">
+            <button id="start-test-view-btn" class="test-main-btn">
+              검사하기
+            </button>
+          </div>
+        </div>
+
+        <!-- ✅ 검사 설정 화면 (검사하기 눌렀을 때 나타나는 화면) -->
+        <div class="hero-content test-setup hidden">
+          <div class="test-layout">
+                    <!-- 왼쪽: 닉네임 + 작업 선택 -->
+        <div class="test-left">
+          <h2 class="test-title">
+            <span id="test-greeting-name">사용자</span>님, 환영합니다.
+          </h2>
+          <p class="test-subtitle">
+            당신의 작업을 선택해주세요.
+          </p>
+
+          <div class="test-checkboxes">
+            <label class="test-check-item">
+              <input type="radio" name="task" value="study" />
+              <span class="check-label-main">Study</span>
+              <span class="check-label-sub">(작업 / 공부)</span>
+            </label>
+
+            <label class="test-check-item">
+              <input type="radio" name="task" value="webtoon" />
+              <span class="check-label-main">Webtoon</span>
+              <span class="check-label-sub">(만화)</span>
+            </label>
+
+            <label class="test-check-item">
+              <input type="radio" name="task" value="game" />
+              <span class="check-label-main">Game</span>
+              <span class="check-label-sub">(게임)</span>
+            </label>
+
+            <label class="test-check-item">
+              <input type="radio" name="task" value="youtube-music" />
+              <span class="check-label-main">Music</span>
+              <span class="check-label-sub">(음악)</span>
+            </label>
+
+            <label class="test-check-item">
+              <input type="radio" name="task" value="youtube" />
+              <span class="check-label-main">YouTube</span>
+              <span class="check-label-sub">(비디오)</span>
+            </label>
+
+            <label class="test-check-item">
+              <input type="radio" name="task" value="sns" />
+              <span class="check-label-main">SNS</span>
+              <span class="check-label-sub">(메신저)</span>
+            </label>
+          </div>
+
+          <!-- ✅ 선택 완료 버튼 -->
+          <button id="task-confirm-btn" class="task-confirm-btn">
+            선택 완료
+          </button>
+        </div>
+
+            <!-- 오른쪽: 타이머 + 검사 시작/종료 버튼 -->
+            <div class="test-right">
+              <div class="test-timer-label">
+                검사가 <span id="test-countdown">10</span>초 후 시작됩니다.
+              </div>
+
+              <div class="test-timer-display">
+                <span id="test-timer-big">10:00</span>
+              </div>
+
+              <!-- 검사 중 표시 -->
+              <div id="test-running" class="test-running hidden">
+                <span class="test-running-dot"></span>
+                <span class="test-running-text">검사 중...</span>
+              </div>
+
+              <div class="test-controls">
+                <button
+                  id="test-start-btn"
+                  class="test-ctrl-btn primary"
+                  type="button"
+                >
+                  검사 시작
+                </button>
+                <button
+                  id="test-stop-btn"
+                  class="test-ctrl-btn secondary"
+                  type="button"
+                  disabled
+                >
+                  검사 종료
+                </button>
+              </div>
+
+              <p class="test-note">
+                ※ 검사 시작 후, 약 10초 뒤부터 PC 화면과 키보드/마우스 입력을 기록합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ 검사 결과 화면 -->
+        <div class="hero-content test-result hidden">
+          <div class="test-result-grid">
+           <div class="test-result-left">
+  <!-- 🔹 상단 3줄: 닉네임 / 이번 세션 요약 / 선택한 작업 -->
+  <h2 class="test-result-title">
+    <span id="test-result-nickname">사용자</span>님이 실행
+  </h2>
+  <h2 class="test-result-title">이번 세션 요약</h2>
+  <h2 class="test-result-title">
+    선택 작업:
+    <span id="test-result-selected-task">-</span>
+  </h2>
+
+  <!-- 🔹 요약 문구 -->
+  <p id="test-result-summary" class="test-result-summary">
+    검사 종료 후, 이곳에 분석 결과가 표시됩니다.
+  </p>
+  <p id="test-result-detail" class="test-result-summary">
+   
+  </p>
+
+  <!-- 🔹 하단 통계 4개 (모두 같은 도형 크기) -->
+  <div class="test-result-focus">
+    <div class="test-result-stat">
+      <span class="label">집중도 (선택한 작업 기준)</span>
+      <span id="test-focus-percent" class="value">--%</span>
+    </div>
+
+    <div class="test-result-stat">
+      <span class="label">잠수 시간 비율</span>
+      <span id="test-idle-percent" class="value">--%</span>
+    </div>
+
+    <div class="test-result-stat">
+      <span class="label">입력/분 (키보드+마우스)</span>
+      <span id="test-input-per-min" class="value">--</span>
+    </div>
+
+    <div class="test-result-stat">
+      <span class="label">기록된 화면 (총 캡쳐 수)</span>
+      <span id="test-capture-count" class="value">--</span>
+</div>
+
+<div class="test-result-actions">
+  <button id="goMyPageBtn" class="test-result-orb" type="button">
+    마이페이지
+  </button>
+  </div>
+  </div>
+</div>
+
+            <!-- 오른쪽: 차트 2개 -->
+            <div class="test-result-right">
+              <div class="test-chart-wrapper">
+                <div class="chart-block">
+                  <h3 class="chart-title">활동 비율 (전체 세션)</h3>
+                  <canvas id="activity-pie"></canvas>
+                </div>
+
+                <div class="chart-block">
+                  <h3 class="chart-title">시간대별 활동 유형</h3>
+                  <canvas id="activity-timeline"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ✅ 검사 페이지용 '구' 버튼 -->
+    <button id="test-orb" class="about-orb test-orb" type="button">
+      돌아가기
+    </button>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <span>졸업 작품 · Monitor Sketcher · PC 사용 기록 기반 집중도 분석 서비스</span>
+    </footer>
+  </div>
+
+  <!-- 로그인 필요 팝업 모달 (index와 동일) -->
+  <div id="login-modal-backdrop" class="login-modal-backdrop hidden">
+    <div class="login-modal">
+      <h3 class="login-modal-title">로그인이 필요한 기능입니다</h3>
+      <p class="login-modal-message">
+        이 기능을 이용하려면 먼저 로그인을 해주세요.
+      </p>
+      <div class="login-modal-actions">
+        <button
+          type="button"
+          id="login-modal-cancel"
+          class="login-modal-btn login-modal-btn-secondary"
+        >
+          취소
+        </button>
+        <button
+          type="button"
+          id="login-modal-go"
+          class="login-modal-btn login-modal-btn-primary"
+        >
+          로그인 하러 가기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 공통 JS -->
+
+  <!-- 검사 페이지 전용 JS -->
+  <script>
+
+    // ✅ test.html 전용 로그인 유지 함수 (main.js에서 가져온 그대로)
+function getCurrentUser() {
+  try {
+    const raw = localStorage.getItem("ms_user");
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch (e) {
+    console.error("ms_user 파싱 오류:", e);
+    return null;
+  }
+}
+
+    // =============================
+// ✅ test.html 전용: 헤더 로그인 UI 동기화
+// =============================
+function syncAuthUI() {
+  const loginBtn = document.getElementById("login-btn");
+  const logoutBtn = document.getElementById("logout-btn");
+  const mypageBtn = document.getElementById("mypage-btn");
+  const nicknameLabel = document.getElementById("user-nickname-label");
+
+  const user = getCurrentUser(); // 네가 추가한 그 함수
+
+  if (user) {
+    // 로그인 상태
+    loginBtn?.classList.add("hidden");
+    logoutBtn?.classList.remove("hidden");
+    mypageBtn?.classList.remove("hidden");
+    if (nicknameLabel) {
+      nicknameLabel.classList.remove("hidden");
+      nicknameLabel.textContent = user.nickname ? `${user.nickname}님` : "";
+    }
+  } else {
+    // 로그아웃 상태
+    loginBtn?.classList.remove("hidden");
+    logoutBtn?.classList.add("hidden");
+    mypageBtn?.classList.add("hidden");
+    if (nicknameLabel) {
+      nicknameLabel.classList.add("hidden");
+      nicknameLabel.textContent = "";
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  syncAuthUI();
+
+  // 로그아웃 버튼 동작도 test에서 처리
+  document.getElementById("logout-btn")?.addEventListener("click", () => {
+    localStorage.removeItem("ms_user");
+    syncAuthUI();
+    window.location.href = "/"; // 메인으로
+  });
+
+  // 마이페이지 이동
+  document.getElementById("mypage-btn")?.addEventListener("click", () => {
+    window.location.href = "/mypage.html";
+  });
+
+  // 로그인 이동
+  document.getElementById("login-btn")?.addEventListener("click", () => {
+    window.location.href = "/login.html";
+  });
+});
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("[test] 검사 페이지 스크립트 로딩됨");
+
+      // 메인에서 쓰는 유저 정보 함수 재사용
+      let currentUser = (typeof getCurrentUser === "function") ? getCurrentUser() : null;
+
+      // DOM 요소 캐시
+      const heroCard = document.querySelector(".hero-card");
+      const initialContent = document.querySelector(".hero-content-initial");
+      const testSetup = document.querySelector(".test-setup");
+      const testResultView = document.querySelector(".test-result");
+
+      const startTestViewBtn = document.getElementById("start-test-view-btn");
+      const greetingName = document.getElementById("test-greeting-name");
+
+      const countdownSpan = document.getElementById("test-countdown");
+      const timerBigSpan = document.getElementById("test-timer-big");
+      const testStartBtn = document.getElementById("test-start-btn");
+      const testStopBtn = document.getElementById("test-stop-btn");
+      const testOrb = document.getElementById("test-orb");
+      const testRunning = document.getElementById("test-running");
+
+      const resultSummaryEl = document.getElementById("test-result-summary");
+      const focusPercentEl = document.getElementById("test-focus-percent");
+      const idlePercentEl = document.getElementById("test-idle-percent");
+      const inputPerMinEl = document.getElementById("test-input-per-min");
+
+      const resultDetailEl = document.getElementById("test-result-detail");
+      const resultNicknameEl = document.getElementById("test-result-nickname");
+      const resultSelectedTaskEl = document.getElementById("test-result-selected-task");
+      const captureCountEl = document.getElementById("test-capture-count");
+
+      const taskConfirmBtn = document.getElementById("task-confirm-btn");
+
+      const activityPieCanvas = document.getElementById("activity-pie");
+      const activityTimelineCanvas = document.getElementById("activity-timeline");
+      const timerLabel = document.querySelector(".test-timer-label");
+      const timerDisplay = document.querySelector(".test-timer-display");
+
+      // 라벨 순서 및 표시 이름
+      const LABEL_ORDER = [
+        "study",
+        "game",
+        "webtoon",
+        "sns",
+        "youtube-ent",
+        "youtube-music",
+        "other",
+      ];
+
+      const LABEL_DISPLAY = {
+        study: "Study (작업/공부)",
+        game: "Game",
+        webtoon: "Webtoon",
+        sns: "SNS/메신저",
+        "youtube-ent": "YouTube-엔터",
+        "youtube-music": "YouTube-음악",
+        other: "기타",
+      };
+
+      // 내부 상태
+      let selectedTask = null;             // 실제 서버로 보낼 라벨
+      let lastSelectedTask = null;         // 결과 요약용
+      let isRunning = false;
+      let countdownSeconds = 10;
+      let elapsedSeconds = 0;
+      let countdownTimerId = null;
+      let elapsedTimerId = null;
+
+      let pieChart = null;
+      let timelineChart = null;
+      let focusTimerId = null;
+      let idleTimerId = null;
+      let inputTimerId = null;
+      let captureTimerId = null;
+
+      // =============================
+      // 유틸: 로그인 필요 모달 열기
+      // =============================
+      function openLoginRequired() {
+        if (typeof openLoginRequiredModal === "function") {
+          openLoginRequiredModal();
+        } else {
+          alert("로그인이 필요한 기능입니다. 먼저 로그인 해주세요.");
+          window.location.href = "/login.html";
+        }
+      }
+function clearTimers() {
+  // 타이머 인터벌 제거
+  if (countdownTimerId) {
+    clearInterval(countdownTimerId);
+    countdownTimerId = null;
+  }
+
+  // 10초(10000ms)로 초기화
+  countdownSeconds = 10;
+  if (countdownSpan) countdownSpan.textContent = "10";
+  if (timerBigSpan) timerBigSpan.textContent = "10.00";
+
+  // 검사중 표시 끄기
+  if (testRunning) {
+    testRunning.classList.add("hidden");
+  }
+
+  // 버튼 상태 초기화
+  if (testStartBtn) {
+    testStartBtn.disabled = false;
+    testStartBtn.textContent = "검사 시작";
+  }
+
+  isRunning = false;
+}
+
+
+      // =============================
+      // 유틸: 전체 검사 상태 초기화
+      // =============================
+      function resetTestStateToInitial() {
+        clearTimers();
+        selectedTask = null;
+        lastSelectedTask = null;
+
+        // 선택 라디오 해제
+        const radios = document.querySelectorAll('input[name="task"]');
+        radios.forEach((r) => {
+          r.checked = false;
+        });
+
+        if (heroCard) {
+          heroCard.classList.remove("test-mode", "result-mode");
+        }
+        if (initialContent) initialContent.classList.remove("hidden");
+        if (testSetup) testSetup.classList.add("hidden");
+        if (testResultView) testResultView.classList.add("hidden");
+
+        // 차트도 제거
+        if (pieChart) {
+          pieChart.destroy();
+          pieChart = null;
+        }
+        if (timelineChart) {
+          timelineChart.destroy();
+          timelineChart = null;
+        }
+      }
+
+      // =============================
+      // 서버에 검사 시작 알리기
+      // =============================
+      async function notifyServerTestStart(userId, task) {
+        const res = await fetch("/api/test/start", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ userId, task }),
+        });
+
+        const data = await res.json().catch(() => null);
+        if (!res.ok || !data || !data.ok) {
+          throw new Error(data?.message || "검사 시작에 실패했습니다.");
+        }
+        return data;
+      }
+
+      // =============================
+      // 서버에 검사 종료 + 분석 요청
+      // =============================
+      async function notifyServerTestStop(userId) {
+        const res = await fetch("/api/test/stop", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ userId }),
+        });
+
+        const data = await res.json().catch(() => null);
+        if (!res.ok || !data || !data.ok) {
+          throw new Error(data?.message || "검사 종료/분석에 실패했습니다.");
+        }
+        return data;
+      }
+
+function startCountdownAndTimer() {
+  isRunning = true;
+
+  // 10초 = 10000ms, 0.01초 단위로 줄여서 10.00 → 0.00 애니메이션
+  let remainingMs = 10000;
+  const TICK = 10; // 10ms
+
+  countdownTimerId = setInterval(() => {
+    remainingMs -= TICK;
+    if (remainingMs < 0) remainingMs = 0;
+
+    const remainSec = remainingMs / 1000;
+    const intSec = Math.ceil(remainSec);
+
+    if (countdownSpan) {
+      countdownSpan.textContent = intSec.toString();
+    }
+    if (timerBigSpan) {
+      // 🔥 여기서 10.00 → 0.00 처럼 보여줌
+      timerBigSpan.textContent = remainSec.toFixed(2);
+    }
+
+    if (remainingMs <= 0) {
+      clearInterval(countdownTimerId);
+      countdownTimerId = null;
+
+      // 여기부터는 "검사중" UI
+      if (timerLabel)   timerLabel.classList.add("hidden");
+      if (timerDisplay) timerDisplay.classList.add("hidden");
+      if (testRunning)  testRunning.classList.remove("hidden");
+
+      // 실제 로그 기록은 이미 서버에서 시작된 상태니까
+      // 별도 카운트업 타이머는 안 돌려도 됨
+    }
+  }, TICK);
+}
+
+      // =============================
+      // 분석 결과 → 차트용 타임라인 데이터
+      // =============================
+      function buildTimelineData(analyze) {
+        const windowInfo = analyze?.window || {};
+        const winLabels = windowInfo.window_labels || [];
+        const totalSec =
+          windowInfo.session_duration_sec ||
+          analyze?.engagement?.session_duration_sec ||
+          0;
+
+        const SEGMENTS = 5;
+
+        if (!winLabels.length || !totalSec) {
+          const idx = LABEL_ORDER.indexOf(analyze?.final_label || "other");
+          return {
+            labels: ["전체 구간"],
+            values: [idx >= 0 ? idx : 0],
+          };
+        }
+
+        const segLabels = [];
+        const segValues = [];
+
+        for (let i = 0; i < SEGMENTS; i++) {
+          const startIdx = Math.floor((winLabels.length * i) / SEGMENTS);
+          const endIdx = Math.max(
+            startIdx + 1,
+            Math.floor((winLabels.length * (i + 1)) / SEGMENTS)
+          );
+          const slice = winLabels.slice(startIdx, endIdx);
+          if (!slice.length) continue;
+
+          // 해당 구간에서 가장 많이 등장한 라벨
+          const counts = {};
+          slice.forEach((l) => {
+            counts[l] = (counts[l] || 0) + 1;
+          });
+
+          let bestLabel = slice[0];
+          let bestCount = 0;
+          for (const [k, v] of Object.entries(counts)) {
+            if (v > bestCount) {
+              bestLabel = k;
+              bestCount = v;
+            }
+          }
+
+          const segStartSec = (totalSec * i) / SEGMENTS;
+          const segEndSec = (totalSec * (i + 1)) / SEGMENTS;
+
+          let timeLabel;
+          if (totalSec >= 60) {
+            const startMin = segStartSec / 60;
+            const endMin = segEndSec / 60;
+            timeLabel = `${startMin.toFixed(1)}~${endMin.toFixed(1)}분`;
+          } else {
+            timeLabel = `${Math.round(segStartSec)}~${Math.round(
+              segEndSec
+            )}초`;
+          }
+
+          const idx = LABEL_ORDER.indexOf(bestLabel);
+          segLabels.push(timeLabel);
+          segValues.push(idx >= 0 ? idx : 0);
+        }
+
+        return { labels: segLabels, values: segValues };
+      }
+      function getUserId(u) {
+        return Number(u?.user_id ?? u?.id ?? u?.userId ?? 0);
+      }
+
+ 
+
+            // =============================
+      // 숫자 애니메이션 (1.00 → 목표값까지 빠르게 증가)
+      // =============================
+      function animateNumber(el, target, suffix = "", duration = 600, decimals = 2, type = "focus") {
+        if (!el || typeof target !== "number" || isNaN(target)) {
+          el.textContent = suffix ? `--${suffix}` : "--";
+          return;
+        }
+
+        // 이전 타이머 정리
+        const clearPrev = () => {
+          if (type === "focus" && focusTimerId) {
+            clearInterval(focusTimerId);
+            focusTimerId = null;
+          } else if (type === "idle" && idleTimerId) {
+            clearInterval(idleTimerId);
+            idleTimerId = null;
+          } else if (type === "input" && inputTimerId) {
+            clearInterval(inputTimerId);
+            inputTimerId = null;
+          } else if (type === "capture" && captureTimerId) {
+            clearInterval(captureTimerId);
+            captureTimerId = null;
+          }
+        };
+        clearPrev();
+
+        const start = 1.0;
+        const steps = Math.max(10, Math.floor(duration / 30));
+        let step = 0;
+
+        const interval = duration / steps;
+
+        const timerId = setInterval(() => {
+          step++;
+          const t = step / steps;
+          const value = start + (target - start) * t;
+          el.textContent = value.toFixed(decimals) + suffix;
+
+          if (step >= steps) {
+            clearPrev();
+            el.textContent = target.toFixed(decimals) + suffix;
+          }
+        }, interval);
+
+        if (type === "focus") {
+          focusTimerId = timerId;
+        } else if (type === "idle") {
+          idleTimerId = timerId;
+        } else if (type === "input") {
+          inputTimerId = timerId;
+        } else if (type === "capture") {
+          captureTimerId = timerId;
+        }
+      }
+
+      // =============================
+      // 분석 결과 표시 (텍스트 + 차트)
+      // =============================
+      function showTestResult(data) {
+        if (!data || !data.ok) {
+          alert(data?.message || "분석 결과를 가져오지 못했습니다.");
+          return;
+        }
+
+        const analyze = data.analyzeResult || {};
+        const dist =
+          (analyze.activity_distribution &&
+            analyze.activity_distribution.percent) ||
+          {};
+        const focusPercent =
+          data.focusPercent ?? analyze.focus_percent ?? null;
+        const idlePercent =
+          data.idlePercent ?? analyze.engagement?.idle_percent ?? null;
+        const inputPerMin =
+          data.inputPerMin ?? analyze.engagement?.input_per_min ?? null;
+
+        const finalLabel = analyze.final_label || data.predicted || "other";
+        const selectedFromServer =
+          data.selectedTask || analyze.selected_task || lastSelectedTask;
+
+        const selectedDisplay =
+          LABEL_DISPLAY[selectedFromServer] || selectedFromServer || "선택 안 함";
+        const finalDisplay =
+          LABEL_DISPLAY[finalLabel] || finalLabel || "기타";
+
+                  // 닉네임 (좌측 상단)
+        const nickname =
+          (typeof getCurrentUser === "function" && getCurrentUser()?.nickname) ||
+          currentUser?.nickname ||
+          "사용자";
+
+        if (resultNicknameEl) {
+          resultNicknameEl.textContent = nickname;
+        }
+
+        // 선택한 작업 라벨 (좌측 상단 3번째 줄)
+        if (resultSelectedTaskEl) {
+          resultSelectedTaskEl.textContent = selectedDisplay;
+        }
+
+
+        const sessionSec =
+          analyze.engagement?.session_duration_sec ||
+          analyze.window?.session_duration_sec ||
+          0;
+        const sessionMin = sessionSec ? (sessionSec / 60).toFixed(1) : null;
+
+        // 요약 문장
+        // 요약 문구
+        if (resultSummaryEl) {
+          const timeText = sessionMin
+            ? `${sessionMin}분 동안`
+            : "이번 세션에서";
+          resultSummaryEl.textContent =
+            `${timeText} 기록한 결과 ${finalDisplay}활동 감지`;
+        }
+
+        // 오른쪽 차트 안내 문구
+        if (resultDetailEl) {
+          resultDetailEl.textContent =
+            "";
+        }
+
+        // 주요 수치
+               // 집중도 %
+        if (focusPercentEl) {
+          if (typeof focusPercent === "number") {
+            animateNumber(
+              focusPercentEl,
+              focusPercent,
+              "%",
+              700,
+              2,
+              "focus"
+            );
+          } else {
+            focusPercentEl.textContent = "--%";
+          }
+        }
+
+        // 잠수 시간 비율 %
+        if (idlePercentEl) {
+          if (typeof idlePercent === "number") {
+            animateNumber(
+              idlePercentEl,
+              idlePercent,
+              "%",
+              700,
+              2,
+              "idle"
+            );
+          } else {
+            idlePercentEl.textContent = "--%";
+          }
+        }
+
+        // 입력/분
+        if (inputPerMinEl) {
+          if (typeof inputPerMin === "number") {
+            animateNumber(
+              inputPerMinEl,
+              inputPerMin,
+              "",
+              700,
+              2,
+              "input"
+            );
+          } else {
+            inputPerMinEl.textContent = "--";
+          }
+        }
+
+        // 기록된 화면(총 캡쳐 수) - analyzer에서 숫자를 넘겨준다고 가정
+        const captureCount =
+          Number(
+            analyze.screen?.capture_count ??
+              analyze.screen?.num_captures ??
+              analyze.screen?.total_captures ??
+              0
+          ) || 0;
+
+        if (captureCountEl) {
+          if (captureCount > 0) {
+            animateNumber(
+              captureCountEl,
+              captureCount,
+              "",
+              700,
+              0,
+              "capture"
+            );
+          } else {
+            captureCountEl.textContent = "--";
+          }
+        }
+
+        // 카드 모드 전환 (결과 전용)
+        if (heroCard) {
+          heroCard.classList.add("test-mode", "result-mode");
+        }
+        if (initialContent) initialContent.classList.add("hidden");
+        if (testSetup) testSetup.classList.add("hidden");
+        if (testResultView) testResultView.classList.remove("hidden");
+
+        // --------- 원그래프 (활동 비율) ----------
+        if (activityPieCanvas) {
+          const ctxPie = activityPieCanvas.getContext("2d");
+          if (pieChart) {
+            pieChart.destroy();
+          }
+
+          const pieData = LABEL_ORDER.map((key) => dist[key] ?? 0);
+          const pieLabels = LABEL_ORDER.map(
+            (key) => LABEL_DISPLAY[key] || key
+          );
+
+          pieChart = new Chart(ctxPie, {
+            type: "pie",
+            data: {
+              labels: pieLabels,
+              datasets: [
+                {
+                  data: pieData,
+                  backgroundColor: [
+                    "#7c4dff", // study
+                    "#ff6b6b", // game
+                    "#ffb74d", // webtoon
+                    "#4dd0e1", // sns
+                    "#42a5f5", // youtube-ent
+                    "#ab47bc", // youtube-music
+                    "#9e9e9e", // other
+                  ],
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: "bottom",
+                  labels: {
+                    color: "#f5f5ff",
+                    font: { size: 11 },
+                  },
+                },
+              },
+            },
+          });
+        }
+
+        // --------- 시간대별 활동 차트 ----------
+        if (activityTimelineCanvas) {
+          const ctxTime = activityTimelineCanvas.getContext("2d");
+          if (timelineChart) {
+            timelineChart.destroy();
+          }
+
+          const tl = buildTimelineData(analyze);
+
+          timelineChart = new Chart(ctxTime, {
+            type: "line",
+            data: {
+              labels: tl.labels,
+              datasets: [
+                {
+                  label: "활동 유형",
+                  data: tl.values,
+                  borderColor: "#7c4dff",
+                  borderWidth: 2,
+                  tension: 0.3,
+                  pointRadius: 4,
+                  pointHoverRadius: 6,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                legend: { display: false },
+                tooltip: {
+                  callbacks: {
+                    label: (ctx) => {
+                      const idx = ctx.parsed.y;
+                      const key = LABEL_ORDER[idx] || "";
+                      const name = LABEL_DISPLAY[key] || key;
+                      return name || "";
+                    },
+                  },
+                },
+              },
+              scales: {
+                y: {
+                  ticks: {
+                    stepSize: 1,
+                    callback: (value) => {
+                      const key = LABEL_ORDER[value] || "";
+                      return LABEL_DISPLAY[key] || "";
+                    },
+                    color: "#e0e0ff",
+                    font: { size: 10 },
+                  },
+                  suggestedMin: 0,
+                  suggestedMax: LABEL_ORDER.length - 1,
+                  grid: {
+                    color: "rgba(255,255,255,0.06)",
+                  },
+                },
+                x: {
+                  ticks: {
+                    color: "#e0e0ff",
+                    font: { size: 10 },
+                  },
+                  grid: {
+                    color: "rgba(255,255,255,0.04)",
+                  },
+                },
+              },
+            },
+          });
+        }
+      }
+
+      // =============================
+      // 이벤트 바인딩
+      // =============================
+
+      // "검사하기" 버튼 → 테스트 설정 화면 열기
+      if (startTestViewBtn) {
+        startTestViewBtn.addEventListener("click", () => {
+          currentUser =
+            (typeof getCurrentUser === "function") ? getCurrentUser() : null;
+
+          if (!currentUser) {
+            openLoginRequired();
+            return;
+          }
+
+          if (greetingName) {
+            greetingName.textContent = currentUser.nickname || "사용자";
+          }
+
+          if (heroCard) {
+            heroCard.classList.add("test-mode");
+          }
+          if (initialContent) initialContent.classList.add("hidden");
+          if (testResultView) testResultView.classList.add("hidden");
+          if (testSetup) testSetup.classList.remove("hidden");
+
+          clearTimers();
+        });
+      }
+
+      // 작업 선택 후 "선택 완료"
+      if (taskConfirmBtn) {
+        taskConfirmBtn.addEventListener("click", () => {
+          const checked = document.querySelector(
+            'input[name="task"]:checked'
+          );
+          if (!checked) {
+            alert("먼저 작업을 하나 선택해주세요.");
+            return;
+          }
+          selectedTask = checked.value;
+          lastSelectedTask = selectedTask;
+          alert("작업이 선택되었습니다. 이제 '검사 시작' 버튼을 눌러 주세요.");
+        });
+      }
+
+      // "검사 시작"
+      if (testStartBtn) {
+        testStartBtn.addEventListener("click", async () => {
+          if (isRunning) return;
+
+          currentUser =
+            (typeof getCurrentUser === "function") ? getCurrentUser() : null;
+          if (!currentUser) {
+            openLoginRequired();
+            return;
+          }
+
+          if (!selectedTask) {
+            alert("작업을 선택하고 '선택 완료' 버튼을 눌러주세요.");
+            return;
+          }
+
+          try {
+            testStartBtn.disabled = true;
+            testStartBtn.textContent = "시작 중...";
+            const uid = getUserId(currentUser);
+            if (!uid) {
+              openLoginRequired();
+              return;
+            }
+            await notifyServerTestStart(uid, selectedTask);
+
+
+            // 시작 성공 시
+            if (testStopBtn) {
+              testStopBtn.disabled = false;
+            }
+            startCountdownAndTimer();
+          } catch (err) {
+            console.error(err);
+            alert(err.message || "검사 시작 중 오류가 발생했습니다.");
+            testStartBtn.disabled = false;
+          } finally {
+            if (!isRunning) {
+              testStartBtn.textContent = "검사 시작";
+            }
+          }
+        });
+      }
+
+      // "검사 종료"
+      if (testStopBtn) {
+        testStopBtn.addEventListener("click", async () => {
+          if (!isRunning) return;
+
+          currentUser =
+            (typeof getCurrentUser === "function") ? getCurrentUser() : null;
+          if (!currentUser) {
+            openLoginRequired();
+            return;
+          }
+
+          try {
+            testStopBtn.disabled = true;
+            testStopBtn.textContent = "종료 중...";
+            const uid = getUserId(currentUser);
+            if (!uid) {
+              openLoginRequired();
+              return;
+            }
+            
+            
+            const data = await notifyServerTestStop(uid);
+
+
+            clearTimers();
+            showTestResult(data);
+          } catch (err) {
+            console.error(err);
+            alert(err.message || "검사 종료/분석 중 오류가 발생했습니다.");
+            testStopBtn.disabled = false;
+          } finally {
+            isRunning = false;
+            testStopBtn.textContent = "검사 종료";
+          }
+        });
+      }
+
+      // 구(orb) 버튼 동작
+      if (testOrb) {
+        testOrb.addEventListener("click", () => {
+          // 검사 중이면 먼저 종료 유도
+          if (isRunning) {
+            alert("검사 중에는 돌아갈 수 없습니다.\n먼저 '검사 종료'를 눌러주세요.");
+            return;
+          }
+
+          // 결과 화면이 열려 있으면 → 초기 화면으로
+          if (heroCard && heroCard.classList.contains("result-mode")) {
+            resetTestStateToInitial();
+            return;
+          }
+
+          // 검사 설정 화면만 열려 있으면 → 초기 화면으로
+          if (testSetup && !testSetup.classList.contains("hidden")) {
+            resetTestStateToInitial();
+            return;
+          }
+
+          // 그 외에는 메인으로
+          window.location.href = "/";
+        });
+      }
+
+      // 페이지 로딩 시 타이머/버튼 기본 상태 정리
+      clearTimers();
+    });
+     document.getElementById("goMyPageBtn")?.addEventListener("click", () => {
+    window.location.href = "/mypage.html";
+  });
+  </script>
+</body>
+</html>
