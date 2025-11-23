@@ -15,7 +15,6 @@ import mysql.connector
 from mysql.connector import pooling
 
 from analyzer import analyze_and_save
-from session_logger import start_session_logging, stop_session_logging
 
 app = Flask(__name__)
 
@@ -79,7 +78,12 @@ db_pool = pooling.MySQLConnectionPool(
     **DB_CONFIG
 )
 
+def start_session_logging(*args, **kwargs):
+    print("[server] start_session_logging ignored on server (remote mode)")
 
+def stop_session_logging(*args, **kwargs):
+    print("[server] stop_session_logging ignored on server (remote mode)")
+    return {}
 # ==============================
 # 유틸 함수
 # ==============================
@@ -611,12 +615,12 @@ def api_test_start():
         print("usage_index:", usage_index)
 
         # 실제 로거 시작
-        start_session_logging(
-            user_id=user_id,
-            session_id=session_id,
-            usage_index=usage_index,
-            task=selected_task,
-        )
+        #start_session_logging(
+          #  user_id=user_id,
+          #  session_id=session_id,
+           # usage_index=usage_index,
+           # task=selected_task,
+       # )
 
         return jsonify({"ok": True})
 
@@ -661,8 +665,9 @@ def api_test_stop():
         print("usage_index:", current_test_session["usage_index"])
 
         # 1) 로거 종료
-        session_meta = stop_session_logging()
-        print("[server] session_meta from logger:", session_meta)
+       # session_meta = stop_session_logging()
+      #  print("[server] session_meta from logger:", session_meta)
+        session_meta = {} 
 
         # 2) current_session_id.txt 기록 (analyzer용)
         session_id = current_test_session["session_id"]
@@ -688,7 +693,7 @@ def api_test_stop():
             analyze_result = {}
             
         try:
-            save_analysis_to_db(analyze_result, session_meta)
+            save_analysis_to_db(analyze_result, current_test_session)
         except Exception as e:
             print("DB 저장 실패:", e)
 
