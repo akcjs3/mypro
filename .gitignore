@@ -1,4 +1,7 @@
 venv/
 __pycache__/
+*.pyc
+data/dataset/
+data/session_logs/
+data/screens/
 *.zip
-data/
