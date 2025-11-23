@@ -1,166 +1,159 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <title>Monitor Sketcher · 로그인</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Monitor Sketcher · 로그인</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="./css/style.css" />
-</head>
-<body>
-  <div class="app">
-    <!-- 상단 헤더 (index.html과 같은 구조) -->
-    <header class="site-header">
-      <div class="header-inner">
-        <!-- 왼쪽 로고 + 텍스트 (여기서는 메인으로 이동하도록 링크 처리) -->
-        <a href="index.html" class="brand brand-link">
-          <div class="brand-logo-mark">
-            <img src="/src/logo.png" alt="Monitor Sketcher 로고" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- 상단 헤더 (index.html과 같은 구조) -->
+      <header class="site-header">
+        <div class="header-inner">
+          <!-- 왼쪽 로고 + 텍스트 (여기서는 메인으로 이동하도록 링크 처리) -->
+          <a href="index.html" class="brand brand-link">
+            <div class="brand-logo-mark">
+              <img src="/src/logo.png" alt="Monitor Sketcher 로고" />
+            </div>
+            <span class="brand-text">Monitor Sketcher</span>
+          </a>
+
+          <!-- 가운데 네비게이션 (일단 형식만 동일하게) -->
+          <nav class="main-nav">
+            <a href="index.html" class="nav-link" data-page="test">검사</a>
+            <a href="index.html" class="nav-link" data-page="ranking">랭킹</a>
+            <a href="index.html" class="nav-link" data-page="about">소개</a>
+            <a href="index.html" class="nav-link" data-page="contact">문의</a>
+          </nav>
+
+          <!-- 오른쪽 액션 버튼들 (형식만 유지) -->
+          <div class="header-actions">
+            <button class="header-btn text-btn hidden">마이페이지</button>
+            <button class="header-btn outline-btn hidden">로그아웃</button>
           </div>
-          <span class="brand-text">Monitor Sketcher</span>
-        </a>
-
-        <!-- 가운데 네비게이션 (일단 형식만 동일하게) -->
-        <nav class="main-nav">
-          <a href="index.html" class="nav-link" data-page="test">검사</a>
-          <a href="index.html" class="nav-link" data-page="ranking">랭킹</a>
-          <a href="index.html" class="nav-link" data-page="about">소개</a>
-          <a href="index.html" class="nav-link" data-page="contact">문의</a>
-        </nav>
-
-        <!-- 오른쪽 액션 버튼들 (형식만 유지) -->
-        <div class="header-actions">
-          <button class="header-btn text-btn hidden">
-            마이페이지
-          </button>
-          <button class="header-btn outline-btn hidden">
-            로그아웃
-          </button>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <!-- 메인 로그인 카드 -->
-    <main class="hero">
-      <section class="hero-card login-card">
-        <div class="hero-glow"></div>
+      <!-- 메인 로그인 카드 -->
+      <main class="hero">
+        <section class="hero-card login-card">
+          <div class="hero-glow"></div>
 
-        <div class="hero-content">
-          <img
-            src="./src/logo.png"
-            alt="Monitor Sketcher 로고"
-            class="hero-logo"
-          />
+          <div class="hero-content">
+            <img
+              src="./src/logo.png"
+              alt="Monitor Sketcher 로고"
+              class="hero-logo"
+            />
 
-          <h1 class="hero-title">Login</h1>
+            <h1 class="hero-title">Login</h1>
 
-          <!-- ✅ 로그인 폼 -->
-          <form id="login-form" class="login-form">
-            <div class="form-field">
-              <!-- ✅ 아이디 → 이메일로 변경 & id도 login-email로 변경 -->
-              <label for="login-email">이메일</label>
-              <input
-                type="email"
-                id="login-email"
-                name="login-email"
-                placeholder="example@naver.com"
-                required
-              />
-            </div>
+            <!-- ✅ 로그인 폼 -->
+            <form id="login-form" class="login-form">
+              <div class="form-field">
+                <!-- ✅ 아이디 → 이메일로 변경 & id도 login-email로 변경 -->
+                <label for="login-email">이메일</label>
+                <input
+                  type="email"
+                  id="login-email"
+                  name="login-email"
+                  placeholder="example@naver.com"
+                  required
+                />
+              </div>
 
-            <div class="form-field">
-              <label for="login-password">비밀번호</label>
-              <input
-                type="password"
-                id="login-password"
-                name="login-password"
-                placeholder="비밀번호"
-                required
-              />
-            </div>
+              <div class="form-field">
+                <label for="login-password">비밀번호</label>
+                <input
+                  type="password"
+                  id="login-password"
+                  name="login-password"
+                  placeholder="비밀번호"
+                  required
+                />
+              </div>
 
-            <!-- ✅ 로그인 / 회원가입 나란히 -->
-            <div class="login-actions">
-              <button type="submit" class="login-submit-btn">
-                로그인
-              </button>
-              <!-- ✅ 회원가입 버튼에 클릭 시 이동 추가 -->
-              <button
-                type="button"
-                class="login-signup-btn"
-                onclick="window.location.href='signup.html'"
-              >
-                회원가입
-              </button>
-            </div>
-          </form>
+              <!-- ✅ 로그인 / 회원가입 나란히 -->
+              <div class="login-actions">
+                <button type="submit" class="login-submit-btn">로그인</button>
+                <!-- ✅ 회원가입 버튼에 클릭 시 이동 추가 -->
+                <button
+                  type="button"
+                  class="login-signup-btn"
+                  onclick="window.location.href='signup.html'"
+                >
+                  회원가입
+                </button>
+              </div>
+            </form>
 
-          <!-- ✅ 메인으로 돌아가기 버튼 -->
-          <button
-            type="button"
-            class="login-back-btn"
-            onclick="window.location.href='index.html'"
-          >
-            메인으로 돌아가기
-          </button>
-        </div>
-      </section>
-    </main>
-  </div>
+            <!-- ✅ 메인으로 돌아가기 버튼 -->
+            <button
+              type="button"
+              class="login-back-btn"
+              onclick="window.location.href='index.html'"
+            >
+              메인으로 돌아가기
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
 
-  <!-- ✅ 로그인 처리 스크립트 -->
-  <script>
-    const loginForm = document.getElementById("login-form");
+    <!-- ✅ 로그인 처리 스크립트 -->
+    <script>
+      const loginForm = document.getElementById("login-form");
 
-    if (loginForm) {
-      loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
+      if (loginForm) {
+        loginForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-        // ✅ id 고친 것에 맞춰 login-email 사용
-        const email = document.getElementById("login-email").value.trim();
-        const password = document.getElementById("login-password").value;
+          // ✅ id 고친 것에 맞춰 login-email 사용
+          const email = document.getElementById("login-email").value.trim();
+          const password = document.getElementById("login-password").value;
 
-        if (!email || !password) {
-          alert("이메일과 비밀번호를 입력해주세요.");
-          return;
-        }
-
-        try {
-          const res = await fetch("/api/login", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email, password }),
-          });
-
-          const data = await res.json();
-
-          if (!res.ok || !data.ok) {
-            alert(data.message || "로그인에 실패했습니다.");
+          if (!email || !password) {
+            alert("이메일과 비밀번호를 입력해주세요.");
             return;
           }
 
-          // ✅ 로그인 성공: 브라우저에 사용자 정보 저장 (localStorage)
-          localStorage.setItem(
-            "ms_user",
-            JSON.stringify({
-              user_id: data.userId, 
-              email,
-              nickname: data.nickname,
-              emailVerified: data.emailVerified,
-            })
-          );
+          try {
+            const res = await fetch("/api/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, password }),
+            });
 
-             alert(`${data.nickname}님, 환영합니다!`);
-    window.location.href = "index.html";   // ✅ 메인(root)으로 이동
+            const data = await res.json();
 
-        } catch (err) {
-          console.error("로그인 요청 실패:", err);
-          alert("서버와 통신 중 오류가 발생했습니다.");
-        }
-      });
-    }
-  </script>
-</body>
+            if (!res.ok || !data.ok) {
+              alert(data.message || "로그인에 실패했습니다.");
+              return;
+            }
+
+            // ✅ 로그인 성공: 브라우저에 사용자 정보 저장 (localStorage)
+            localStorage.setItem(
+              "ms_user",
+              JSON.stringify({
+                user_id: data.userId,
+                email,
+                nickname: data.nickname,
+                emailVerified: data.emailVerified,
+              })
+            );
+
+            alert(`${data.nickname}님, 환영합니다!`);
+            window.location.href = "index.html"; // ✅ 메인(root)으로 이동
+          } catch (err) {
+            console.error("로그인 요청 실패:", err);
+            alert("서버와 통신 중 오류가 발생했습니다.");
+          }
+        });
+      }
+    </script>
+  </body>
 </html>

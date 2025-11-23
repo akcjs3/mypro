@@ -1,0 +1,67 @@
+{
+    "session_id": "20251122153520_1_d1bh",
+    "user_id": 1,
+    "usage_index": 1,
+    "selected_task": "webtoon",
+    "session_start": "2025-11-22T15:35:20.221965",
+    "session_end": "2025-11-22T15:35:21.760621",
+    "final_label": "other",
+    "predicted": "other",
+    "activity_distribution": {
+        "percent": {
+            "other": 100.0
+        },
+        "ratio": {
+            "other": 1.0
+        }
+    },
+    "window": {
+        "window_titles": [
+            "Monitor Sketcher · 검사 - Chrome"
+        ],
+        "window_labels": [
+            "other"
+        ],
+        "distribution": {
+            "percent": {
+                "other": 100.0
+            },
+            "ratio": {
+                "other": 1.0
+            }
+        }
+    },
+    "screen": {
+        "screen_probs": {
+            "game": 0.0011545912129804492,
+            "other": 0.9917033910751343,
+            "sns": 2.3777827664162032e-05,
+            "study": 0.007040624041110277,
+            "webtoon": 1.651688421588915e-07,
+            "youtube-ent": 7.74415530031547e-05,
+            "youtube-music": 1.5833701016987334e-10
+        },
+        "screen_top": "other",
+        "capture_count": 1,
+        "num_captures": 1,
+        "total_captures": 1
+    },
+    "input": {
+        "key_count": 0,
+        "mouse_count": 0
+    },
+    "engagement": {
+        "idle_percent": 0.0,
+        "idle_ratio": 0.0,
+        "idle_time_sec": 0,
+        "input_per_min": 0.0,
+        "session_duration_sec": 1.538656,
+        "total_input": 0
+    },
+    "process": {
+        "process_count": 0
+    },
+    "focus_ratio": 0.0,
+    "focus_percent": 0.0,
+    "inputPerMin": 0.0
+}

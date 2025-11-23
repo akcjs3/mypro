@@ -1,0 +1,67 @@
+{
+    "session_id": "20251122114459_1_a1ch",
+    "user_id": 1,
+    "usage_index": 1,
+    "selected_task": "study",
+    "final_label": "study",
+    "predicted": "study",
+    "activity_distribution": {
+        "percent": {
+            "study": 100.0
+        },
+        "ratio": {
+            "study": 1.0
+        }
+    },
+    "window": {
+        "window_titles": [
+            "(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome",
+            "(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome"
+        ],
+        "window_labels": [
+            "study",
+            "study"
+        ],
+        "distribution": {
+            "percent": {
+                "study": 100.0
+            },
+            "ratio": {
+                "study": 1.0
+            }
+        }
+    },
+    "screen": {
+        "screen_probs": {
+            "game": 0.00157354143448174,
+            "other": 0.055829428136348724,
+            "sns": 2.766263378362055e-07,
+            "study": 0.9425964951515198,
+            "webtoon": 3.4897137624056995e-08,
+            "youtube-ent": 2.1747086975665297e-07,
+            "youtube-music": 1.5707102285489327e-10
+        },
+        "screen_top": "study",
+        "capture_count": 8,
+        "num_captures": 8,
+        "total_captures": 8
+    },
+    "input": {
+        "key_count": 0,
+        "mouse_count": 20
+    },
+    "engagement": {
+        "idle_percent": 0.0,
+        "idle_ratio": 0.0,
+        "idle_time_sec": 0,
+        "input_per_min": 13.665402305685895,
+        "session_duration_sec": 87.813002,
+        "total_input": 20
+    },
+    "process": {
+        "process_count": 0
+    },
+    "focus_ratio": 1.0,
+    "focus_percent": 100.0,
+    "inputPerMin": 13.665402305685895
+}

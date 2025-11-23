@@ -1,0 +1,93 @@
+{
+    "session_id": "20251122062728_1_ols6",
+    "user_id": 1,
+    "usage_index": 1,
+    "selected_task": "study",
+    "final_label": "webtoon",
+    "predicted": "webtoon",
+    "activity_distribution": {
+        "percent": {
+            "other": 18.181818181818183,
+            "webtoon": 45.45454545454545,
+            "study": 36.36363636363637
+        },
+        "ratio": {
+            "other": 0.18181818181818182,
+            "webtoon": 0.45454545454545453,
+            "study": 0.36363636363636365
+        }
+    },
+    "window": {
+        "window_titles": [
+            "Chrome에 대한 점프 목록",
+            "새 탭 - Chrome",
+            "웹툰 - Google 검색 - Chrome",
+            "네이버 웹툰 - Chrome",
+            "analyzer.py - monitor-sketcher - Visual Studio Code",
+            "● analyzer.py - monitor-sketcher - Visual Studio Code",
+            "● analyzer.py - monitor-sketcher - Visual Studio Code",
+            "(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome",
+            "네이버 웹툰 - Chrome",
+            "경경수의 개발만화 : 네이버 웹툰 - Chrome",
+            "경경수의 개발만화 - 1화.체크셔츠 : 네이버 웹툰 - Chrome"
+        ],
+        "window_labels": [
+            "other",
+            "other",
+            "webtoon",
+            "webtoon",
+            "study",
+            "study",
+            "study",
+            "study",
+            "webtoon",
+            "webtoon",
+            "webtoon"
+        ],
+        "distribution": {
+            "percent": {
+                "other": 18.181818181818183,
+                "webtoon": 45.45454545454545,
+                "study": 36.36363636363637
+            },
+            "ratio": {
+                "other": 0.18181818181818182,
+                "webtoon": 0.45454545454545453,
+                "study": 0.36363636363636365
+            }
+        }
+    },
+    "screen": {
+        "screen_probs": {
+            "game": 0.20222119987010956,
+            "other": 0.04514564201235771,
+            "sns": 0.1096327006816864,
+            "study": 0.4060458242893219,
+            "webtoon": 0.22787992656230927,
+            "youtube-ent": 0.009037687443196774,
+            "youtube-music": 3.701237801578827e-05
+        },
+        "screen_top": "study",
+        "capture_count": 8,
+        "num_captures": 8,
+        "total_captures": 8
+    },
+    "input": {
+        "key_count": 502,
+        "mouse_count": 476
+    },
+    "engagement": {
+        "idle_percent": 0.0,
+        "idle_ratio": 0.0,
+        "idle_time_sec": 0,
+        "input_per_min": 171.47250255348064,
+        "session_duration_sec": 342.212303,
+        "total_input": 978
+    },
+    "process": {
+        "process_count": 0
+    },
+    "focus_ratio": 0.36363636363636365,
+    "focus_percent": 36.36363636363637,
+    "inputPerMin": 171.47250255348064
+}

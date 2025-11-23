@@ -1,0 +1,381 @@
+timestamp,user_id,session_id,usage_index,task_label,process_name,window_title,exe_path
+2025-11-21T02:19:27.656317,1,20251121021927_1_0pm7,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T02:35:01.303488,1,20251121023501_1_m5sl,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T02:35:04.500233,1,20251121023501_1_m5sl,1,webtoon,chrome.exe,마흔 즈음에 - 41화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T02:35:37.268987,1,20251121023501_1_m5sl,1,webtoon,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T02:35:38.306958,1,20251121023501_1_m5sl,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T02:43:29.176564,1,20251121024329_1_5q3k,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T02:43:30.769660,1,20251121024329_1_5q3k,1,webtoon,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T02:43:31.350788,1,20251121024329_1_5q3k,1,webtoon,chrome.exe,마흔 즈음에 - 41화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T02:43:32.899905,1,20251121024329_1_5q3k,1,webtoon,chrome.exe,마흔 즈음에 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T02:43:36.062499,1,20251121024329_1_5q3k,1,webtoon,chrome.exe,마흔 즈음에 - 41화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T02:44:32.357314,1,20251121024329_1_5q3k,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:02:48.808991,1,20251121030248_1_egbz,1,sns,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T03:02:49.426589,1,20251121030248_1_egbz,1,sns,chrome.exe,Instagram - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:03:46.721072,1,20251121030248_1_egbz,1,sns,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T03:03:47.320639,1,20251121030248_1_egbz,1,sns,chrome.exe,네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:03:48.373202,1,20251121030248_1_egbz,1,sns,chrome.exe,히든 특성 13개 들고 시작한다 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:03:49.957429,1,20251121030248_1_egbz,1,sns,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:04:13.924019,1,20251121030248_1_egbz,1,sns,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T03:04:14.946083,1,20251121030248_1_egbz,1,sns,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:17:57.652433,1,20251121031757_1_3juk,1,sns,chrome.exe,Instagram - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:17:59.284443,1,20251121031757_1_3juk,1,sns,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T03:17:59.808784,1,20251121031757_1_3juk,1,sns,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:18:00.850789,1,20251121031757_1_3juk,1,sns,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T03:18:01.364395,1,20251121031757_1_3juk,1,sns,chrome.exe,Instagram - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:19:07.774687,1,20251121031757_1_3juk,1,sns,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:19:09.347111,1,20251121031757_1_3juk,1,sns,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T03:19:10.387019,1,20251121031757_1_3juk,1,sns,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:19:11.946291,1,20251121031757_1_3juk,1,sns,chrome.exe,히든 특성 13개 들고 시작한다 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:19:14.032909,1,20251121031757_1_3juk,1,sns,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:19:30.835982,1,20251121031757_1_3juk,1,sns,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T03:19:31.880935,1,20251121031757_1_3juk,1,sns,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:55:49.794442,1,20251121035549_1_b644,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:55:50.863352,1,20251121035549_1_b644,1,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T03:55:52.414577,1,20251121035549_1_b644,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T03:57:00.606286,1,20251121035549_1_b644,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T03:57:01.118431,1,20251121035549_1_b644,1,study,ShellExperienceHost.exe,Chrome에 대한 점프 목록,C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe
+2025-11-21T03:57:02.191993,1,20251121035549_1_b644,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T03:57:02.770530,1,20251121035549_1_b644,1,study,chrome.exe,새 탭 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:57:04.829225,1,20251121035549_1_b644,1,study,chrome.exe,인프런 - Google 검색 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:57:06.922841,1,20251121035549_1_b644,1,study,chrome.exe,인프런 - 라이프타임 커리어 플랫폼 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:57:13.207298,1,20251121035549_1_b644,1,study,chrome.exe,accounts.kakao.com/login?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fclient_id%3D0de1184063abadc9cef9dbf417c567a5%26redirect_uri%3Dhttps%253A%252F%252Faccount.inflearn.com%252Fapi%252Fv1%252Fauth%252Fkakao%26response_type%3Dcode%26scope%3Dprofile%252Caccount_email%252Cbirthday%252Cbirthyear%252Cphone_number%252Cage_range%252Cgender%26state%3D%257B%2522prev_url%2522%253A%2522https%253A%252F%252Fwww.inflearn.com%252F%253Futm_source%253Dgoogle%2526utm_medium%253Dcpc%2526utm_campaign%253Dtraff,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:57:13.713527,1,20251121035549_1_b644,1,study,chrome.exe,카카오계정 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:57:20.457597,1,20251121035549_1_b644,1,study,chrome.exe,Daum 로그인 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:57:20.967728,1,20251121035549_1_b644,1,study,chrome.exe,로그인 - 인프런 | 계정 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:57:22.022334,1,20251121035549_1_b644,1,study,chrome.exe,account.rallit.com/auth?connect.sid=s%3A6zSScHY7A4_8e2qgH8HY6_RvUTO-KsUc.DeooEVisJf4wvBTaoa4%2BvNZOU57Zdo8YDuuDD8NOA%2Bc&referUrl=https%3A%2F%2Fwww.inflearn.com%2F%3Futm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3Dtraffic_regular_g-brand-sa%26utm_content%3Dmainkw_etc_all%26utm_term%3D%25EC%259D%25B8%25ED%2594%2584%25EB%259F%25B0%26gad_source%3D1%26gad_campaignid%3D11648391330%26gbraid%3D0AAAAADAClSBWd0pGl-6Oj7MhaC58eDa9F%26gclid%3DCjwKCAiAlfvIBhA6EiwAcErpyfmSYcWnm4vAJAyQ5fK8OXhSIJal003aopIlmzoZ8K80,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:57:23.048208,1,20251121035549_1_b644,1,study,chrome.exe,인프런 - 라이프타임 커리어 플랫폼 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:57:32.934579,1,20251121035549_1_b644,1,study,chrome.exe,내 학습 - 인프런 | 마이페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:57:36.569749,1,20251121035549_1_b644,1,study,chrome.exe,inflearn.com/courses/lecture?courseId=333770&unitId=225780 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:57:38.137800,1,20251121035549_1_b644,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:59:35.888008,1,20251121035549_1_b644,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T03:59:37.428428,1,20251121035549_1_b644,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T03:59:38.003200,1,20251121035549_1_b644,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:59:41.111156,1,20251121035549_1_b644,1,study,chrome.exe,요일전체 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:59:42.633975,1,20251121035549_1_b644,1,study,chrome.exe,작성자OO : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T03:59:45.209737,1,20251121035549_1_b644,1,study,chrome.exe,작성자OO - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:00:42.583866,1,20251121035549_1_b644,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T04:02:35.499414,1,20251121035549_1_b644,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T04:02:36.013412,1,20251121035549_1_b644,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:07:24.922636,1,20251121040724_1_lyhk,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:07:25.482550,1,20251121040724_1_lyhk,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T04:07:26.053097,1,20251121040724_1_lyhk,1,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T04:07:28.117446,1,20251121040724_1_lyhk,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T04:08:37.071467,1,20251121040724_1_lyhk,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T04:08:38.110075,1,20251121040724_1_lyhk,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T04:08:38.620201,1,20251121040724_1_lyhk,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T04:08:39.129635,1,20251121040724_1_lyhk,1,study,ShellExperienceHost.exe,Chrome에 대한 점프 목록,C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe
+2025-11-21T04:08:40.170666,1,20251121040724_1_lyhk,1,study,chrome.exe,새 탭 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:08:41.728889,1,20251121040724_1_lyhk,1,study,chrome.exe,인프런 - Google 검색 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:08:43.298773,1,20251121040724_1_lyhk,1,study,chrome.exe,인프런 - 라이프타임 커리어 플랫폼 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:08:47.415348,1,20251121040724_1_lyhk,1,study,chrome.exe,inflearn.com/courses/lecture?courseId=333770&unitId=327091 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:08:48.998278,1,20251121040724_1_lyhk,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:10:26.354272,1,20251121040724_1_lyhk,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T04:11:21.571046,1,20251121040724_1_lyhk,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T04:11:22.711222,1,20251121040724_1_lyhk,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:11:25.894813,1,20251121040724_1_lyhk,1,study,chrome.exe,dnpqxns - Google 검색 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:11:26.927014,1,20251121040724_1_lyhk,1,study,chrome.exe,네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:11:28.482025,1,20251121040724_1_lyhk,1,study,chrome.exe,히든 특성 13개 들고 시작한다 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:11:29.524671,1,20251121040724_1_lyhk,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:11:42.210570,1,20251121040724_1_lyhk,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T04:11:42.733620,1,20251121040724_1_lyhk,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:57:44.821259,1,20251121045744_1_i02h,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T04:57:45.388831,1,20251121045744_1_i02h,1,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T04:57:50.097208,1,20251121045744_1_i02h,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T04:58:09.806237,1,20251121045744_1_i02h,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T05:02:59.316514,1,20251121050259_1_a2q9,2,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T05:03:01.441280,1,20251121050259_1_a2q9,2,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T05:03:43.773345,1,20251121050259_1_a2q9,2,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T05:03:44.280691,1,20251121050259_1_a2q9,2,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:13:10.629654,1,1_1,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:13:11.259921,1,1_1,1,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:13:16.981989,1,1_1,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:13:23.189303,1,1_1,1,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:13:25.308188,1,1_1,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:14:12.380882,1,1_1,1,study,Code.exe,server_fixed.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:14:13.916506,1,1_1,1,study,Code.exe,Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:14:16.484422,1,1_1,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:14:17.013290,1,1_1,1,study,Code.exe,server_fixed.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:14:22.223356,1,1_1,1,study,Code.exe,● server_fixed.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:14:27.363147,1,1_1,1,study,Code.exe,server_fixed.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:14:30.006787,1,1_1,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:14:31.029840,1,1_1,1,study,ShellExperienceHost.exe,Chrome에 대한 점프 목록,C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe
+2025-11-21T06:14:32.076370,1,1_1,1,study,chrome.exe,새 탭 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:14:35.750328,1,1_1,1,study,chrome.exe,네이버웹툰 - Google 검색 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:14:36.763327,1,1_1,1,study,chrome.exe,네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:14:37.839765,1,1_1,1,study,chrome.exe,히든 특성 13개 들고 시작한다 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:14:39.368236,1,1_1,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:14:51.349014,1,1_1,1,study,Code.exe,server_fixed.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:16:18.727000,1,1_1,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T06:16:19.791554,1,1_1,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:28:40.498797,1,20251121062840_1_c0mo,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:28:41.084291,1,20251121062840_1_c0mo,1,study,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:28:42.631754,1,20251121062840_1_c0mo,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T06:28:43.681619,1,20251121062840_1_c0mo,1,study,ShellExperienceHost.exe,날짜 및 시간 정보,C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe
+2025-11-21T06:28:45.711688,1,20251121062840_1_c0mo,1,study,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:28:46.770260,1,20251121062840_1_c0mo,1,study,Code.exe,● analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:29:45.894999,1,20251121062840_1_c0mo,1,study,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:29:46.933284,1,20251121062840_1_c0mo,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T06:29:49.016040,1,20251121062840_1_c0mo,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:29:57.281927,1,20251121062840_1_c0mo,1,study,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:31:55.393870,1,20251121062840_1_c0mo,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:37:47.522066,1,20251121063747_1_ehws,2,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:37:49.614113,1,20251121063747_1_ehws,2,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:37:52.705203,1,20251121063747_1_ehws,2,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:38:14.856660,1,20251121063747_1_ehws,2,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T06:38:15.400049,1,20251121063747_1_ehws,2,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:38:19.038709,1,20251121063747_1_ehws,2,study,ShellExperienceHost.exe,Chrome에 대한 점프 목록,C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe
+2025-11-21T06:38:20.065439,1,20251121063747_1_ehws,2,study,chrome.exe,새 탭 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:38:22.685546,1,20251121063747_1_ehws,2,study,chrome.exe,인프런 - Google 검색 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:38:23.760251,1,20251121063747_1_ehws,2,study,chrome.exe,인프런 - 라이프타임 커리어 플랫폼 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:38:27.877139,1,20251121063747_1_ehws,2,study,chrome.exe,inflearn.com/courses/lecture?courseId=333770&unitId=327091 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:38:28.926161,1,20251121063747_1_ehws,2,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:39:32.167255,1,20251121063747_1_ehws,2,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T06:39:33.182579,1,20251121063747_1_ehws,2,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:39:34.713084,1,20251121063747_1_ehws,2,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T06:39:35.826414,1,20251121063747_1_ehws,2,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:39:38.952291,1,20251121063747_1_ehws,2,study,chrome.exe,웹툰 - Google 검색 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:39:39.970258,1,20251121063747_1_ehws,2,study,chrome.exe,네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:39:41.532315,1,20251121063747_1_ehws,2,study,chrome.exe,히든 특성 13개 들고 시작한다 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:39:43.054606,1,20251121063747_1_ehws,2,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:39:50.381260,1,20251121063747_1_ehws,2,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T06:39:50.888051,1,20251121063747_1_ehws,2,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:42:29.086131,1,20251121064229_1_zcv9,3,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:42:30.127489,1,20251121064229_1_zcv9,3,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:42:32.689198,1,20251121064229_1_zcv9,3,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:42:51.939692,1,20251121064229_1_zcv9,3,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:42:52.459431,1,20251121064229_1_zcv9,3,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:42:53.474759,1,20251121064229_1_zcv9,3,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T06:42:53.983530,1,20251121064229_1_zcv9,3,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T06:42:54.501628,1,20251121064229_1_zcv9,3,study,chrome.exe,웹툰 - Google 검색 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:42:57.066058,1,20251121064229_1_zcv9,3,study,chrome.exe,인프런 - Google 검색 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:42:58.603924,1,20251121064229_1_zcv9,3,study,chrome.exe,인프런 - 라이프타임 커리어 플랫폼 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:43:01.733188,1,20251121064229_1_zcv9,3,study,chrome.exe,inflearn.com/courses/lecture?courseId=333770&unitId=327091 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:43:02.785624,1,20251121064229_1_zcv9,3,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:44:33.750280,1,20251121064229_1_zcv9,3,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:44:37.955164,1,20251121064229_1_zcv9,3,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T06:44:38.991378,1,20251121064229_1_zcv9,3,study,chrome.exe,코드 수정 요청 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:44:39.498848,1,20251121064229_1_zcv9,3,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:48:07.672495,1,20251121064807_1_r7l4,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:48:08.723462,1,20251121064807_1_r7l4,1,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:48:12.344450,1,20251121064807_1_r7l4,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:48:38.355251,1,20251121064807_1_r7l4,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T06:48:38.864950,1,20251121064807_1_r7l4,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:48:39.911032,1,20251121064807_1_r7l4,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T06:48:40.426926,1,20251121064807_1_r7l4,1,study,explorer.exe,backend,C:\Windows\explorer.exe
+2025-11-21T06:48:40.941929,1,20251121064807_1_r7l4,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T06:48:41.452963,1,20251121064807_1_r7l4,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:48:42.012311,1,20251121064807_1_r7l4,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:49:31.092056,1,20251121064807_1_r7l4,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:49:38.414143,1,20251121064807_1_r7l4,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T06:49:38.927559,1,20251121064807_1_r7l4,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:58:46.246119,1,20251121065846_1_zmit,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:58:47.355334,1,20251121065846_1_zmit,1,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:58:51.968658,1,20251121065846_1_zmit,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T06:59:50.614049,1,20251121065846_1_zmit,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T06:59:51.129516,1,20251121065846_1_zmit,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:59:51.640276,1,20251121065846_1_zmit,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T06:59:52.174200,1,20251121065846_1_zmit,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T06:59:52.680937,1,20251121065846_1_zmit,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:00:36.369073,1,20251121065846_1_zmit,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:01:17.358577,1,20251121065846_1_zmit,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T07:01:17.865181,1,20251121065846_1_zmit,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:08:43.502852,1,20251121070843_1_f28m,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T07:08:44.588613,1,20251121070843_1_f28m,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:08:46.608975,1,20251121070843_1_f28m,1,study,chrome.exe,inflearn.com/courses/lecture?courseId=333770&tab=curriculum&type=LECTURE&unitId=327091&subtitleLanguage=ko - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:08:48.166158,1,20251121070843_1_f28m,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:10:41.107611,1,20251121070843_1_f28m,1,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T07:10:45.210857,1,20251121070843_1_f28m,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T07:11:11.624091,1,20251121070843_1_f28m,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T07:11:12.137148,1,20251121070843_1_f28m,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:11:12.647039,1,20251121070843_1_f28m,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:12:57.683703,1,20251121070843_1_f28m,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T07:12:58.193113,1,20251121070843_1_f28m,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:16:33.666666,1,20251121071633_1_lijr,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:16:35.235099,1,20251121071633_1_lijr,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T07:16:36.249213,1,20251121071633_1_lijr,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:16:39.369047,1,20251121071633_1_lijr,1,study,chrome.exe,inflearn.com/courses/lecture?courseId=333770&tab=curriculum&type=LECTURE&unitId=327091&subtitleLanguage=ko - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:16:39.936795,1,20251121071633_1_lijr,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:17:51.208495,1,20251121071633_1_lijr,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:18:59.770833,1,20251121071633_1_lijr,1,study,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T07:19:08.037468,1,20251121071633_1_lijr,1,study,Code.exe,● analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T07:20:54.849075,1,20251121071633_1_lijr,1,study,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T07:20:55.361772,1,20251121071633_1_lijr,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T07:20:56.957940,1,20251121071633_1_lijr,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:23:31.619130,1,20251121072331_1_auor,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:23:32.165259,1,20251121072331_1_auor,1,study,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T07:23:38.394048,1,20251121072331_1_auor,1,study,Code.exe,● analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T07:24:50.412538,1,20251121072331_1_auor,1,study,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T07:24:52.480439,1,20251121072331_1_auor,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T07:24:53.051934,1,20251121072331_1_auor,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:24:53.575397,1,20251121072331_1_auor,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T07:24:54.088088,1,20251121072331_1_auor,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:24:54.600138,1,20251121072331_1_auor,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:27:06.418636,1,20251121072331_1_auor,1,study,chrome.exe,히든 특성 13개 들고 시작한다 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:27:15.247706,1,20251121072331_1_auor,1,study,chrome.exe,금요웹툰 : 네이버웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:27:19.374482,1,20251121072331_1_auor,1,study,chrome.exe,요일전체 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:27:20.924946,1,20251121072331_1_auor,1,study,chrome.exe,신작 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:27:24.043858,1,20251121072331_1_auor,1,study,chrome.exe,당신의 완벽한 엔딩을 위하여 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:27:25.580585,1,20251121072331_1_auor,1,study,chrome.exe,당신의 완벽한 엔딩을 위하여 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:28:38.103009,1,20251121072331_1_auor,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T07:28:39.124848,1,20251121072331_1_auor,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:41:36.182687,1,20251121074136_1_kd3n,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T07:41:37.256188,1,20251121074136_1_kd3n,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:41:45.479761,1,20251121074136_1_kd3n,1,study,chrome.exe,당신의 완벽한 엔딩을 위하여 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:41:47.002291,1,20251121074136_1_kd3n,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:43:22.743790,1,20251121074136_1_kd3n,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T07:43:23.770020,1,20251121074136_1_kd3n,1,study,chrome.exe,당신의 완벽한 엔딩을 위하여 - 1화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:43:27.895616,1,20251121074136_1_kd3n,1,study,chrome.exe,당신의 완벽한 엔딩을 위하여 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:43:29.977079,1,20251121074136_1_kd3n,1,study,chrome.exe,요일전체 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:43:32.617569,1,20251121074136_1_kd3n,1,study,chrome.exe,육아일기 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:43:35.201542,1,20251121074136_1_kd3n,1,study,chrome.exe,일요웹툰 : 네이버웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:43:36.736513,1,20251121074136_1_kd3n,1,study,chrome.exe,용사보다 너무 강해서 힘을 숨김 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:43:38.806547,1,20251121074136_1_kd3n,1,study,chrome.exe,용사보다 너무 강해서 힘을 숨김 - 1화 : 힘숨찐 탄생! : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T07:45:09.338372,1,20251121074136_1_kd3n,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T07:45:10.394603,1,20251121074136_1_kd3n,1,study,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T07:45:14.024821,1,20251121074136_1_kd3n,1,study,Code.exe,● analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T07:45:48.744740,1,20251121074136_1_kd3n,1,study,SearchApp.exe,검색,C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe
+2025-11-21T07:45:52.366617,1,20251121074136_1_kd3n,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T07:45:53.400097,1,20251121074136_1_kd3n,1,study,WINWORD.EXE,,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-21T07:45:54.428417,1,20251121074136_1_kd3n,1,study,WINWORD.EXE,여는 중 - Word,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-21T07:45:54.939652,1,20251121074136_1_kd3n,1,study,WINWORD.EXE,Word,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-21T07:45:56.027444,1,20251121074136_1_kd3n,1,study,WINWORD.EXE,문서1 - Word,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-21T07:46:03.247012,1,20251121074136_1_kd3n,1,study,WINWORD.EXE,정품 Office 구매하기,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-21T07:46:05.327715,1,20251121074136_1_kd3n,1,study,WINWORD.EXE,문서1 - Word,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-21T07:46:06.354028,1,20251121074136_1_kd3n,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T07:46:07.952945,1,20251121074136_1_kd3n,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:06:07.895427,1,20251121100607_1_nn2j,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:06:09.481204,1,20251121100607_1_nn2j,1,webtoon,Code.exe,test.html - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T10:06:15.677994,1,20251121100607_1_nn2j,1,webtoon,Code.exe,● test.html - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T10:07:24.686686,1,20251121100607_1_nn2j,1,webtoon,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T10:07:27.300800,1,20251121100607_1_nn2j,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:07:27.833750,1,20251121100607_1_nn2j,1,webtoon,chrome.exe,네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:07:29.899273,1,20251121100607_1_nn2j,1,webtoon,chrome.exe,역대급 영지 설계사 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:07:31.470497,1,20251121100607_1_nn2j,1,webtoon,chrome.exe,역대급 영지 설계사 - 207화 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:08:39.050888,1,20251121100607_1_nn2j,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:38:51.138810,1,20251121103851_1_fweo,2,music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:38:58.446508,1,20251121103851_1_fweo,2,music,chrome.exe,코드 수정 요청 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:40:20.993685,1,20251121103851_1_fweo,2,music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T10:40:21.505771,1,20251121103851_1_fweo,2,music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:40:32.497851,1,20251121103851_1_fweo,2,music,chrome.exe,Monitor Sketcher - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:40:34.070333,1,20251121103851_1_fweo,2,music,Code.exe,style.css - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T10:44:12.027695,1,20251121104411_1_811q,1,music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:44:36.176237,1,20251121104411_1_811q,1,music,Code.exe,test.html - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T10:48:06.892965,1,20251121104806_1_ow2k,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T10:48:07.986225,1,20251121104806_1_ow2k,1,webtoon,AYPop.aye,,C:\Program Files\ESTsoft\ALYac\AYPop.aye
+2025-11-21T10:48:08.562808,1,20251121104806_1_ow2k,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:09:47.043188,1,20251121110946_1_cip1,1,music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:09:58.600315,1,20251121110946_1_cip1,1,music,ShellExperienceHost.exe,Chrome에 대한 점프 목록,C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe
+2025-11-21T11:10:00.158685,1,20251121110946_1_cip1,1,music,chrome.exe,새 탭 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:10:04.326262,1,20251121110946_1_cip1,1,music,chrome.exe,유튜브 - Google 검색 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:10:05.428232,1,20251121110946_1_cip1,1,music,chrome.exe,제목 없음 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:10:05.949914,1,20251121110946_1_cip1,1,music,chrome.exe,YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:10:14.691718,1,20251121110946_1_cip1,1,music,chrome.exe,[싱어게인3] 소수빈이 들려주는 마지막 '쉬운' 노래 〈한번만 더〉♪ | 싱어게인3 13회 | JTBC 240118 방송 - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:10:22.032787,1,20251121110946_1_cip1,1,music,chrome.exe,Even Though You Said So Easily (넌 쉽게 말했지만) - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:10:44.989842,1,20251121110946_1_cip1,1,music,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T11:10:45.503715,1,20251121110946_1_cip1,1,music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:26:46.639454,1,20251121112646_1_tcqs,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:26:58.011085,1,20251121112646_1_tcqs,1,youtube-music,chrome.exe,Even Though You Said So Easily (넌 쉽게 말했지만) - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:27:02.203559,1,20251121112646_1_tcqs,1,youtube-music,chrome.exe,Stay (Prod. An Shinae & Philtre) (머물러주오 (Prod. 안신애 & Philtre)) - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:28:33.636163,1,20251121112646_1_tcqs,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T11:28:34.155819,1,20251121112646_1_tcqs,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:28:36.251478,1,20251121112646_1_tcqs,1,youtube-music,chrome.exe,Stay (Prod. An Shinae & Philtre) (머물러주오 (Prod. 안신애 & Philtre)) - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:29:28.336770,1,20251121112646_1_tcqs,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T11:29:29.363745,1,20251121112646_1_tcqs,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:43:54.639227,1,20251121114354_1_1mie,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:44:03.672920,1,20251121114354_1_1mie,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T11:44:05.213656,1,20251121114354_1_1mie,1,youtube-music,chrome.exe,양다일 (Yang Da Il) '고백 (Sorry) ' M/V - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:44:10.946157,1,20251121114354_1_1mie,1,youtube-music,chrome.exe,회상 Reminiscence - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T11:46:30.069232,1,20251121114354_1_1mie,1,youtube-music,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T11:46:30.608131,1,20251121114354_1_1mie,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:11:18.301848,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:11:19.962729,1,20251121121118_1_mmq0,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T12:11:26.892006,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:11:28.947932,1,20251121121118_1_mmq0,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T12:11:30.000899,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,유희열의 스케치북 - 들으면 들을수록 마음을 울리는 권진아 - 운이 좋았지♬.20190927 - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:11:34.774060,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,미안해 미워해 사랑해 - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:13:20.366913,1,20251121121118_1_mmq0,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T12:13:21.452177,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:13:24.031136,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:13:26.072091,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,웹툰 - Google 검색 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:13:28.189725,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:13:32.341624,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,브레이커즈 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:13:33.901779,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,브레이커즈 - 28화 발굴 #2 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:13:44.769041,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,브레이커즈 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:13:45.850619,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,브레이커즈 - 1화 입장 #1 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:14:25.797039,1,20251121121118_1_mmq0,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T12:14:28.907974,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,강의콘텐츠 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:14:29.936829,1,20251121121118_1_mmq0,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T12:14:31.066859,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,웹툰 - Google 검색 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:14:31.711438,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,코드 수정 요청 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:14:32.236016,1,20251121121118_1_mmq0,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:29:08.060778,1,20251121122908_1_8tag,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:29:19.106529,1,20251121122908_1_8tag,1,youtube-music,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-21T12:29:20.259709,1,20251121122908_1_8tag,1,youtube-music,chrome.exe,Never Ending Story (Never Ending Story) - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:29:26.993888,1,20251121122908_1_8tag,1,youtube-music,chrome.exe,멈춰줘 - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:31:40.481043,1,20251121122908_1_8tag,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T12:31:42.021665,1,20251121122908_1_8tag,1,youtube-music,chrome.exe,브레이커즈 - 1화 입장 #1 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:32:41.916770,1,20251121122908_1_8tag,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T12:32:42.988151,1,20251121122908_1_8tag,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:42:02.895050,1,20251121124202_1_l6e7,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:42:05.606453,1,20251121124202_1_l6e7,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T12:42:11.465604,1,20251121124202_1_l6e7,1,youtube-music,chrome.exe,I Still Love You (추억은 만남보다 이별에 남아) - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:42:17.089420,1,20251121124202_1_l6e7,1,youtube-music,chrome.exe,In the afternoon while I'm leaning back (기대어 앉은 오후에는) - YouTube - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:44:27.631768,1,20251121124202_1_l6e7,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T12:44:28.170910,1,20251121124202_1_l6e7,1,youtube-music,chrome.exe,브레이커즈 - 1화 입장 #1 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T12:45:41.654015,1,20251121124202_1_l6e7,1,youtube-music,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T12:45:42.679625,1,20251121124202_1_l6e7,1,youtube-music,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T13:06:56.879793,1,20251121130656_1_x338,2,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T13:07:03.145536,1,20251121130656_1_x338,2,webtoon,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T13:07:28.861630,1,20251121130728_1_8tfv,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T13:07:31.473117,1,20251121130728_1_8tfv,1,webtoon,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T13:07:34.529396,1,20251121130728_1_8tfv,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T13:07:39.768487,1,20251121130728_1_8tfv,1,webtoon,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-21T13:07:40.272315,1,20251121130728_1_8tfv,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T13:07:42.858161,1,20251121130728_1_8tfv,1,webtoon,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T13:07:43.398965,1,20251121130728_1_8tfv,1,webtoon,chrome.exe,브레이커즈 - 1화 입장 #1 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T13:07:58.939555,1,20251121130728_1_8tfv,1,webtoon,chrome.exe,브레이커즈 - 2화 입장 #2 : 네이버 웹툰 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-21T13:08:50.655022,1,20251121130728_1_8tfv,1,webtoon,explorer.exe,,C:\Windows\explorer.exe
+2025-11-21T13:08:51.165305,1,20251121130728_1_8tfv,1,webtoon,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T03:25:54.989622,1,20251122032554_1_8mil,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T03:26:07.024296,1,20251122032554_1_8mil,1,study,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-22T03:26:11.122272,1,20251122032554_1_8mil,1,study,Code.exe,● analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-22T03:27:25.255993,1,20251122032554_1_8mil,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-22T03:27:25.785677,1,20251122032554_1_8mil,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T04:28:31.174329,1,20251122042831_1_51um,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T04:28:42.917797,1,20251122042831_1_51um,1,study,Code.exe,cnn_screen_model.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-22T04:28:44.501467,1,20251122042831_1_51um,1,study,Code.exe,● cnn_screen_model.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-22T04:28:53.378026,1,20251122042831_1_51um,1,study,SearchApp.exe,검색,C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe
+2025-11-22T04:28:55.426711,1,20251122042831_1_51um,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-22T04:28:55.935483,1,20251122042831_1_51um,1,study,WINWORD.EXE,,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-22T04:28:57.050301,1,20251122042831_1_51um,1,study,WINWORD.EXE,여는 중 - Word,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-22T04:28:58.078195,1,20251122042831_1_51um,1,study,WINWORD.EXE,Word,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-22T04:29:00.759975,1,20251122042831_1_51um,1,study,WINWORD.EXE,문서1 - Word,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-22T04:29:08.191574,1,20251122042831_1_51um,1,study,WINWORD.EXE,정품 Office 구매하기,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-22T04:29:10.796560,1,20251122042831_1_51um,1,study,WINWORD.EXE,문서1 - Word,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-22T04:29:45.378189,1,20251122042831_1_51um,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-22T04:29:46.415834,1,20251122042831_1_51um,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T04:29:48.593480,1,20251122042831_1_51um,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-22T04:29:49.107225,1,20251122042831_1_51um,1,study,WINWORD.EXE,문서1 - Word,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-22T04:29:51.182302,1,20251122042831_1_51um,1,study,WINWORD.EXE,Microsoft Word,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-22T04:29:52.209164,1,20251122042831_1_51um,1,study,WINWORD.EXE,Word,C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-11-22T04:29:52.718836,1,20251122042831_1_51um,1,study,Code.exe,● cnn_screen_model.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-22T04:29:53.268831,1,20251122042831_1_51um,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T04:46:12.024522,1,20251122044612_1_25hc,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T04:46:16.242406,1,20251122044612_1_25hc,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-22T04:46:20.538308,1,20251122044612_1_25hc,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T04:46:22.133834,1,20251122044612_1_25hc,1,study,chrome.exe,인프런 - 라이프타임 커리어 플랫폼 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T04:46:24.784388,1,20251122044612_1_25hc,1,study,chrome.exe,inflearn.com/courses/lecture?courseId=333770&unitId=225735 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T04:46:26.308733,1,20251122044612_1_25hc,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T04:47:17.660787,1,20251122044612_1_25hc,1,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-22T04:47:24.380682,1,20251122044612_1_25hc,1,study,Code.exe,● server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-22T04:47:37.582845,1,20251122044612_1_25hc,1,study,Code.exe,server.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-22T04:47:38.099135,1,20251122044612_1_25hc,1,study,chrome.exe,(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T04:47:38.607787,1,20251122044612_1_25hc,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-22T04:47:39.632198,1,20251122044612_1_25hc,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T05:00:37.883862,1,20251122050037_1_3p6i,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe
+2025-11-22T05:00:49.997292,1,20251122050037_1_3p6i,1,study,explorer.exe,,C:\Windows\explorer.exe
+2025-11-22T05:00:51.079009,1,20251122050037_1_3p6i,1,study,Code.exe,analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-22T05:00:53.164126,1,20251122050037_1_3p6i,1,study,Code.exe,● analyzer.py - monitor-sketcher - Visual Studio Code,C:\Users\TAE HEE\AppData\Local\Programs\Microsoft VS Code\Code.exe
+2025-11-22T05:01:46.685207,1,20251122050037_1_3p6i,1,study,explorer.exe,작업 전환,C:\Windows\explorer.exe
+2025-11-22T05:01:47.706298,1,20251122050037_1_3p6i,1,study,chrome.exe,Monitor Sketcher · 검사 - Chrome,C:\Program Files\Google\Chrome\Application\chrome.exe

@@ -1,0 +1,76 @@
+{
+  "session_id": "20251123174555_1_l4rt",
+  "user_id": 1,
+  "usage_index": 2,
+  "selected_task": "study",
+  "session_start": "2025-11-23T17:45:55.503333",
+  "session_end": "2025-11-23T17:46:41.920396",
+  "final_label": "study",
+  "predicted": "study",
+  "activity_distribution": {
+    "percent": {
+      "study": 100.0
+    },
+    "ratio": {
+      "study": 1.0
+    }
+  },
+  "window": {
+    "window_titles": [
+      "test.html - monitor-sketcher - Visual Studio Code",
+      "● test.html - monitor-sketcher - Visual Studio Code"
+    ],
+    "window_labels": [
+      "study",
+      "study"
+    ],
+    "distribution": {
+      "percent": {
+        "study": 100.0
+      },
+      "ratio": {
+        "study": 1.0
+      }
+    }
+  },
+  "screen": {
+    "screen_probs": {
+      "game": 0.3485828936100006,
+      "other": 0.012912879697978497,
+      "sns": 2.1830769583175424e-06,
+      "study": 0.6340520977973938,
+      "webtoon": 0.0010579639347270131,
+      "youtube-ent": 0.003392021171748638,
+      "youtube-music": 1.6593549867494062e-09
+    },
+    "screen_top": "study",
+    "capture_count": 8,
+    "num_captures": 8,
+    "total_captures": 8
+  },
+  "input": {
+    "key_count": 395,
+    "mouse_count": 16
+  },
+  "engagement": {
+    "idle_percent": 0.0,
+    "idle_ratio": 0.0,
+    "idle_time_sec": 0,
+    "input_per_min": 411.0,
+    "session_duration_sec": 46.417063,
+    "total_input": 411
+  },
+  "process": {
+    "process_count": 0
+  },
+  "focus_ratio": 1.0,
+  "focus_percent": 100.0,
+  "inputPerMin": 411.0,
+  "focus": {
+    "selected_task": "study",
+    "selected_task_percent": 100.0,
+    "idle_percent_of_session": 0.0,
+    "reliability": "high",
+    "warnings": []
+  }
+}

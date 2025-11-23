@@ -1,0 +1,67 @@
+{
+    "session_id": "20251122153204_1_nfx2",
+    "user_id": 1,
+    "usage_index": 1,
+    "selected_task": "youtube-music",
+    "session_start": "2025-11-22T15:32:04.165428",
+    "session_end": "2025-11-22T15:32:05.647990",
+    "final_label": "other",
+    "predicted": "other",
+    "activity_distribution": {
+        "percent": {
+            "other": 100.0
+        },
+        "ratio": {
+            "other": 1.0
+        }
+    },
+    "window": {
+        "window_titles": [
+            "Monitor Sketcher · 검사 - Chrome"
+        ],
+        "window_labels": [
+            "other"
+        ],
+        "distribution": {
+            "percent": {
+                "other": 100.0
+            },
+            "ratio": {
+                "other": 1.0
+            }
+        }
+    },
+    "screen": {
+        "screen_probs": {
+            "game": 0.0012386348098516464,
+            "other": 0.992420494556427,
+            "sns": 1.945255462487694e-05,
+            "study": 0.006248685531318188,
+            "webtoon": 1.5789240137564775e-07,
+            "youtube-ent": 7.252854265971109e-05,
+            "youtube-music": 1.5366143080175476e-10
+        },
+        "screen_top": "other",
+        "capture_count": 1,
+        "num_captures": 1,
+        "total_captures": 1
+    },
+    "input": {
+        "key_count": 0,
+        "mouse_count": 0
+    },
+    "engagement": {
+        "idle_percent": 0.0,
+        "idle_ratio": 0.0,
+        "idle_time_sec": 0,
+        "input_per_min": 0.0,
+        "session_duration_sec": 1.482562,
+        "total_input": 0
+    },
+    "process": {
+        "process_count": 0
+    },
+    "focus_ratio": 0.0,
+    "focus_percent": 0.0,
+    "inputPerMin": 0.0
+}

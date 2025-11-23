@@ -1,0 +1,95 @@
+{
+    "session_id": "20251122122732_1_0z2u",
+    "user_id": 1,
+    "usage_index": 1,
+    "selected_task": "webtoon",
+    "session_start": "2025-11-22T12:27:32.643849",
+    "session_end": "2025-11-22T12:30:07.608879",
+    "final_label": "webtoon",
+    "predicted": "webtoon",
+    "activity_distribution": {
+        "percent": {
+            "other": 18.181818181818183,
+            "study": 36.36363636363637,
+            "webtoon": 45.45454545454545
+        },
+        "ratio": {
+            "other": 0.18181818181818182,
+            "study": 0.36363636363636365,
+            "webtoon": 0.45454545454545453
+        }
+    },
+    "window": {
+        "window_titles": [
+            "바탕 화면",
+            "바탕 화면",
+            "(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome",
+            "test.html - monitor-sketcher - Visual Studio Code",
+            "(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome",
+            "(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome",
+            "20 중반, 성공이란 무엇인가 - 5화 - 동훈이의 짝사랑 : 네이버 웹툰 - Chrome",
+            "네이버 웹툰 - Chrome",
+            "파국연애 : 네이버 웹툰 - Chrome",
+            "파국연애 - 13화 결혼 직전, 그때 벌어진 이상한 사건 썰 4 : 네이버 웹툰 - Chrome",
+            "수요웹툰 : 네이버웹툰 - Chrome"
+        ],
+        "window_labels": [
+            "other",
+            "other",
+            "study",
+            "study",
+            "study",
+            "study",
+            "webtoon",
+            "webtoon",
+            "webtoon",
+            "webtoon",
+            "webtoon"
+        ],
+        "distribution": {
+            "percent": {
+                "other": 18.181818181818183,
+                "study": 36.36363636363637,
+                "webtoon": 45.45454545454545
+            },
+            "ratio": {
+                "other": 0.18181818181818182,
+                "study": 0.36363636363636365,
+                "webtoon": 0.45454545454545453
+            }
+        }
+    },
+    "screen": {
+        "screen_probs": {
+            "game": 0.10371573269367218,
+            "other": 0.4437198340892792,
+            "sns": 1.4848941646050662e-05,
+            "study": 0.04906856641173363,
+            "webtoon": 0.40293776988983154,
+            "youtube-ent": 0.0005191188538447022,
+            "youtube-music": 2.4155691789928824e-05
+        },
+        "screen_top": "other",
+        "capture_count": 8,
+        "num_captures": 8,
+        "total_captures": 8
+    },
+    "input": {
+        "key_count": 0,
+        "mouse_count": 141
+    },
+    "engagement": {
+        "idle_percent": 0.0,
+        "idle_ratio": 0.0,
+        "idle_time_sec": 0,
+        "input_per_min": 54.592962037951395,
+        "session_duration_sec": 154.96503,
+        "total_input": 141
+    },
+    "process": {
+        "process_count": 0
+    },
+    "focus_ratio": 0.45454545454545453,
+    "focus_percent": 45.45454545454545,
+    "inputPerMin": 54.592962037951395
+}

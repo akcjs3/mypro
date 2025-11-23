@@ -1,0 +1,14 @@
+{
+  "focus": {
+    "selected_task": "study",
+    "selected_task_percent": null,
+    "idle_percent_of_session": 0.0,
+    "reliability": "low",
+    "warnings": [
+      "session_too_short"
+    ]
+  },
+  "selected_task": "study",
+  "focus_ratio": null,
+  "focus_percent": null
+}

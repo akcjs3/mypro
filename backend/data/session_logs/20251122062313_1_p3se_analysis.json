@@ -1,0 +1,71 @@
+{
+    "session_id": "20251122062313_1_p3se",
+    "user_id": 1,
+    "usage_index": 1,
+    "selected_task": "study",
+    "final_label": "study",
+    "predicted": "study",
+    "activity_distribution": {
+        "percent": {
+            "study": 100.0
+        },
+        "ratio": {
+            "study": 1.0
+        }
+    },
+    "window": {
+        "window_titles": [
+            "analyzer.py - monitor-sketcher - Visual Studio Code",
+            "● analyzer.py - monitor-sketcher - Visual Studio Code",
+            "analyzer.py - monitor-sketcher - Visual Studio Code",
+            "(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome"
+        ],
+        "window_labels": [
+            "study",
+            "study",
+            "study",
+            "study"
+        ],
+        "distribution": {
+            "percent": {
+                "study": 100.0
+            },
+            "ratio": {
+                "study": 1.0
+            }
+        }
+    },
+    "screen": {
+        "screen_probs": {
+            "game": 1.0156190910493024e-05,
+            "other": 4.894534777477588e-10,
+            "sns": 3.529731784635004e-10,
+            "study": 0.9999898672103882,
+            "webtoon": 3.2380245706953303e-10,
+            "youtube-ent": 2.530514908727355e-09,
+            "youtube-music": 4.127431174616447e-10
+        },
+        "screen_top": "study",
+        "capture_count": 8,
+        "num_captures": 8,
+        "total_captures": 8
+    },
+    "input": {
+        "key_count": 176,
+        "mouse_count": 28
+    },
+    "engagement": {
+        "idle_percent": 0.0,
+        "idle_ratio": 0.0,
+        "idle_time_sec": 0,
+        "input_per_min": 89.33850160457861,
+        "session_duration_sec": 137.006999,
+        "total_input": 204
+    },
+    "process": {
+        "process_count": 0
+    },
+    "focus_ratio": 1.0,
+    "focus_percent": 100.0,
+    "inputPerMin": 89.33850160457861
+}

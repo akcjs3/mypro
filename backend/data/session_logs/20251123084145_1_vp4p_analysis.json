@@ -1,0 +1,89 @@
+{
+    "session_id": "20251123084145_1_vp4p",
+    "user_id": 1,
+    "usage_index": 1,
+    "selected_task": "study",
+    "session_start": "2025-11-23T08:41:46.028781",
+    "session_end": "2025-11-23T08:43:06.670776",
+    "final_label": "sns",
+    "predicted": "sns",
+    "activity_distribution": {
+        "percent": {
+            "study": 25.0,
+            "webtoon": 12.5,
+            "sns": 62.5
+        },
+        "ratio": {
+            "study": 0.25,
+            "webtoon": 0.125,
+            "sns": 0.625
+        }
+    },
+    "window": {
+        "window_titles": [
+            "mypage.html - monitor-sketcher - Visual Studio Code",
+            "● mypage.html - monitor-sketcher - Visual Studio Code",
+            "수요웹툰 : 네이버웹툰 - Chrome",
+            "Instagram - Chrome",
+            "(1) Instagram - Chrome",
+            "(1) Instagram • 메시지 - Chrome",
+            "Instagram • 메시지 - Chrome",
+            "Instagram - Chrome"
+        ],
+        "window_labels": [
+            "study",
+            "study",
+            "webtoon",
+            "sns",
+            "sns",
+            "sns",
+            "sns",
+            "sns"
+        ],
+        "distribution": {
+            "percent": {
+                "study": 25.0,
+                "webtoon": 12.5,
+                "sns": 62.5
+            },
+            "ratio": {
+                "study": 0.25,
+                "webtoon": 0.125,
+                "sns": 0.625
+            }
+        }
+    },
+    "screen": {
+        "screen_probs": {
+            "game": 0.035576436668634415,
+            "other": 0.6411117911338806,
+            "sns": 0.11807449907064438,
+            "study": 0.17414724826812744,
+            "webtoon": 0.030875880271196365,
+            "youtube-ent": 8.598446584073827e-05,
+            "youtube-music": 0.00012815558875445276
+        },
+        "screen_top": "other",
+        "capture_count": 8,
+        "num_captures": 8,
+        "total_captures": 8
+    },
+    "input": {
+        "key_count": 253,
+        "mouse_count": 37
+    },
+    "engagement": {
+        "idle_percent": 0.0,
+        "idle_ratio": 0.0,
+        "idle_time_sec": 0,
+        "input_per_min": 215.76847150172813,
+        "session_duration_sec": 80.641995,
+        "total_input": 290
+    },
+    "process": {
+        "process_count": 0
+    },
+    "focus_ratio": 0.25,
+    "focus_percent": 25.0,
+    "inputPerMin": 215.76847150172813
+}

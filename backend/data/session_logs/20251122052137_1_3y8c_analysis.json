@@ -1,0 +1,73 @@
+{
+    "session_id": "20251122052137_1_3y8c",
+    "user_id": 1,
+    "usage_index": 1,
+    "selected_task": "study",
+    "final_label": "study",
+    "predicted": "study",
+    "activity_distribution": {
+        "percent": {
+            "other": 100.0
+        },
+        "ratio": {
+            "other": 1.0
+        }
+    },
+    "window": {
+        "window_titles": [
+            "Monitor Sketcher · 검사 - Chrome",
+            "analyzer.py - monitor-sketcher - Visual Studio Code",
+            "● analyzer.py - monitor-sketcher - Visual Studio Code",
+            "작업 전환",
+            "Monitor Sketcher · 검사 - Chrome"
+        ],
+        "window_labels": [
+            "other",
+            "other",
+            "other",
+            "other",
+            "other"
+        ],
+        "distribution": {
+            "percent": {
+                "other": 100.0
+            },
+            "ratio": {
+                "other": 1.0
+            }
+        }
+    },
+    "screen": {
+        "screen_probs": {
+            "game": 1.1774964150390588e-05,
+            "other": 6.756045877409633e-06,
+            "sns": 2.8150207072030753e-06,
+            "study": 0.9973697066307068,
+            "webtoon": 0.0025256993249058723,
+            "youtube-ent": 8.322778739966452e-05,
+            "youtube-music": 4.44192380655295e-08
+        },
+        "screen_top": "study",
+        "capture_count": 8,
+        "num_captures": 8,
+        "total_captures": 8
+    },
+    "input": {
+        "key_count": 72,
+        "mouse_count": 16
+    },
+    "engagement": {
+        "idle_percent": 0.0,
+        "idle_ratio": 0.0,
+        "idle_time_sec": 0,
+        "input_per_min": 76.63574980221662,
+        "session_duration_sec": 68.897349,
+        "total_input": 88
+    },
+    "process": {
+        "process_count": 0
+    },
+    "focus_ratio": 0.0,
+    "focus_percent": 0.0,
+    "inputPerMin": 76.63574980221662
+}

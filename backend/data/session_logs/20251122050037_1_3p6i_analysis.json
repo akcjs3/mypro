@@ -1,0 +1,50 @@
+{
+    "session_id": "20251122050037_1_3p6i",
+    "user_id": 1,
+    "usage_index": 1,
+    "selected_task": "study",
+    "final_label": "youtube-music",
+    "predicted": "youtube-music",
+    "activity_distribution": {
+        "percent": {},
+        "ratio": {}
+    },
+    "window": {
+        "window_titles": [],
+        "window_labels": [],
+        "distribution": {
+            "percent": {},
+            "ratio": {}
+        }
+    },
+    "screen": {
+        "screen_probs": {
+            "game": 0.0,
+            "other": 0.0,
+            "sns": 0.0,
+            "study": 0.0,
+            "webtoon": 0.0,
+            "youtube-ent": 0.0,
+            "youtube-music": 0.0
+        },
+        "screen_top": null
+    },
+    "input": {
+        "key_count": 0,
+        "mouse_count": 0
+    },
+    "engagement": {
+        "idle_percent": 0.0,
+        "idle_ratio": 0.0,
+        "idle_time_sec": 0,
+        "input_per_min": 0.0,
+        "session_duration_sec": 1.0,
+        "total_input": 0
+    },
+    "process": {
+        "process_count": 0
+    },
+    "focus_ratio": 0.0,
+    "focus_percent": 0.0,
+    "inputPerMin": 0.0
+}

@@ -1,0 +1,77 @@
+{
+    "session_id": "20251122121748_1_5e8f",
+    "user_id": 1,
+    "usage_index": 1,
+    "selected_task": "webtoon",
+    "session_start": "2025-11-22T12:17:48.248313",
+    "session_end": "2025-11-22T12:19:07.770115",
+    "final_label": "webtoon",
+    "predicted": "webtoon",
+    "activity_distribution": {
+        "percent": {
+            "other": 25.0,
+            "webtoon": 75.0
+        },
+        "ratio": {
+            "other": 0.25,
+            "webtoon": 0.75
+        }
+    },
+    "window": {
+        "window_titles": [
+            "DB 이관 및 인증 변경 - Chrome",
+            "20 중반, 성공이란 무엇인가 - 5화 - 동훈이의 짝사랑 : 네이버 웹툰 - Chrome",
+            "20 중반, 성공이란 무엇인가 - 5화 - 동훈이의 짝사랑 : 네이버 웹툰 - Chrome",
+            "20 중반, 성공이란 무엇인가 - 5화 - 동훈이의 짝사랑 : 네이버 웹툰 - Chrome"
+        ],
+        "window_labels": [
+            "other",
+            "webtoon",
+            "webtoon",
+            "webtoon"
+        ],
+        "distribution": {
+            "percent": {
+                "other": 25.0,
+                "webtoon": 75.0
+            },
+            "ratio": {
+                "other": 0.25,
+                "webtoon": 0.75
+            }
+        }
+    },
+    "screen": {
+        "screen_probs": {
+            "game": 0.2412877082824707,
+            "other": 0.6676849722862244,
+            "sns": 0.00021875447419006377,
+            "study": 0.06814879924058914,
+            "webtoon": 0.02260013110935688,
+            "youtube-ent": 3.545949948602356e-05,
+            "youtube-music": 2.4204802684835158e-05
+        },
+        "screen_top": "other",
+        "capture_count": 8,
+        "num_captures": 8,
+        "total_captures": 8
+    },
+    "input": {
+        "key_count": 0,
+        "mouse_count": 421
+    },
+    "engagement": {
+        "idle_percent": 0.0,
+        "idle_ratio": 0.0,
+        "idle_time_sec": 0,
+        "input_per_min": 317.6487373865094,
+        "session_duration_sec": 79.521802,
+        "total_input": 421
+    },
+    "process": {
+        "process_count": 0
+    },
+    "focus_ratio": 0.75,
+    "focus_percent": 75.0,
+    "inputPerMin": 317.6487373865094
+}

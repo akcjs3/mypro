@@ -1,0 +1,81 @@
+{
+    "session_id": "20251122120412_1_v83r",
+    "user_id": 1,
+    "usage_index": 1,
+    "selected_task": "study",
+    "session_start": "2025-11-22T12:04:12.579095",
+    "session_end": "2025-11-22T12:07:50.068929",
+    "final_label": "webtoon",
+    "predicted": "webtoon",
+    "activity_distribution": {
+        "percent": {
+            "study": 33.33333333333333,
+            "webtoon": 66.66666666666666
+        },
+        "ratio": {
+            "study": 0.33333333333333326,
+            "webtoon": 0.6666666666666665
+        }
+    },
+    "window": {
+        "window_titles": [
+            "(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome",
+            "(2025) 일주일만에 합격하는 정보처리기사 실기 | 학습 페이지 - Chrome",
+            "경경수의 개발만화 - 3화.버그가 아니고 기능 : 네이버 웹툰 - Chrome",
+            "네이버 웹툰 - Chrome",
+            "20 중반, 성공이란 무엇인가 : 네이버 웹툰 - Chrome",
+            "20 중반, 성공이란 무엇인가 - 5화 - 동훈이의 짝사랑 : 네이버 웹툰 - Chrome"
+        ],
+        "window_labels": [
+            "study",
+            "study",
+            "webtoon",
+            "webtoon",
+            "webtoon",
+            "webtoon"
+        ],
+        "distribution": {
+            "percent": {
+                "study": 33.33333333333333,
+                "webtoon": 66.66666666666666
+            },
+            "ratio": {
+                "study": 0.33333333333333326,
+                "webtoon": 0.6666666666666665
+            }
+        }
+    },
+    "screen": {
+        "screen_probs": {
+            "game": 1.6819973097881302e-05,
+            "other": 0.19575239717960358,
+            "sns": 0.0020376278553158045,
+            "study": 0.2989217936992645,
+            "webtoon": 0.5026190280914307,
+            "youtube-ent": 0.0006513899425044656,
+            "youtube-music": 9.489809826845885e-07
+        },
+        "screen_top": "webtoon",
+        "capture_count": 8,
+        "num_captures": 8,
+        "total_captures": 8
+    },
+    "input": {
+        "key_count": 0,
+        "mouse_count": 806
+    },
+    "engagement": {
+        "idle_percent": 0.0,
+        "idle_ratio": 0.0,
+        "idle_time_sec": 0,
+        "input_per_min": 222.35522052033016,
+        "session_duration_sec": 217.489834,
+        "total_input": 806
+    },
+    "process": {
+        "process_count": 0
+    },
+    "focus_ratio": 0.33333333333333326,
+    "focus_percent": 33.33333333333333,
+    "inputPerMin": 222.35522052033016
+}

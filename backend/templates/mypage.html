@@ -1,763 +1,813 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <title>Monitor Sketcher · 마이페이지</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Monitor Sketcher · 마이페이지</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
 
-  <style>
-    /* ==============================
+    <style>
+      /* ==============================
        mypage 전용 스타일
     =============================== */
-    .sessions-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
+      .sessions-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
 
-.sessions-title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #fff;
-}
-.date-filter {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  opacity: 0.85;
-  font-size: 0.92rem;
-}
+      .sessions-title {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #fff;
+      }
+      .date-filter {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        opacity: 0.85;
+        font-size: 0.92rem;
+      }
 
-.date-filter input {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(200,200,255,0.5);
-  color: #fff;
-  padding: 4px 2px;
-  outline: none;
-}
+      .date-filter input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(200, 200, 255, 0.5);
+        color: #fff;
+        padding: 4px 2px;
+        outline: none;
+      }
 
-.date-filter input::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-  cursor: pointer;
-}
-.session-item {
-  background: rgba(10,10,30,0.85);
-  border: 1px solid rgba(120,120,200,0.35);
-  border-radius: 14px;
-  padding: 1.1rem 1.4rem;
-  margin-bottom: 1rem;   /* 박스 간 간격 추가 */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+      .date-filter input::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+        cursor: pointer;
+      }
+      .session-item {
+        background: rgba(10, 10, 30, 0.85);
+        border: 1px solid rgba(120, 120, 200, 0.35);
+        border-radius: 14px;
+        padding: 1.1rem 1.4rem;
+        margin-bottom: 1rem; /* 박스 간 간격 추가 */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-.session-info {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
+      .session-info {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
 
-.session-title {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #fff;
-}
+      .session-title {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #fff;
+      }
 
-.session-sub {
-  font-size: .9rem;
-  opacity: 0.85;
-}
+      .session-sub {
+        font-size: 0.9rem;
+        opacity: 0.85;
+      }
 
-.session-focus {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ff8fb3;
-}
+      .session-focus {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #ff8fb3;
+      }
 
+      .mypage-card,
+      .mypage-card:hover {
+        transform: none !important;
+        filter: none !important;
+        background: inherit !important;
+        box-shadow: none !important;
+        cursor: default !important;
+      }
 
-    .mypage-card,
-    .mypage-card:hover {
-      transform: none !important;
-      filter: none !important;
-      background: inherit !important;
-      box-shadow: none !important;
-      cursor: default !important;
-    }
+      .mypage-hero-title {
+        font-size: clamp(1.7rem, 3vw, 2.2rem);
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+      .mypage-hero-subtitle {
+        font-size: 0.95rem;
+        color: rgba(235, 235, 255, 0.85);
+        margin-top: 0.8rem;
+        margin-bottom: 1.6rem;
+      }
 
-    .mypage-hero-title {
-      font-size: clamp(1.7rem, 3vw, 2.2rem);
-      font-weight: 800;
-      margin-bottom: 0.5rem;
-    }
-    .mypage-hero-subtitle {
-      font-size: 0.95rem;
-      color: rgba(235,235,255,0.85);
-      margin-top: 0.8rem;
-      margin-bottom: 1.6rem;
-    }
+      .mypage-actions {
+        display: flex;
+        gap: 0.8rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
 
-    .mypage-actions {
-      display: flex;
-      gap: .8rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
+      .mypage-action-btn {
+        min-width: 180px;
+        padding: 0.8rem 1.2rem;
+        border-radius: 999px;
+        background: rgba(10, 10, 35, 0.9);
+        border: 1px solid rgba(120, 120, 200, 0.6);
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.15s;
+      }
+      .mypage-action-btn.primary {
+        background: linear-gradient(90deg, #7c4dff, #ff6b6b);
+        border: none;
+      }
 
-    .mypage-action-btn {
-      min-width: 180px;
-      padding: 0.8rem 1.2rem;
-      border-radius: 999px;
-      background: rgba(10,10,35,0.9);
-      border: 1px solid rgba(120,120,200,0.6);
-      color: #fff;
-      font-weight: 700;
-      cursor: pointer;
-      transition: .15s;
-    }
-    .mypage-action-btn.primary {
-      background: linear-gradient(90deg, #7c4dff, #ff6b6b);
-      border: none;
-    }
+      .hero-card.mypage-expanded {
+        min-height: 560px;
+      }
+      .hero-card.mypage-expanded .mypage-initial {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: 0.35s;
+      }
 
-    .hero-card.mypage-expanded {
-      min-height: 560px;
-    }
-    .hero-card.mypage-expanded .mypage-initial {
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(-8px);
-      transition: .35s;
-    }
+      .mypage-panel {
+        display: none;
+        position: absolute;
+        inset: 0;
+        padding: 3rem 2.3rem;
+        overflow-y: auto;
+        color: #f6f6ff;
+      }
 
-    .mypage-panel {
-      display: none;
-      position: absolute;
-      inset: 0;
-      padding: 3rem 2.3rem;
-      overflow-y: auto;
-      color: #f6f6ff;
-    }
+      .hero-card.sessions-mode .mypage-sessions-panel {
+        display: block;
+      }
+      .hero-card.study-mode .mypage-study-panel {
+        display: block;
+      }
 
-    .hero-card.sessions-mode .mypage-sessions-panel { display: block; }
-    .hero-card.study-mode .mypage-study-panel { display: block; }
+      .mypage-back {
+        display: none;
+        position: fixed;
+        right: 160px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 86px;
+        height: 86px;
+        border-radius: 50%;
+        background: rgba(10, 10, 35, 0.94);
+        border: 1px solid rgba(120, 120, 200, 0.55);
+        color: #fff;
+        font-weight: 900;
+        cursor: pointer;
+        z-index: 999;
+      }
+      .mypage-back.show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    .mypage-back {
-      display: none;
-      position: fixed;
-      right: 160px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 86px;
-      height: 86px;
-      border-radius: 50%;
-      background: rgba(10,10,35,0.94);
-      border: 1px solid rgba(120,120,200,0.55);
-      color:#fff;
-      font-weight: 900;
-      cursor: pointer;
-      z-index: 999;
-    }
-    .mypage-back.show { display: flex; align-items: center; justify-content: center; }
+      .session-item {
+        background: rgba(5, 5, 25, 0.95);
+        border: 1px solid rgba(120, 120, 200, 0.5);
+        border-radius: 14px;
+        padding: 0.7rem 1rem;
+        cursor: pointer;
+        min-height: 62px;
+        transition: 0.15s;
+      }
+      .session-item:hover {
+        background: rgba(20, 20, 55, 0.95);
+        transform: translateY(-1px);
+      }
 
-    .session-item {
-      background: rgba(5,5,25,0.95);
-      border:1px solid rgba(120,120,200,0.5);
-      border-radius:14px;
-      padding:0.7rem 1rem;
-      cursor:pointer;
-      min-height: 62px;
-      transition:.15s;
-    }
-    .session-item:hover {
-      background: rgba(20,20,55,0.95);
-      transform: translateY(-1px);
-    }
+      .session-meta {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        overflow: hidden;
+      }
 
-    .session-meta {
-      display:flex;
-      align-items:center;
-      gap:0.7rem;
-      overflow:hidden;
-    }
+      /* 모달 */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      .modal-overlay.show {
+        display: flex;
+      }
+      .detail-wrap {
+        display: flex;
+        gap: 2rem;
+        padding: 1.5rem;
+      }
 
-    /* 모달 */
-    .modal-overlay {
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.6);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-    }
-    .modal-overlay.show { display:flex; }
-    .detail-wrap {
-  display: flex;
-  gap: 2rem;
-  padding: 1.5rem;
-}
+      .detail-left {
+        flex: 1.1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
 
-.detail-left {
-  flex: 1.1;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+      .detail-right {
+        flex: 1;
+        background: rgba(10, 10, 30, 0.7);
+        padding: 1rem;
+        border-radius: 12px;
+      }
 
-.detail-right {
-  flex: 1;
-  background: rgba(10,10,30,0.7);
-  padding: 1rem;
-  border-radius: 12px;
-}
+      .detail-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
 
-.detail-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-}
+      .summary-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
 
-.summary-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
+      .summary-box {
+        background: rgba(20, 20, 55, 0.7);
+        padding: 0.95rem 1.15rem; /* ✅ 조금 더 여유 */
+        border-radius: 10px;
+        line-height: 1.65; /* ✅ 글자 간격 */
+        display: flex; /* ✅ 라벨-값 간격 균일 */
+        justify-content: space-between;
+        align-items: center;
+      }
+      .summary-box b {
+        font-weight: 800;
+        letter-spacing: 0.2px; /* 살짝 또렷하게 */
+      }
 
-.summary-box {
-  background: rgba(20,20,55,0.7);
-  padding: 0.95rem 1.15rem;  /* ✅ 조금 더 여유 */
-  border-radius: 10px;
-  line-height: 1.65;         /* ✅ 글자 간격 */
-  display: flex;             /* ✅ 라벨-값 간격 균일 */
-  justify-content: space-between;
-  align-items: center;
-}
-.summary-box b {
-  font-weight: 800;
-  letter-spacing: .2px;      /* 살짝 또렷하게 */
-}
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55); /* 약간 어둡게 */
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
 
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);   /* 약간 어둡게 */
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
+      .modal-overlay.show {
+        display: flex;
+      }
 
-.modal-overlay.show {
-  display: flex;
-}
+      /* 모달 박스 */
+      .modal-card {
+        background: linear-gradient(
+          145deg,
+          rgba(20, 20, 40, 0.95),
+          rgba(10, 10, 25, 0.95)
+        );
+        border: 1px solid rgba(120, 120, 200, 0.3);
+        border-radius: 18px;
+        padding: 1.8rem;
+        width: 680px;
+        max-width: 92%;
+        color: #fff;
+        position: relative;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+        animation: modalPop 0.25s ease-out;
+      }
 
-/* 모달 박스 */
-.modal-card {
-  background: linear-gradient(145deg, rgba(20,20,40,0.95), rgba(10,10,25,0.95));
-  border: 1px solid rgba(120,120,200,0.3);
-  border-radius: 18px;
-  padding: 1.8rem;
-  width: 680px;
-  max-width: 92%;
-  color: #fff;
-  position: relative;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.45);
-  animation: modalPop 0.25s ease-out;
-}
+      @keyframes modalPop {
+        from {
+          transform: scale(0.92);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .modal-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(50, 50, 90, 0.6);
+        color: #fff;
+        border: none;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: 0.15s;
+      }
 
-@keyframes modalPop {
-  from { transform: scale(0.92); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
-}
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(50,50,90,0.6);
-  color: #fff;
-  border: none;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: 0.15s;
-}
+      .modal-close:hover {
+        background: rgba(80, 80, 150, 0.8);
+        transform: scale(1.07);
+      }
+      .mypage-panel {
+        overflow: hidden; /* ✅ auto → hidden */
+      }
+      .hero-card.mypage-expanded {
+        min-height: unset;
+        height: calc(100vh - 220px); /* ✅ 헤더/푸터 제외하고 화면에 딱 */
+      }
+      /* 전체 페이지는 고정(바디 스크롤 방지) */
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
 
-.modal-close:hover {
-  background: rgba(80,80,150,0.8);
-  transform: scale(1.07);
-}
-.mypage-panel {
-  overflow: hidden;   /* ✅ auto → hidden */
-}
-.hero-card.mypage-expanded {
-  min-height: unset; 
-  height: calc(100vh - 220px);  /* ✅ 헤더/푸터 제외하고 화면에 딱 */
-}
-/* 전체 페이지는 고정(바디 스크롤 방지) */
-html, body {
-  height: 100%;
-  overflow: hidden;
-}
+      /* 확장된 hero 카드가 화면 안에 들어오게 유지 */
+      .hero-card.mypage-expanded {
+        min-height: unset;
+        height: calc(100vh - 220px);
+        position: relative; /* 패널 absolute 기준 */
+      }
 
-/* 확장된 hero 카드가 화면 안에 들어오게 유지 */
-.hero-card.mypage-expanded {
-  min-height: unset;
-  height: calc(100vh - 220px);
-  position: relative; /* 패널 absolute 기준 */
-}
+      /* ✅ 세션/스터디 패널 내부만 스크롤 가능 */
+      .mypage-sessions-panel,
+      .mypage-study-panel {
+        overflow-y: auto;
+        height: 100%; /* hero-card 안 높이 꽉 채움 */
+        padding-bottom: 2rem; /* 맨 아래 잘림 방지 */
+        overscroll-behavior: contain; /* 스크롤 튐 방지 */
+      }
 
-/* ✅ 세션/스터디 패널 내부만 스크롤 가능 */
-.mypage-sessions-panel,
-.mypage-study-panel {
-  overflow-y: auto;
-  height: 100%;            /* hero-card 안 높이 꽉 채움 */
-  padding-bottom: 2rem;    /* 맨 아래 잘림 방지 */
-  overscroll-behavior: contain; /* 스크롤 튐 방지 */
-}
-
-/* ==============================
+      /* ==============================
    Study 패널 레이아웃/크기 조정
 ============================== */
 
-.study-head {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 1rem;
-}
+      .study-head {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 1rem;
+      }
 
-/* 타이틀을 “세션 결과창 검사 요약” 크기로 */
-.study-title {
-  font-size: 1.4rem;   /* 검사 요약급 */
-  font-weight: 800;
-  color: #fff;
-}
+      /* 타이틀을 “세션 결과창 검사 요약” 크기로 */
+      .study-title {
+        font-size: 1.4rem; /* 검사 요약급 */
+        font-weight: 800;
+        color: #fff;
+      }
 
-/* 카드 3개 수평 정렬 */
-.study-cards-row {
-  display: flex;
-  gap: 1rem;
-  align-items: stretch;
-  margin-bottom: 1.2rem;
-  flex-wrap: wrap; /* 모바일 대응 */
-}
+      /* 카드 3개 수평 정렬 */
+      .study-cards-row {
+        display: flex;
+        gap: 1rem;
+        align-items: stretch;
+        margin-bottom: 1.2rem;
+        flex-wrap: wrap; /* 모바일 대응 */
+      }
 
-/* 카드 디자인 = 기존 summary-box 느낌 */
-.study-card {
-  flex: 1;
-  min-width: 180px;
-  background: rgba(20,20,55,0.7);
-  border: 1px solid rgba(120,120,200,0.35);
-  padding: .8rem 1rem;
-  border-radius: 12px;
-}
+      /* 카드 디자인 = 기존 summary-box 느낌 */
+      .study-card {
+        flex: 1;
+        min-width: 180px;
+        background: rgba(20, 20, 55, 0.7);
+        border: 1px solid rgba(120, 120, 200, 0.35);
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+      }
 
-/* 카드 안 텍스트 */
-.study-card .k {
-  font-size: .9rem;
-  opacity: .85;
-  margin-bottom: .4rem;
-}
-.study-card .v {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #ff8fb3;
-}
+      /* 카드 안 텍스트 */
+      .study-card .k {
+        font-size: 0.9rem;
+        opacity: 0.85;
+        margin-bottom: 0.4rem;
+      }
+      .study-card .v {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #ff8fb3;
+      }
 
-/* 그래프 영역 조금 줄여서 스크롤 방지 */
-.study-chart-wrap {
-  background: rgba(10,10,30,0.55);
-  border: 1px solid rgba(120,120,200,0.25);
-  border-radius: 12px;
-  padding: 0.9rem 1rem;
-}
+      /* 그래프 영역 조금 줄여서 스크롤 방지 */
+      .study-chart-wrap {
+        background: rgba(10, 10, 30, 0.55);
+        border: 1px solid rgba(120, 120, 200, 0.25);
+        border-radius: 12px;
+        padding: 0.9rem 1rem;
+      }
 
-/* 제목 글자만 굵게 */
-.study-chart-title {
-  font-weight: 800;
-  margin-bottom: .6rem;
-  font-size: 1rem;
-}
+      /* 제목 글자만 굵게 */
+      .study-chart-title {
+        font-weight: 800;
+        margin-bottom: 0.6rem;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
 
-  </style>
-</head>
+  <body>
+    <div class="app">
+      <!-- 상단 헤더 -->
+      <header class="site-header">
+        <div class="header-inner">
+          <a href="index.html" class="brand brand-link">
+            <div class="brand-logo-mark">
+              <img src="./src/logo.png" alt="Monitor Sketcher 로고" />
+            </div>
+            <span class="brand-text">Monitor Sketcher</span>
+          </a>
 
-<body>
-  <div class="app">
+          <nav class="main-nav">
+            <a href="test.html" class="nav-link">검사</a>
+            <a href="ranking.html" class="nav-link">랭킹</a>
+            <a href="about.html" class="nav-link">소개</a>
+            <a href="contact.html" class="nav-link">문의</a>
+          </nav>
 
-    <!-- 상단 헤더 -->
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="brand brand-link">
-          <div class="brand-logo-mark">
-            <img src="./src/logo.png" alt="Monitor Sketcher 로고" />
-          </div>
-          <span class="brand-text">Monitor Sketcher</span>
-        </a>
-
-        <nav class="main-nav">
-          <a href="test.html" class="nav-link">검사</a>
-          <a href="ranking.html" class="nav-link">랭킹</a>
-          <a href="about.html" class="nav-link">소개</a>
-          <a href="contact.html" class="nav-link">문의</a>
-        </nav>
-
-        <div class="header-actions">
-          <span id="user-nickname-label" class="nickname-label hidden"></span>
-          <button id="mypage-btn" class="header-btn outline-btn hidden">마이페이지</button>
-          <button id="login-btn" class="header-btn primary-btn">로그인</button>
-          <button id="logout-btn" class="header-btn outline-btn hidden">로그아웃</button>
-        </div>
-      </div>
-    </header>
-
-
-    <!-- 메인 히어로 -->
-    <main class="hero">
-      <section class="hero-card mypage-card">
-        <div class="hero-glow"></div>
-
-        <!-- 초기 화면 -->
-        <div class="hero-content mypage-initial">
-          <img src="./src/logo.png" alt="logo" class="hero-logo" />
-          <h1 class="mypage-hero-title">마이페이지</h1>
-          <p class="mypage-hero-subtitle">나의 검사 기록과 집중도 변화를 확인해보세요.</p>
-
-          <div class="mypage-actions">
-            <button id="btn-sessions" class="mypage-action-btn">기록 조회</button>
-            <button id="btn-study" class="mypage-action-btn primary">누적 집중도</button>
+          <div class="header-actions">
+            <span id="user-nickname-label" class="nickname-label hidden"></span>
+            <button id="mypage-btn" class="header-btn outline-btn hidden">
+              마이페이지
+            </button>
+            <button id="login-btn" class="header-btn primary-btn">
+              로그인
+            </button>
+            <button id="logout-btn" class="header-btn outline-btn hidden">
+              로그아웃
+            </button>
           </div>
         </div>
+      </header>
 
-        <!-- 기록 조회 패널 -->
-        <div class="mypage-panel mypage-sessions-panel">
-          <div class="sessions-head">
-            <div class="sessions-title">기록 살펴보기</div>
+      <!-- 메인 히어로 -->
+      <main class="hero">
+        <section class="hero-card mypage-card">
+          <div class="hero-glow"></div>
 
-            <div class="date-filter">
-              <span style="font-size:.82rem;opacity:.9;">기간 설정</span>
-              <input id="from-date" type="date" />
-              <span style="opacity:.7;">~</span>
-              <input id="to-date" type="date" />
+          <!-- 초기 화면 -->
+          <div class="hero-content mypage-initial">
+            <img src="./src/logo.png" alt="logo" class="hero-logo" />
+            <h1 class="mypage-hero-title">마이페이지</h1>
+            <p class="mypage-hero-subtitle">
+              나의 검사 기록과 집중도 변화를 확인해보세요.
+            </p>
+
+            <div class="mypage-actions">
+              <button id="btn-sessions" class="mypage-action-btn">
+                기록 조회
+              </button>
+              <button id="btn-study" class="mypage-action-btn primary">
+                누적 집중도
+              </button>
             </div>
           </div>
 
-          <div id="session-list" class="session-list"></div>
-          <button id="btn-back-from-sessions" class="mypage-back">돌아가기</button>
-        </div>
+          <!-- 기록 조회 패널 -->
+          <div class="mypage-panel mypage-sessions-panel">
+            <div class="sessions-head">
+              <div class="sessions-title">기록 살펴보기</div>
 
-        <!-- Study 패널 -->
-        <div class="mypage-panel mypage-study-panel">
+              <div class="date-filter">
+                <span style="font-size: 0.82rem; opacity: 0.9">기간 설정</span>
+                <input id="from-date" type="date" />
+                <span style="opacity: 0.7">~</span>
+                <input id="to-date" type="date" />
+              </div>
+            </div>
 
-  <!-- 왼쪽 위 타이틀 -->
-  <div class="study-head">
-    <div class="study-title">Study 집중도 분석</div>
-  </div>
+            <div id="session-list" class="session-list"></div>
+            <button id="btn-back-from-sessions" class="mypage-back">
+              돌아가기
+            </button>
+          </div>
 
-  <!-- 지표 카드 3개 수평 배치 -->
-  <div class="study-cards-row">
-    <div class="study-card">
-      <div class="k">Study 선택 횟수</div>
-      <div id="study-total-sessions" class="v">-</div>
+          <!-- Study 패널 -->
+          <div class="mypage-panel mypage-study-panel">
+            <!-- 왼쪽 위 타이틀 -->
+            <div class="study-head">
+              <div class="study-title">Study 집중도 분석</div>
+            </div>
+
+            <!-- 지표 카드 3개 수평 배치 -->
+            <div class="study-cards-row">
+              <div class="study-card">
+                <div class="k">Study 선택 횟수</div>
+                <div id="study-total-sessions" class="v">-</div>
+              </div>
+
+              <div class="study-card">
+                <div class="k">누적 평균 집중도</div>
+                <div id="study-avg-focus" class="v">-</div>
+              </div>
+
+              <div class="study-card">
+                <div class="k">가장 방해된 활동</div>
+                <div id="study-top-distract" class="v">-</div>
+              </div>
+            </div>
+
+            <!-- 그래프 -->
+            <div class="study-chart-wrap">
+              <div class="study-chart-title">일별 집중도 변화</div>
+              <!-- height 살짝 줄여서 스크롤 없게 -->
+              <canvas id="weekly-focus-chart" height="120"></canvas>
+            </div>
+
+            <button id="btn-back-from-study" class="mypage-back">
+              돌아가기
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span
+          >졸업 작품 · Monitor Sketcher · PC 사용 기록 기반 집중도 분석
+          서비스</span
+        >
+      </footer>
     </div>
 
-    <div class="study-card">
-      <div class="k">누적 평균 집중도</div>
-      <div id="study-avg-focus" class="v">-</div>
+    <!-- 모달 1개만 유지 -->
+    <div id="sessionModal" class="modal-overlay">
+      <div class="modal-card">
+        <button id="modalClose" class="modal-close">×</button>
+        <div id="modalBody"></div>
+      </div>
     </div>
 
-    <div class="study-card">
-      <div class="k">가장 방해된 활동</div>
-      <div id="study-top-distract" class="v">-</div>
-    </div>
-  </div>
+    <!-- 스크립트들 -->
+    <script src="/static/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- 그래프 -->
-  <div class="study-chart-wrap">
-    <div class="study-chart-title">일별 집중도 변화</div>
-    <!-- height 살짝 줄여서 스크롤 없게 -->
-    <canvas id="weekly-focus-chart" height="120"></canvas>
-  </div>
-
-  <button id="btn-back-from-study" class="mypage-back">돌아가기</button>
-</div>
-
-      </section>
-    </main>
-
-    <footer class="footer">
-      <span>졸업 작품 · Monitor Sketcher · PC 사용 기록 기반 집중도 분석 서비스</span>
-    </footer>
-
-  </div>
-
-  <!-- 모달 1개만 유지 -->
-  <div id="sessionModal" class="modal-overlay">
-  <div class="modal-card">
-    <button id="modalClose" class="modal-close">×</button>
-    <div id="modalBody"></div>
-    </div>
-</div>
-
-
-
-  <!-- 스크립트들 -->
-  <script src="./js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- 내부 JS (원본 100% 유지) -->
-  <script>
-    /* --------------------------------------
+    <!-- 내부 JS (원본 100% 유지) -->
+    <script>
+      /* --------------------------------------
        🔒 1) getCurrentUser() 로딩 대기
     -------------------------------------- */
-    async function waitForGetCurrentUser() {
-      return new Promise(resolve => {
-        const timer = setInterval(() => {
-          if (typeof getCurrentUser === "function") {
-            clearInterval(timer);
-            resolve();
-          }
-        }, 30);
-      });
-    }
-
-    /* --------------------------------------
-       🔥 2) DOMContentLoaded
-    -------------------------------------- */
-    document.addEventListener("DOMContentLoaded", async () => {
-
-      await waitForGetCurrentUser();
-      const user = getCurrentUser();
-
-      if (!user || !user.user_id) {
-        alert("로그인이 필요합니다.");
-        window.location.href = "login.html";
-        return;
+      async function waitForGetCurrentUser() {
+        return new Promise((resolve) => {
+          const timer = setInterval(() => {
+            if (typeof getCurrentUser === "function") {
+              clearInterval(timer);
+              resolve();
+            }
+          }, 30);
+        });
       }
-
-      const heroCard = document.querySelector(".mypage-card");
-
-      const btnSessions = document.getElementById("btn-sessions");
-      const btnStudy = document.getElementById("btn-study");
-      const backSessions = document.getElementById("btn-back-from-sessions");
-      const backStudy = document.getElementById("btn-back-from-study");
-
-      function openSessionsMode() {
-        heroCard.classList.add("mypage-expanded", "sessions-mode");
-        heroCard.classList.remove("study-mode");
-        backSessions.classList.add("show");
-        backStudy.classList.remove("show");
-        loadSessions();
-      }
-      function openStudyMode() {
-        heroCard.classList.add("mypage-expanded", "study-mode");
-        heroCard.classList.remove("sessions-mode");
-        backStudy.classList.add("show");
-        backSessions.classList.remove("show");
-        loadStudySummary();
-      }
-      function backToInitial() {
-        heroCard.classList.remove("mypage-expanded", "sessions-mode", "study-mode");
-        backSessions.classList.remove("show");
-        backStudy.classList.remove("show");
-      }
-
-      btnSessions.addEventListener("click", openSessionsMode);
-      btnStudy.addEventListener("click", openStudyMode);
-      backSessions.addEventListener("click", backToInitial);
-      backStudy.addEventListener("click", backToInitial);
-
-      /* 모달 */
-      const modal = document.getElementById("sessionModal");
-      const modalBody = document.getElementById("modalBody");
-      const modalClose = document.getElementById("modalClose");
-
-      function openModal() { modal.classList.add("show"); }
-      function closeModal() {
-        modal.classList.remove("show");
-        destroyDetailCharts();
-      }
-      modalClose.addEventListener("click", closeModal);
-      modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
 
       /* --------------------------------------
+       🔥 2) DOMContentLoaded
+    -------------------------------------- */
+      document.addEventListener("DOMContentLoaded", async () => {
+        await waitForGetCurrentUser();
+        const user = getCurrentUser();
+
+        if (!user || !user.user_id) {
+          alert("로그인이 필요합니다.");
+          window.location.href = "login.html";
+          return;
+        }
+
+        const heroCard = document.querySelector(".mypage-card");
+
+        const btnSessions = document.getElementById("btn-sessions");
+        const btnStudy = document.getElementById("btn-study");
+        const backSessions = document.getElementById("btn-back-from-sessions");
+        const backStudy = document.getElementById("btn-back-from-study");
+
+        function openSessionsMode() {
+          heroCard.classList.add("mypage-expanded", "sessions-mode");
+          heroCard.classList.remove("study-mode");
+          backSessions.classList.add("show");
+          backStudy.classList.remove("show");
+          loadSessions();
+        }
+        function openStudyMode() {
+          heroCard.classList.add("mypage-expanded", "study-mode");
+          heroCard.classList.remove("sessions-mode");
+          backStudy.classList.add("show");
+          backSessions.classList.remove("show");
+          loadStudySummary();
+        }
+        function backToInitial() {
+          heroCard.classList.remove(
+            "mypage-expanded",
+            "sessions-mode",
+            "study-mode"
+          );
+          backSessions.classList.remove("show");
+          backStudy.classList.remove("show");
+        }
+
+        btnSessions.addEventListener("click", openSessionsMode);
+        btnStudy.addEventListener("click", openStudyMode);
+        backSessions.addEventListener("click", backToInitial);
+        backStudy.addEventListener("click", backToInitial);
+
+        /* 모달 */
+        const modal = document.getElementById("sessionModal");
+        const modalBody = document.getElementById("modalBody");
+        const modalClose = document.getElementById("modalClose");
+
+        function openModal() {
+          modal.classList.add("show");
+        }
+        function closeModal() {
+          modal.classList.remove("show");
+          destroyDetailCharts();
+        }
+        modalClose.addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+
+        /* --------------------------------------
          세션 목록 불러오기
       -------------------------------------- */
-      const sessionListEl = document.getElementById("session-list");
-      const fromDateEl = document.getElementById("from-date");
-      const toDateEl = document.getElementById("to-date");
+        const sessionListEl = document.getElementById("session-list");
+        const fromDateEl = document.getElementById("from-date");
+        const toDateEl = document.getElementById("to-date");
 
-      fromDateEl.addEventListener("change", loadSessions);
-      toDateEl.addEventListener("change", loadSessions);
+        fromDateEl.addEventListener("change", loadSessions);
+        toDateEl.addEventListener("change", loadSessions);
 
-      async function loadSessions() {
-        const from = fromDateEl.value;
-        const to = toDateEl.value;
+        async function loadSessions() {
+          const from = fromDateEl.value;
+          const to = toDateEl.value;
 
-        const url = new URL("/api/mypage/sessions", window.location.origin);
-        url.searchParams.set("userId", user.user_id);
-        if (from) url.searchParams.set("dateFrom", from);
-        if (to) url.searchParams.set("dateTo", to);
+          const url = new URL("/api/mypage/sessions", window.location.origin);
+          url.searchParams.set("userId", user.user_id);
+          if (from) url.searchParams.set("dateFrom", from);
+          if (to) url.searchParams.set("dateTo", to);
 
-        sessionListEl.innerHTML = `<div style="opacity:.85;">세션 불러오는 중...</div>`;
+          sessionListEl.innerHTML = `<div style="opacity:.85;">세션 불러오는 중...</div>`;
 
-        try {
-          const res = await fetch(url.toString());
-          const data = await res.json();
+          try {
+            const res = await fetch(url.toString());
+            const data = await res.json();
 
-          if (!res.ok || !data.ok) {
-            sessionListEl.innerHTML = `<div style="opacity:.85;">세션이 없습니다.</div>`;
-            return;
-          }
+            if (!res.ok || !data.ok) {
+              sessionListEl.innerHTML = `<div style="opacity:.85;">세션이 없습니다.</div>`;
+              return;
+            }
 
-          const sessions = data.sessions || [];
-          if (sessions.length === 0) {
-            sessionListEl.innerHTML = `<div style="opacity:.85;">(해당 기간) 세션이 없습니다.</div>`;
-            return;
-          }
+            const sessions = data.sessions || [];
+            if (sessions.length === 0) {
+              sessionListEl.innerHTML = `<div style="opacity:.85;">(해당 기간) 세션이 없습니다.</div>`;
+              return;
+            }
 
-          sessionListEl.innerHTML = "";
+            sessionListEl.innerHTML = "";
 
-          sessions.forEach((s, index) => {
-            const item = document.createElement("div");
-            item.className = "session-item";
+            sessions.forEach((s, index) => {
+              const item = document.createElement("div");
+              item.className = "session-item";
 
-            const focus2 = Number(s.focus_percent ?? 0).toFixed(2);
+              const focus2 = Number(s.focus_percent ?? 0).toFixed(2);
 
-            item.innerHTML = `
+              item.innerHTML = `
             <div class="session-info">
               <div class="session-title">검사 ${index + 1}</div>
-              <div class="session-sub">선택한 작업: <b>${s.selected_task || "-"}</b></div>
+              <div class="session-sub">선택한 작업: <b>${
+                s.selected_task || "-"
+              }</b></div>
             </div>
             <div class="session-focus">${focus2}%</div>
             `;
-            item.addEventListener("click", () => loadSessionDetail(s.session_id, index + 1));
-            sessionListEl.appendChild(item);
-          });
-
-        } catch (err) {
-          console.error(err);
-          sessionListEl.innerHTML = `<div style="opacity:.85;">불러오기 실패</div>`;
+              item.addEventListener("click", () =>
+                loadSessionDetail(s.session_id, index + 1)
+              );
+              sessionListEl.appendChild(item);
+            });
+          } catch (err) {
+            console.error(err);
+            sessionListEl.innerHTML = `<div style="opacity:.85;">불러오기 실패</div>`;
+          }
         }
-      }
 
-      /* --------------------------------------
+        /* --------------------------------------
          세션 상세 모달
       -------------------------------------- */
-      let pieChartInstance = null;
+        let pieChartInstance = null;
 
-      function destroyDetailCharts() {
-        if (pieChartInstance) {
-          pieChartInstance.destroy();
-          pieChartInstance = null;
+        function destroyDetailCharts() {
+          if (pieChartInstance) {
+            pieChartInstance.destroy();
+            pieChartInstance = null;
+          }
         }
-      }
 
-      function normalizeResult(raw) {
-        const r = raw || {};
-        if (!r.engagement) r.engagement = {};
-        return r;
-      }
+        function normalizeResult(raw) {
+          const r = raw || {};
+          if (!r.engagement) r.engagement = {};
+          return r;
+        }
 
-async function loadSessionDetail(sessionId, testNo) {
-  const modalBody = document.getElementById("modalBody");
-  modalBody.innerHTML = `<div style="opacity:.85;">상세 불러오는 중...</div>`;
-  openModal();
+        async function loadSessionDetail(sessionId, testNo) {
+          const modalBody = document.getElementById("modalBody");
+          modalBody.innerHTML = `<div style="opacity:.85;">상세 불러오는 중...</div>`;
+          openModal();
 
-  try {
-    let res = await fetch(`/api/mypage/session/${sessionId}`);
-    let data = await res.json();
+          try {
+            let res = await fetch(`/api/mypage/session/${sessionId}`);
+            let data = await res.json();
 
-    if (!res.ok || !data.ok) {
-      res = await fetch(`/api/session/${sessionId}`);
-      data = await res.json();
-    }
-    if (!res.ok || !data.ok) {
-      modalBody.innerHTML = `<div style="opacity:.85;">상세 로드 실패</div>`;
-      return;
-    }
+            if (!res.ok || !data.ok) {
+              res = await fetch(`/api/session/${sessionId}`);
+              data = await res.json();
+            }
+            if (!res.ok || !data.ok) {
+              modalBody.innerHTML = `<div style="opacity:.85;">상세 로드 실패</div>`;
+              return;
+            }
 
-    // ✅ r 먼저 선언
-    const r = normalizeResult(data.analyzeResult || data.result || data);
+            // ✅ r 먼저 선언
+            const r = normalizeResult(
+              data.analyzeResult || data.result || data
+            );
 
-    /* ✅ 활동 비율(문자열이면 파싱) */
-    let ad = r.activity_distribution || r.activity_distribution_json || {};
-    if (typeof ad === "string") {
-      try { ad = JSON.parse(ad); } catch (e) { ad = {}; }
-    }
-    const distPercent = ad.percent || {};
+            /* ✅ 활동 비율(문자열이면 파싱) */
+            let ad =
+              r.activity_distribution || r.activity_distribution_json || {};
+            if (typeof ad === "string") {
+              try {
+                ad = JSON.parse(ad);
+              } catch (e) {
+                ad = {};
+              }
+            }
+            const distPercent = ad.percent || {};
 
-    /* ✅ 집중도 */
-    const focus2 = Number(r.focus_percent ?? 0).toFixed(2);
+            /* ✅ 집중도 */
+            const focus2 = Number(r.focus_percent ?? 0).toFixed(2);
 
-    /* ✅ 잠수 비율 */
-    const idleTime = Number(r.idle_time_sec ?? 0);
-    const durForIdle = (() => {
-      const st = r.session_start;
-      const et = r.session_end;
-      const sDate = st ? new Date(st.replace(" ", "T")) : null;
-      const eDate = et ? new Date(et.replace(" ", "T")) : null;
-      if (!sDate || !eDate || isNaN(sDate) || isNaN(eDate)) return 0;
-      return (eDate - sDate) / 1000;
-    })();
-    const idlePercentCalc = durForIdle > 0 ? (idleTime / durForIdle) * 100 : 0;
-    const idle2 = Number(
-      r.engagement?.idle_percent ?? r.idle_percent ?? idlePercentCalc
-    ).toFixed(2);
+            /* ✅ 잠수 비율 */
+            const idleTime = Number(r.idle_time_sec ?? 0);
+            const durForIdle = (() => {
+              const st = r.session_start;
+              const et = r.session_end;
+              const sDate = st ? new Date(st.replace(" ", "T")) : null;
+              const eDate = et ? new Date(et.replace(" ", "T")) : null;
+              if (!sDate || !eDate || isNaN(sDate) || isNaN(eDate)) return 0;
+              return (eDate - sDate) / 1000;
+            })();
+            const idlePercentCalc =
+              durForIdle > 0 ? (idleTime / durForIdle) * 100 : 0;
+            const idle2 = Number(
+              r.engagement?.idle_percent ?? r.idle_percent ?? idlePercentCalc
+            ).toFixed(2);
 
-    /* ✅ 검사 “총 시간” 만들기 (start/end 차이) */
-    // ✅ 검사 총 시간(시작~종료 차이) 계산 - 안전 파싱 버전
-function parseDateTime(raw) {
-  if (!raw) return null;
-  if (raw instanceof Date) return raw;
-  if (typeof raw === "number") return new Date(raw);
+            /* ✅ 검사 “총 시간” 만들기 (start/end 차이) */
+            // ✅ 검사 총 시간(시작~종료 차이) 계산 - 안전 파싱 버전
+            function parseDateTime(raw) {
+              if (!raw) return null;
+              if (raw instanceof Date) return raw;
+              if (typeof raw === "number") return new Date(raw);
 
-  let s = String(raw).trim();
+              let s = String(raw).trim();
 
-  // "YYYY-MM-DD HH:MM:SS" → "YYYY-MM-DDTHH:MM:SS"
-  if (s.includes(" ") && !s.includes("T")) {
-    s = s.replace(" ", "T");
-  }
+              // "YYYY-MM-DD HH:MM:SS" → "YYYY-MM-DDTHH:MM:SS"
+              if (s.includes(" ") && !s.includes("T")) {
+                s = s.replace(" ", "T");
+              }
 
-  // 혹시 ".000000" 같은 마이크로초 붙으면 제거
-  s = s.replace(/\.\d+$/, "");
+              // 혹시 ".000000" 같은 마이크로초 붙으면 제거
+              s = s.replace(/\.\d+$/, "");
 
-  const d = new Date(s);
-  return isNaN(d) ? null : d;
-}
+              const d = new Date(s);
+              return isNaN(d) ? null : d;
+            }
 
-const start = parseDateTime(r.session_start || r.start_time);
-const end   = parseDateTime(r.session_end   || r.end_time);
+            const start = parseDateTime(r.session_start || r.start_time);
+            const end = parseDateTime(r.session_end || r.end_time);
 
-let durationStr = "-";
-if (start && end) {
-  const durSec = Math.max(0, (end - start) / 1000);
+            let durationStr = "-";
+            if (start && end) {
+              const durSec = Math.max(0, (end - start) / 1000);
 
-  if (durSec >= 3600) {
-    const h = Math.floor(durSec / 3600);
-    const m = Math.floor((durSec % 3600) / 60);
-    durationStr = `${h}시간 ${m}분`;
-  } else if (durSec >= 60) {
-    const m = Math.floor(durSec / 60);
-    const s = Math.floor(durSec % 60);
-    durationStr = `${m}분 ${s}초`;
-  } else {
-    durationStr = `${durSec.toFixed(1)}초`;
-  }
-}
+              if (durSec >= 3600) {
+                const h = Math.floor(durSec / 3600);
+                const m = Math.floor((durSec % 3600) / 60);
+                durationStr = `${h}시간 ${m}분`;
+              } else if (durSec >= 60) {
+                const m = Math.floor(durSec / 60);
+                const s = Math.floor(durSec % 60);
+                durationStr = `${m}분 ${s}초`;
+              } else {
+                durationStr = `${durSec.toFixed(1)}초`;
+              }
+            }
 
-
-    modalBody.innerHTML = `
+            modalBody.innerHTML = `
       <div class="detail-wrap">
         <div class="detail-left">
           <div class="detail-title">검사 ${testNo} 요약</div>
           <div class="summary-stack">
-            <div class="summary-box">선택한 작업 <b>${r.selected_task || "-"}</b></div>
+            <div class="summary-box">선택한 작업 <b>${
+              r.selected_task || "-"
+            }</b></div>
             <div class="summary-box">집중도 <b>${focus2}%</b></div>
             <div class="summary-box">잠수 비율 <b>${idle2}%</b></div>
             <div class="summary-box">검사 시간 <b>${durationStr}</b></div>
@@ -771,243 +821,254 @@ if (start && end) {
       </div>
     `;
 
-    renderDetailPie(distPercent);
+            renderDetailPie(distPercent);
+          } catch (err) {
+            console.error(err);
+            modalBody.innerHTML = `<div style="opacity:.85;">상세 불러오기 실패</div>`;
+          }
+        }
 
-  } catch (err) {
-    console.error(err);
-    modalBody.innerHTML = `<div style="opacity:.85;">상세 불러오기 실패</div>`;
-  }
-}
+        function renderDetailPie(dist) {
+          const canvas = document.getElementById("detailPie");
+          if (!canvas || typeof Chart === "undefined") {
+            console.log("Chart.js 로드 안 됨 or canvas 없음");
+            return;
+          }
 
+          destroyDetailCharts(); // 기존 차트 제거
 
+          // ✅ dist가 비었으면 ratio로 fallback
+          let distObj = dist && Object.keys(dist).length ? dist : null;
 
-      function renderDetailPie(dist) {
-  const canvas = document.getElementById("detailPie");
-  if (!canvas || typeof Chart === "undefined") {
-    console.log("Chart.js 로드 안 됨 or canvas 없음");
-    return;
-  }
+          if (!distObj) {
+            const r2 = window.__lastDetailResult || {};
+            distObj =
+              r2.activity_distribution?.percent ||
+              r2.activity_distribution?.ratio ||
+              {};
+          }
 
-  destroyDetailCharts(); // 기존 차트 제거
+          const labels = Object.keys(distObj);
+          const values = Object.values(distObj);
 
-  // ✅ dist가 비었으면 ratio로 fallback
-  let distObj = dist && Object.keys(dist).length ? dist : null;
+          // ✅ 데이터가 진짜 없으면 안내만 표시
+          if (!labels.length) {
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "rgba(255,255,255,0.7)";
+            ctx.font = "14px sans-serif";
+            ctx.fillText("활동 비율 데이터 없음", 10, 30);
+            return;
+          }
 
-  if (!distObj) {
-    const r2 = window.__lastDetailResult || {};
-    distObj =
-      r2.activity_distribution?.percent ||
-      r2.activity_distribution?.ratio ||
-      {};
-  }
+          const ctx = canvas.getContext("2d");
 
-  const labels = Object.keys(distObj);
-  const values = Object.values(distObj);
+          pieChartInstance = new Chart(ctx, {
+            type: "pie",
+            data: {
+              labels,
+              datasets: [
+                {
+                  data: values,
+                  backgroundColor: [
+                    "#7c4dff",
+                    "#ff6b6b",
+                    "#4dd0e1",
+                    "#ffd54f",
+                    "#81c784",
+                    "#ba68c8",
+                    "#90caf9",
+                  ],
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              plugins: { legend: { position: "bottom" } },
+            },
+          });
+        }
 
-  // ✅ 데이터가 진짜 없으면 안내만 표시
-  if (!labels.length) {
-    const ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "rgba(255,255,255,0.7)";
-    ctx.font = "14px sans-serif";
-    ctx.fillText("활동 비율 데이터 없음", 10, 30);
-    return;
-  }
-
-  const ctx = canvas.getContext("2d");
-
-  pieChartInstance = new Chart(ctx, {
-    type: "pie",
-    data: {
-      labels,
-      datasets: [{
-        data: values,
-        backgroundColor: [
-          "#7c4dff",
-          "#ff6b6b",
-          "#4dd0e1",
-          "#ffd54f",
-          "#81c784",
-          "#ba68c8",
-          "#90caf9"
-        ]
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: { legend: { position: "bottom" } }
-      
-    }
-  });
-}
-
-      /* --------------------------------------
+        /* --------------------------------------
          Study 요약
       -------------------------------------- */
-      let dailyChart = null;
+        let dailyChart = null;
 
-     async function loadStudySummary() {
-  document.getElementById("study-total-sessions").textContent = "-";
-  document.getElementById("study-avg-focus").textContent = "-";
-  document.getElementById("study-top-distract").textContent = "-";
+        async function loadStudySummary() {
+          document.getElementById("study-total-sessions").textContent = "-";
+          document.getElementById("study-avg-focus").textContent = "-";
+          document.getElementById("study-top-distract").textContent = "-";
 
-  try {
-    // 1) 세션 목록 먼저 가져오기 (여기엔 dist가 없음!)
-    const listRes = await fetch(`/api/mypage/sessions?userId=${user.user_id}`);
-    const listData = await listRes.json();
-
-    if (!listRes.ok || !listData.ok) {
-      renderDailyFocusChart([]);
-      return;
-    }
-
-    const all = listData.sessions || [];
-    const studyList = all.filter(s => s.selected_task === "study");
-
-    // 2) Study 선택 횟수 / 평균 집중도
-    document.getElementById("study-total-sessions").textContent = studyList.length;
-
-    const focuses = studyList.map(s => Number(s.focus_percent ?? 0));
-    const avgFocus = focuses.length
-      ? focuses.reduce((a,b)=>a+b,0) / focuses.length
-      : 0;
-    document.getElementById("study-avg-focus").textContent = avgFocus.toFixed(1) + "%";
-
-    // 3) ✅ 각 study 세션의 "상세"를 다시 불러와서 dist 모으기
-    const detailResults = await Promise.all(
-      studyList.map(async (s) => {
-        // mypage/detail 먼저 시도, 실패하면 기존 detail로 fallback
-        let r = null;
-
-        try {
-          let res = await fetch(`/api/mypage/session/${s.session_id}`);
-          let data = await res.json();
-          if (res.ok && data.ok) r = data.analyzeResult || data.result || data;
-        } catch(e){}
-
-        if (!r) {
           try {
-            let res2 = await fetch(`/api/session/${s.session_id}`);
-            let data2 = await res2.json();
-            if (res2.ok && data2.ok) r = data2.analyzeResult || data2.result || data2;
-          } catch(e){}
+            // 1) 세션 목록 먼저 가져오기 (여기엔 dist가 없음!)
+            const listRes = await fetch(
+              `/api/mypage/sessions?userId=${user.user_id}`
+            );
+            const listData = await listRes.json();
+
+            if (!listRes.ok || !listData.ok) {
+              renderDailyFocusChart([]);
+              return;
+            }
+
+            const all = listData.sessions || [];
+            const studyList = all.filter((s) => s.selected_task === "study");
+
+            // 2) Study 선택 횟수 / 평균 집중도
+            document.getElementById("study-total-sessions").textContent =
+              studyList.length;
+
+            const focuses = studyList.map((s) => Number(s.focus_percent ?? 0));
+            const avgFocus = focuses.length
+              ? focuses.reduce((a, b) => a + b, 0) / focuses.length
+              : 0;
+            document.getElementById("study-avg-focus").textContent =
+              avgFocus.toFixed(1) + "%";
+
+            // 3) ✅ 각 study 세션의 "상세"를 다시 불러와서 dist 모으기
+            const detailResults = await Promise.all(
+              studyList.map(async (s) => {
+                // mypage/detail 먼저 시도, 실패하면 기존 detail로 fallback
+                let r = null;
+
+                try {
+                  let res = await fetch(`/api/mypage/session/${s.session_id}`);
+                  let data = await res.json();
+                  if (res.ok && data.ok)
+                    r = data.analyzeResult || data.result || data;
+                } catch (e) {}
+
+                if (!r) {
+                  try {
+                    let res2 = await fetch(`/api/session/${s.session_id}`);
+                    let data2 = await res2.json();
+                    if (res2.ok && data2.ok)
+                      r = data2.analyzeResult || data2.result || data2;
+                  } catch (e) {}
+                }
+
+                return r; // null일 수도 있음
+              })
+            );
+
+            // 4) 최대 방해 활동 계산
+            const distractTotals = {};
+            detailResults.forEach((r) => {
+              if (!r) return;
+
+              let ad =
+                r.activity_distribution || r.activity_distribution_json || {};
+              if (typeof ad === "string") {
+                try {
+                  ad = JSON.parse(ad);
+                } catch (e) {
+                  ad = {};
+                }
+              }
+
+              const perc = ad.percent || ad.ratio || ad || {};
+              Object.entries(perc).forEach(([k, v]) => {
+                if (k === "study") return;
+                const num = Number(v ?? 0);
+                if (!isFinite(num)) return;
+                distractTotals[k] = (distractTotals[k] || 0) + num;
+              });
+            });
+
+            let topDistractKey = "-";
+            const sorted = Object.entries(distractTotals).sort(
+              (a, b) => b[1] - a[1]
+            );
+            if (sorted.length) topDistractKey = sorted[0][0];
+
+            const labelMap = {
+              webtoon: "웹툰",
+              sns: "SNS",
+              game: "게임",
+              "youtube-ent": "유튜브(오락)",
+              youtube_mus: "유튜브(음악)",
+              "youtube-music": "유튜브(음악)",
+              youtube_entertain: "유튜브(오락)",
+              youtube_music: "유튜브(음악)",
+              other: "기타",
+            };
+
+            document.getElementById("study-top-distract").textContent =
+              labelMap[topDistractKey] || topDistractKey || "-";
+
+            // 5) 일별 집중도 그래프는 ‘목록’으로 그려도 OK
+            renderDailyFocusChart(studyList);
+          } catch (err) {
+            console.error(err);
+            renderDailyFocusChart([]);
+          }
         }
 
-        return r; // null일 수도 있음
-      })
-    );
+        function renderDailyFocusChart(sessions) {
+          const ctx = document
+            .getElementById("weekly-focus-chart")
+            .getContext("2d");
 
-    // 4) 최대 방해 활동 계산
-    const distractTotals = {};
-    detailResults.forEach(r => {
-      if (!r) return;
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
 
-      let ad = r.activity_distribution || r.activity_distribution_json || {};
-      if (typeof ad === "string") {
-        try { ad = JSON.parse(ad); } catch(e){ ad = {}; }
-      }
+          const days = [];
+          for (let i = 6; i >= 0; i--) {
+            const d = new Date(today);
+            d.setDate(today.getDate() - i);
+            days.push(d);
+          }
 
-      const perc = ad.percent || ad.ratio || ad || {};
-      Object.entries(perc).forEach(([k,v]) => {
-        if (k === "study") return;
-        const num = Number(v ?? 0);
-        if (!isFinite(num)) return;
-        distractTotals[k] = (distractTotals[k] || 0) + num;
+          const labels = days.map((d) => `${d.getMonth() + 1}/${d.getDate()}`);
+
+          const bucket = {};
+          sessions.forEach((s) => {
+            const dateStr = s.date || s.created_at;
+            if (!dateStr) return;
+
+            const d = new Date(dateStr);
+            d.setHours(0, 0, 0, 0);
+            const key = d.toISOString().slice(0, 10);
+
+            bucket[key] = bucket[key] || [];
+            bucket[key].push(Number(s.focus_percent ?? 0));
+          });
+
+          const values = days.map((d) => {
+            const key = d.toISOString().slice(0, 10);
+            const arr = bucket[key] || [];
+            if (!arr.length) return null;
+            return arr.reduce((a, b) => a + b, 0) / arr.length;
+          });
+
+          if (dailyChart) dailyChart.destroy();
+
+          dailyChart = new Chart(ctx, {
+            type: "line",
+            data: {
+              labels,
+              datasets: [
+                {
+                  label: "일별 집중도(%)",
+                  data: values,
+                  tension: 0.35,
+                  spanGaps: false, // ✅ 여기 콤마 꼭 있어야 함!
+
+                  borderColor: "#ffffff",
+                  pointBackgroundColor: "#ffffff",
+                  backgroundColor: "rgba(255,255,255,0.08)",
+                  borderWidth: 2,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              plugins: { legend: { display: false } },
+              scales: { y: { beginAtZero: true, max: 100 } },
+            },
+          });
+        }
       });
-    });
-
-    let topDistractKey = "-";
-    const sorted = Object.entries(distractTotals).sort((a,b)=>b[1]-a[1]);
-    if (sorted.length) topDistractKey = sorted[0][0];
-
-    const labelMap = {
-      "webtoon": "웹툰",
-      "sns": "SNS",
-      "game": "게임",
-      "youtube-ent": "유튜브(오락)",
-      "youtube_mus": "유튜브(음악)",
-      "youtube-music": "유튜브(음악)",
-      "youtube_entertain": "유튜브(오락)",
-      "youtube_music": "유튜브(음악)",
-      "other": "기타"
-    };
-
-    document.getElementById("study-top-distract").textContent =
-      labelMap[topDistractKey] || topDistractKey || "-";
-
-    // 5) 일별 집중도 그래프는 ‘목록’으로 그려도 OK
-    renderDailyFocusChart(studyList);
-
-  } catch (err) {
-    console.error(err);
-    renderDailyFocusChart([]);
-  }
-}
-
-
-      function renderDailyFocusChart(sessions) {
-        const ctx = document.getElementById("weekly-focus-chart").getContext("2d");
-
-        const today = new Date();
-        today.setHours(0,0,0,0);
-
-        const days = [];
-        for (let i = 6; i >= 0; i--) {
-          const d = new Date(today);
-          d.setDate(today.getDate() - i);
-          days.push(d);
-        }
-
-        const labels = days.map(d => `${d.getMonth()+1}/${d.getDate()}`);
-
-        const bucket = {};
-        sessions.forEach(s => {
-          const dateStr = s.date || s.created_at;
-          if (!dateStr) return;
-
-          const d = new Date(dateStr);
-          d.setHours(0,0,0,0);
-          const key = d.toISOString().slice(0,10);
-
-          bucket[key] = bucket[key] || [];
-          bucket[key].push(Number(s.focus_percent ?? 0));
-        });
-
-        const values = days.map(d => {
-          const key = d.toISOString().slice(0,10);
-          const arr = bucket[key] || [];
-          if (!arr.length) return null;
-          return arr.reduce((a,b)=>a+b,0) / arr.length;
-        });
-
-        if (dailyChart) dailyChart.destroy();
-
-        dailyChart = new Chart(ctx, {
-  type: "line",
-  data: {
-    labels,
-    datasets: [{
-      label: "일별 집중도(%)",
-      data: values,
-      tension: 0.35,
-      spanGaps: false,   // ✅ 여기 콤마 꼭 있어야 함!
-
-      borderColor: "#ffffff",
-      pointBackgroundColor: "#ffffff",
-      backgroundColor: "rgba(255,255,255,0.08)",
-      borderWidth: 2
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: { legend: { display: false } },
-    scales: { y: { beginAtZero: true, max: 100 } }
-  }
-});
-      }
-
-    });
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>
