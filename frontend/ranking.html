@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monitor Sketcher · 랭킹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/ranking.css" />
+</head>
+
+<body>
+<div class="app">
+
+  <!-- 상단 헤더 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand brand-link">
+        <div class="brand-logo-mark">
+          <img src="./src/logo.png" alt="Monitor Sketcher 로고" />
+        </div>
+        <span class="brand-text">Monitor Sketcher</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="test.html" class="nav-link">검사</a>
+        <a href="ranking.html" class="nav-link active">랭킹</a>
+        <a href="about.html" class="nav-link">소개</a>
+        <a href="contact.html" class="nav-link">문의</a>
+      </nav>
+
+      <div class="header-actions">
+        <span id="user-nickname-label" class="nickname-label hidden"></span>
+        <button id="mypage-btn" class="header-btn outline-btn hidden">마이페이지</button>
+        <button id="login-btn" class="header-btn primary-btn">로그인</button>
+        <button id="logout-btn" class="header-btn outline-btn hidden">로그아웃</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 -->
+  <main class="hero">
+    <section class="hero-card ranking-card">
+      <div class="hero-glow"></div>
+
+      <h1 class="ranking-title">오늘의 랭킹</h1>
+      <p class="ranking-date" id="ranking-date"></p>
+
+      <!-- 단상 전체 -->
+      <div class="podium-wrap">
+
+        <!-- 2등 -->
+        <div class="podium silver">
+          <img src="./src/knight_silver.gif" class="knight-img" alt="silver knight">
+          <!-- ✅ 단상 내부에 유저 이름이 들어갈 자리 -->
+          <div class="podium-step silver-step">
+            <div class="podium-name" id="rank-2">-</div>
+          </div>
+        </div>
+
+        <!-- 1등 -->
+        <div class="podium gold">
+          <img src="./src/knight_gold.gif" class="knight-img" alt="gold knight">
+          <div class="podium-step gold-step">
+            <div class="podium-name" id="rank-1">-</div>
+          </div>
+        </div>
+
+        <!-- 3등 -->
+        <div class="podium bronze">
+          <img src="./src/knight_bronze.gif" class="knight-img" alt="bronze knight">
+          <div class="podium-step bronze-step">
+            <div class="podium-name" id="rank-3">-</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 로그인된 유저 본인의 순위 (담백 버전) -->
+      <div class="my-rank-box">
+        <div class="my-rank-title">내 순위</div>
+        <div class="my-rank-value" id="my-rank">-</div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>졸업 작품 · Monitor Sketcher · 집중도 기반 랭킹 시스템</span>
+  </footer>
+
+</div>
+
+<script src="./js/main.js"></script>
+<script src="./js/ranking.js"></script>
+
+</body>
+</html>

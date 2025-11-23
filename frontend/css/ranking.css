@@ -1,0 +1,262 @@
+/* ======================
+   Ranking Page Styles
+====================== */
+
+.ranking-card {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.ranking-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.ranking-date {
+  opacity: 0.85;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+/* ======================
+   Podium Layout
+====================== */
+.podium-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2.3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.podium {
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ======================
+   Knight (Jump Animation)
+====================== */
+.knight-img {
+  width: 100px;
+  height: auto;
+  margin-bottom: -12px;
+  image-rendering: pixelated;
+  animation: knightJump 1.4s ease-in-out infinite;
+  transform-origin: bottom center;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.55));
+}
+
+.podium.gold .knight-img   { animation-delay: 0s; }
+.podium.silver .knight-img { animation-delay: .15s; }
+.podium.bronze .knight-img { animation-delay: .3s; }
+
+@keyframes knightJump {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ======================
+   Podium Steps (Height Control)
+====================== */
+.podium-step {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 14px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 단상 높이 차이 */
+.podium.gold .podium-step   { height: 150px; }
+.podium.silver .podium-step { height: 115px; }
+.podium.bronze .podium-step { height: 95px; }
+
+/* ======================
+   Gold / Silver / Bronze Colors + Glow
+====================== */
+.gold-step {
+  background: linear-gradient(180deg, #ffe06a, #d4a400);
+  box-shadow:
+    0 0 24px rgba(255, 220, 20, 0.55),
+    inset 0 0 18px rgba(255,255,255,0.35);
+}
+
+.silver-step {
+  background: linear-gradient(180deg, #e0e0e0, #9a9a9a);
+  box-shadow:
+    0 0 18px rgba(210, 210, 210, 0.55),
+    inset 0 0 14px rgba(255,255,255,0.25);
+}
+
+.bronze-step {
+  background: linear-gradient(180deg, #d39555, #9a5c27);
+  box-shadow:
+    0 0 18px rgba(200, 140, 60, 0.55),
+    inset 0 0 14px rgba(255,255,255,0.2);
+}
+
+/* ======================
+   Trophy Badge (Inside Podium)
+====================== */
+.podium-step::after {
+  content: "🏆";
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+
+/* 반짝이는 하이라이트 */
+.podium-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.45), transparent 60%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ======================
+   Rank Name
+====================== */
+.rank-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  opacity: 0.95;
+  margin-top: 6px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* ======================
+   My Rank
+====================== */
+.my-rank-box {
+  margin-top: 3rem;
+  background: rgba(10,10,35,0.7);
+  padding: 1rem 2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(120,120,200,0.4);
+  display: inline-block;
+}
+
+.my-rank-title {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+.my-rank-value {
+  margin-top: 6px;
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+/* ======================
+   Knight Size (50% smaller)
+====================== */
+.knight-img {
+  width: 50px;     /* 기존 100px에서 절반으로 축소 */
+  height: auto;
+  margin-bottom: -6px;
+  image-rendering: pixelated;
+  animation: knightJump 1.4s ease-in-out infinite;
+  transform-origin: bottom center;
+  filter: drop-shadow(0 4px 7px rgba(0,0,0,0.55));
+}
+
+/* 각각 약간의 딜레이 유지 */
+.podium.gold .knight-img   { animation-delay: 0s; }
+.podium.silver .knight-img { animation-delay: .15s; }
+.podium.bronze .knight-img { animation-delay: .30s; }
+
+/* ======================
+   Rank Name (1등/2등/3등 더 예쁘게)
+====================== */
+
+.rank-title {
+  margin-bottom: 6px;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Press Start 2P', sans-serif; /* 없으면 자동 fallback */
+  text-shadow:
+    0 2px 0 rgba(0,0,0,0.6),
+    0 0 10px rgba(255,255,255,0.3);
+  opacity: 0.95;
+}
+
+/* 색상 차별화 */
+.podium.gold   .rank-title { color: #ffe06a; }
+.podium.silver .rank-title { color: #e0e0e0; }
+.podium.bronze .rank-title { color: #d89a5c; }
+/* ======================
+   Podium Name (inside step)
+====================== */
+.podium-name {
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.65);
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.22);
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 단상 중앙에 이름 배치 */
+.podium-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 금/은/동 이름 색차 */
+.podium.gold   .podium-name { color: #fff4a8; }
+.podium.silver .podium-name { color: #f2f2f2; }
+.podium.bronze .podium-name { color: #ffd2a8; }
+
+/* ======================
+   My Rank (more simple)
+====================== */
+.my-rank-box {
+  margin-top: 2.3rem;
+  background: rgba(10,10,35,0.55);
+  padding: .8rem 1.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(120,120,200,0.35);
+  display: inline-block;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.my-rank-title {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 700;
+}
+
+.my-rank-value {
+  margin-top: 4px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: .5px;
+  color: #ff8fb3;
+}

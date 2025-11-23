@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitor Sketcher 결과</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+    h1 { text-align: center; }
+    .chart-container { width: 80%; margin: auto; }
+  </style>
+</head>
+<body>
+  <h1>📊 Monitor Sketcher 활동 분석</h1>
+
+  <div class="chart-container">
+    <canvas id="overallChart"></canvas>
+  </div>
+  <br>
+  <div class="chart-container">
+    <canvas id="timelineChart"></canvas>
+  </div>
+
+  <script>
+    async function loadData() {
+      const res = await fetch("/api/result");
+      const data = await res.json();
+
+      // ✅ 전체 활동 비율
+      const labels = Object.keys(data.overall.probs);
+      const values = Object.values(data.overall.probs);
+
+      new Chart(document.getElementById("overallChart"), {
+        type: "doughnut",
+        data: {
+          labels: labels,
+          datasets: [{
+            data: values,
+            backgroundColor: [
+              "#ff6384", "#36a2eb", "#ffce56",
+              "#4bc0c0", "#9966ff", "#ff9f40", "#c9cbcf"
+            ]
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: "bottom" } }
+        }
+      });
+
+      // ✅ 타임라인 (창별 argmax)
+      const times = data.timeline.map(t => `${t.window_start}-${t.window_end}`);
+      const argmax = data.timeline.map(t => t.argmax);
+
+      new Chart(document.getElementById("timelineChart"), {
+        type: "bar",
+        data: {
+          labels: times,
+          datasets: [{
+            label: "주요 활동",
+            data: argmax.map((a, i) => i+1), // 순서만 시각화
+            backgroundColor: "#36a2eb"
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `활동: ${argmax[ctx.dataIndex]}`
+              }
+            }
+          },
+          scales: { y: { display: false } }
+        }
+      });
+    }
+    loadData();
+  </script>
+</body>
+</html>

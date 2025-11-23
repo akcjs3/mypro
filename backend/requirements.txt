@@ -1,0 +1,11 @@
+numpy
+scikit-learn
+tensorflow==2.15.0
+flask
+
+psutil
+pyautogui
+pynput
+pywin32
+
+

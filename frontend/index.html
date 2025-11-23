@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monitor Sketcher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- 상단 헤더 -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/index.html" class="brand">
+    <div class="brand-logo-mark">
+        <img src="./src/logo.png" />
+    </div>
+    <span class="brand-text">Monitor Sketcher</span>
+</a>
+
+        <!-- 가운데 네비게이션 -->
+        <nav class="main-nav">
+          <a href="test.html" class="nav-link" data-page="test">검사</a>
+          <a href="ranking.html" class="nav-link" data-page="ranking">랭킹</a>
+          <a href="about.html" class="nav-link" data-page="about">소개</a>
+          <a href="contact.html" class="nav-link" data-page="contact">문의</a>
+        </nav>
+
+        <!-- 오른쪽 로그인 / 마이페이지 / 로그아웃 -->
+        <div class="header-actions">
+          <!-- 닉네임 표시 전용 -->
+          <span id="user-nickname-label" class="nickname-label hidden"></span>
+
+          <!-- 마이페이지 버튼 -->
+          <button id="mypage-btn" class="header-btn outline-btn hidden">
+            마이페이지
+          </button>
+
+          <!-- 로그인 / 로그아웃 버튼 -->
+          <button id="login-btn" class="header-btn primary-btn">
+            로그인
+          </button>
+          <button id="logout-btn" class="header-btn outline-btn hidden">
+            로그아웃
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 메인 히어로 영역 -->
+    <main class="hero">
+      <section class="hero-card">
+        <div class="hero-glow"></div>
+
+        <!-- 기본 모드에서 보이는 내용 -->
+        <div class="hero-content">
+          <img
+            src="./src/logo.png"
+            alt="Monitor Sketcher 로고"
+            class="hero-logo"
+          />
+
+          <h1 class="hero-title">
+            Monitor Sketcher
+          </h1>
+
+          <div class="hero-actions">
+            <button class="hero-btn" data-page="test">검사</button>
+            <button class="hero-btn" data-page="ranking">랭킹</button>
+            <button class="hero-btn" data-page="about">소개</button>
+            <button class="hero-btn" data-page="contact">문의</button>
+          </div>
+
+          <p class="hero-subtitle">
+            PC 사용 패턴을 분석해<br />
+            당신의 집중 시간을 시각화하는 대시보드
+          </p>
+        </div>
+
+        <!-- ✅ 소개 모드(about-expanded)에서만 보이는 내용 -->
+        <div class="hero-about-panel">
+          <div class="hero-about-text">
+              <div class="hero-about-brand">Monitor Sketcher</div>
+            <span class="hero-about-tag"> </span>
+            <h2 class="hero-about-title">
+              집중력 상승을 위해선<br />
+              <strong>집중 시간부터 알아야 합니다.</strong>
+            </h2>
+            <p class="hero-about-desc">
+              GAME, WEBTOON, STUDY...<br />
+          
+            </p>
+          </div>
+
+          <div class="hero-about-chart">
+            <svg
+              class="focus-chart"
+              viewBox="0 0 300 140"
+              preserveAspectRatio="none"
+            >
+              <!-- 가로 축 -->
+              <line x1="20" y1="120" x2="280" y2="120" class="chart-axis" />
+              <!-- 세로 축 -->
+              <line x1="40" y1="20" x2="40" y2="120" class="chart-axis" />
+
+              <!-- 보조 그리드 라인 -->
+              <line x1="40" y1="100" x2="280" y2="100" class="chart-grid" />
+              <line x1="40" y1="80"  x2="280" y2="80"  class="chart-grid" />
+              <line x1="40" y1="60"  x2="280" y2="60"  class="chart-grid" />
+              <line x1="40" y1="40"  x2="280" y2="40"  class="chart-grid" />
+
+              <!-- ✅ 집중 시간 꺾은선 (애니메이션) -->
+              <polyline
+                class="chart-line"
+                points="40,110 80,100 120,90 160,75 200,55 240,40 280,30"
+              />
+
+              <!-- 점 마커들 -->
+              <circle class="chart-point" cx="40"  cy="110" r="3" />
+              <circle class="chart-point" cx="80"  cy="100" r="3" />
+              <circle class="chart-point" cx="120" cy="90"  r="3" />
+              <circle class="chart-point" cx="160" cy="75"  r="3" />
+              <circle class="chart-point" cx="200" cy="55"  r="3" />
+              <circle class="chart-point" cx="240" cy="40"  r="3" />
+              <circle class="chart-point" cx="280" cy="30"  r="3" />
+            </svg>
+            <p class="chart-caption">
+              PC 기록을 기반으로 <strong>사용자의 집중도를</strong> 시각화합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 소개 모드에서만 보이는 아래 섹션 -->
+   <section class="about-sections">
+  <!-- 첫 번째 큰 박스 (왼쪽에 이미지 느낌) -->
+  <div class="about-card about-card-left">
+    <div class="about-card-inner">
+      <div class="about-card-image">
+        <!-- 나중에 여기 about 이미지(대시보드 캡처 등) 넣을 예정 -->
+        <div class="about-image-placeholder">
+          이미지 영역 (왼쪽 1/3쯤)
+        </div>
+      </div>
+      <div class="about-card-text">
+        <h2>Monitor Sketcher는?</h2>
+        <p>
+          사용자가 선택한 활동 라벨을 기준으로
+          PC 화면과 키보드 입력을 분석하여
+          실제로 그 활동을 하고 있는지 파악하고,
+          집중도를 시각화해 보여주는 프로그램입니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 두 번째 큰 박스 (오른쪽에 이미지 느낌) -->
+  <div class="about-card about-card-right">
+    <div class="about-card-inner">
+      <div class="about-card-text">
+        <h2>왜 이 프로그램을 만들었나?</h2>
+        <p>
+          단순히 “열심히 했다”가 아니라, 얼마나 집중했는지, 언제 흐트러지는지를
+          실제 사용 기록으로 확인하고 싶었습니다.
+        </p>
+      </div>
+      <div class="about-card-image">
+        <!-- 나중에 여기에는 동기/시간관리 느낌 나는 사진 넣으면 됨 -->
+        <div class="about-image-placeholder">
+          이미지 영역 (오른쪽 2/3쯤)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- 소개 모드에서만 보이는 떠다니는 구(버튼) -->
+    <button id="about-orb" class="about-orb hidden" type="button">
+      돌아가기
+    </button>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <span>졸업 작품 · Monitor Sketcher · PC 사용 기록 기반 집중도 분석 서비스</span>
+    </footer>
+  </div>
+
+  <!-- 로그인 필요 팝업 모달 -->
+  <div id="login-modal-backdrop" class="login-modal-backdrop hidden">
+    <div class="login-modal">
+      <h3 class="login-modal-title">로그인이 필요한 기능입니다</h3>
+      <p class="login-modal-message">
+        이 기능을 이용하려면 먼저 로그인을 해주세요.
+      </p>
+      <div class="login-modal-actions">
+        <button
+          type="button"
+          id="login-modal-cancel"
+          class="login-modal-btn login-modal-btn-secondary"
+        >
+          취소
+        </button>
+        <button
+          type="button"
+          id="login-modal-go"
+          class="login-modal-btn login-modal-btn-primary"
+        >
+          로그인 하러 가기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
